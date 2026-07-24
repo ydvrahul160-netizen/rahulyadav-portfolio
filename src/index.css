@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+* {
+  font-family: "Saira", sans-serif;
+}
+
+@theme {
+  --color-dark-100: #1a1a1a;
+  --color-dark-200: #333333;
+  --color-dark-300: #4d4d4d;
+  --color-dark-400: #666666;
+  --color-purple: #8b5cf6;
+  --color-pink: #ec4899;
+  --color-blue: #3b82f6;
+
+  --body-bg-color: #0a192f;
+  --color-text: #ccd6f6;
+}
+/* body,html {
+    background-color: var(--body-bg-color);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+} */
+
+/* body {
+    background-color: var(--color-dark-100);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+} */
+
+.typewriter {
+  overflow: hidden;
+  border-right: 0.16em solid orange;
+  white-space: nowrap;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+  /*animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    */
+  -webkit-animation:
+    typing 3s steps(20, end) forwards,
+    blink-caret 0.75s step-end 5;
+  /* -webkit-animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17ch;
+  } /* Adjust the width to match the length of your text */
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #facc15;
+  opacity: 0.4;
+  animation: particleFloat 12s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-120vh) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #facc15, #fb923c, #ec4899);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* <h1 className="gradient-text"> */
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+/* <div className="glass rounded-3xl p-6"> */
+
+.glow {
+  box-shadow:
+    0 0 20px rgba(250, 204, 21, 0.3),
+    0 0 50px rgba(250, 204, 21, 0.2),
+    0 0 80px rgba(250, 204, 21, 0.15);
+}
+/* className="rounded-full glow" */
+
+.hover-lift {
+  transition: 0.35s;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+}
+/* className="hover-lift" */
+
+/* floating animation */
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+/* className="float" */
+
+/* background grid */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+}
+/* <section className="grid-bg"> */
+
+/* animated border */
+.border-glow {
+  position: relative;
+}
+
+.border-glow::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -4px;
+
+  border-radius: 9999px;
+
+  background: linear-gradient(45deg, #facc15, #fb923c, #ec4899, #3b82f6);
+
+  z-index: -1;
+
+  filter: blur(12px);
+
+  opacity: 0.8;
+
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* <div className="border-glow"> */
+
+/* scroll indicator */
+.mouse {
+  width: 28px;
+
+  height: 46px;
+
+  border: 2px solid #facc15;
+
+  border-radius: 40px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.mouse span {
+  width: 5px;
+
+  height: 10px;
+
+  background: #facc15;
+
+  border-radius: 20px;
+
+  margin-top: 8px;
+
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(16px);
+
+    opacity: 0;
+  }
+}
+
+/* btn */
+.btn-premium {
+  transition: 0.35s;
+}
+
+.btn-premium:hover {
+  transform: translateY(-5px) scale(1.05);
+
+  box-shadow: 0 15px 35px rgba(250, 204, 21, 0.35);
+}
