@@ -12,7 +12,7 @@ const About = () => {
       id="about"
       className='className="py-24 relative overflow-hidden"'
     >
-         {/* yello glow line 
+         {/* yellow glow line 
         <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div> */}
 
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -45,7 +45,7 @@ const About = () => {
                     viewport={{ once: false, amount:0.2 }}
                     className="w-full lg:w-3/5 xl:w-2/3"
                     >
-                        <div className="rounded-2xl p-6 md:p-8 max-w-3xl mx-auto ttext-center md:text-left">
+                        <div className="rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center md:text-left">
                             <h3 className='text-2xl font-semibold mb-6'>My Journey</h3>
                             <p className='className="text-gray-300 leading-8 max-w-xl"'>I'm Rahul Yadav, a BCA student and aspiring MERN Stack Developer
                                 passionate about building modern and user-friendly web applications.
@@ -80,7 +80,7 @@ const About = () => {
             </div>
 
         </div>
-        {/* yello glow line  */}
+        {/* yellow glow line  */}
         <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
       
     </motion.div>
