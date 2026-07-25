@@ -27,12 +27,12 @@ export const aboutInfo = [
       description: 'Beautiful design and user experience are at the heart of everything I create.',
       color: 'text-pink'
     },
-    // {
-    //   icon: FaCode,
-    //   title: 'Clean Code',
-    //   description: 'I write maintainable, efficient code following best practices and modern patterns.',
-    //   color: 'text-blue'
-    // }
+    {
+      icon: FaCode,
+      title: 'Clean Code',
+      description: 'I write maintainable, efficient code following best practices and modern patterns.',
+      color: 'text-blue'
+    }
   ];
 
 
@@ -89,6 +89,9 @@ export const projects = [
     image: projectImg1,
     tech: ["Html", "css", "js"],
     icons: [FaReact, FaNodeJs, FaDatabase , FaStripe],
+    github:"#",
+    live: true,
+    feature:"false",
     demo: "#",
     code: "#",
   },
@@ -98,6 +101,9 @@ export const projects = [
     image: projectImg2,
     tech: ["html", "css", "js"],
     icons: [FaVuejs, FaFire, FaCloud , FaDatabase],
+    github:"#",
+    live: false,
+    feature:"true",
     demo: "#",
     code: "#",
   },
@@ -107,6 +113,9 @@ export const projects = [
     image: projectImg3,
     tech: ["React Native", "GraphQL", "MySQL", "Chart.js"],
     icons: [FaReact, FaDatabase],
+    github:"#",
+    live: true,
+    feature:"true",
     demo: "#",
     code: "#",
   },
@@ -116,6 +125,9 @@ export const projects = [
     image: projectImg4,
     tech: ["Html", "CSS"],
     icons: [FaReact, FaCloud],
+    github:"#",
+    live: true,
+    feature:"true",
     demo: "#",
     code: "#",
   },
@@ -125,6 +137,9 @@ export const projects = [
     image: projectImg5,
     tech: ["Socket.IO", "React", "Node.js", "MongoDB"],
     icons: [FaReact, FaNodeJs, FaDatabase ],
+    github:"#",
+    live: true,
+    feature:"true",
     demo: "#",
     code: "#",
   },
@@ -134,6 +149,9 @@ export const projects = [
     image: projectImg6,
     tech: ["React", "OpenAI API", "Cloudinary", "Tailwind CSS"],
     icons: [FaRobot, FaReact, FaCloud],
+    github:"#",
+    live: true,
+    feature:"true",
     demo: "#",
     code: "#",
   }

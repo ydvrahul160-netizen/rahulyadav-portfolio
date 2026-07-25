@@ -15,11 +15,15 @@ const Projects = () => {
       id="projects"
       className='py-30 bg-dark-100'
     >
-        <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <h2 className='text-3xl font-bold text-center mb-4'>My <span className='text-yellow-300'>Projects</span></h2>
+
+           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 blur-[120px] rounded-full"></div>
+           <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 blur-[120px] rounded-full"></div> 
+
             <p className='text-gray-400 text-center max-w-2xl mx-auto mb-16'>A selection of my recent work</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto relative py-24 overflow-hidden">
 
                 {/* PROJECTS CARDS */}
                 {
@@ -35,6 +39,8 @@ const Projects = () => {
                 </a>
             </div>
         </div>
+        {/* yello glow line  */}
+        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
       
     </motion.div>
   )

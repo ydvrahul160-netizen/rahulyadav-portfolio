@@ -75,7 +75,10 @@ const Skills = () => {
           ))}
         </div>
       </div>
+      {/* yello glow line  */}
+        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
     </motion.div>
+    
   );
 };
 

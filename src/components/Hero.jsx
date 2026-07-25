@@ -44,6 +44,7 @@ const Hero = () => {
       id="home"
       className="grid-bg relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-black"
     >
+      
       {/* Background Glow */}
       {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <span className="particle left-[10%] top-[20%]"></span>
@@ -221,6 +222,7 @@ const Hero = () => {
         <span className="text-sm mt-2">Scroll</span>
       </motion.a>
       ;
+      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
     </section>
   );
 };

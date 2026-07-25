@@ -12,6 +12,9 @@ const About = () => {
       id="about"
       className='className="py-24 relative overflow-hidden"'
     >
+         {/* yello glow line 
+        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div> */}
+
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
             {/****************************** HEADING **********************************/}
             <h2 className='text-3xl font-bold text-center mb-4'>About <span className='text-yellow-300'>Me</span></h2>
@@ -56,12 +59,12 @@ const About = () => {
                             </p>
 
                             {/* CARDS */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto ">
                                 {
                                     aboutInfo.map((data, index) => (
-                                        <div key={index} className='bg-dark-300
+                                        <div key={index} className='glass
                                          rounded-2xl p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer'>
-                                             <div className='text-yellow-300 text-4xl mb-4'>
+                                             <div className='text-sky-400 text-4xl mb-4'>
                                                 <data.icon/>
                                              </div>
                                              <h3 className='text-xl font-semibold mb-3'>{data.title}</h3>
@@ -77,6 +80,8 @@ const About = () => {
             </div>
 
         </div>
+        {/* yello glow line  */}
+        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
       
     </motion.div>
   )
