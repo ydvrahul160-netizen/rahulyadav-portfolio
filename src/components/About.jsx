@@ -10,7 +10,7 @@ const About = () => {
       transition={{ duration: 0.6, ease: 'easeInOut' }}
       viewport={{ once: true }}
       id="about"
-      className='className="py-24 relative overflow-hidden"'
+      className='className="relative py-24 relative overflow-hidden"'
     >
          {/* yellow glow line 
         <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div> */}
@@ -45,8 +45,8 @@ const About = () => {
                     viewport={{ once: false, amount:0.2 }}
                     className="w-full lg:w-3/5 xl:w-2/3"
                     >
-                        <div className="rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center md:text-left">
-                            <h3 className='text-2xl font-semibold mb-6'>My Journey</h3>
+                        <div className=" rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center md:text-left">
+                            <h2 className='text-3xl font-semibold mb-4'>My Journey</h2>
                             <p className='className="text-gray-300 leading-8 max-w-xl"'>I'm Rahul Yadav, a BCA student and aspiring MERN Stack Developer
                                 passionate about building modern and user-friendly web applications.
                                 My journey started with HTML, CSS, and JavaScript,

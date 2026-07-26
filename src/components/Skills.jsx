@@ -1,6 +1,5 @@
-import React from "react";
+// import React from "react";
 import { motion } from "framer-motion";
-import { div, span } from "framer-motion/client";
 import { skills } from "../assets/assets";
 
 const Skills = () => {
@@ -9,7 +8,7 @@ const Skills = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.05 }}
       id="skills"
       className="relative py-24 overflow-hidden"
     >
@@ -39,27 +38,23 @@ const Skills = () => {
               <p className="text-gray-400 mb-4">{skill.description}</p>
 
               <div className="mt-5 mb-5">
+                <div className="flex justify-between text-sm mb-2">
+                  <span className="text-gray-400">Proficiency</span>
+                  <span className="text-sky-400 font-semibold">
+                    {skill.level}%
+                  </span>
+                </div>
 
-  <div className="flex justify-between text-sm mb-2">
-    <span className="text-gray-400">Proficiency</span>
-    <span className="text-sky-400 font-semibold">
-      {skill.level}%
-    </span>
-  </div>
-
-  <div className="h-2 rounded-full bg-white/10 overflow-hidden">
-
-    <motion.div
-      initial={{ width: 0 }}
-      whileInView={{ width: `${skill.level}%` }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-      className="h-full rounded-full bg-sky-400"
-    />
-
-  </div>
-
-</div>
+                <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: true }}
+                    className="h-full rounded-full bg-sky-400"
+                  />
+                </div>
+              </div>
 
               <div className="flex flex-wrap gap-2">
                 {skill.tags.map((tech) => (
@@ -76,9 +71,8 @@ const Skills = () => {
         </div>
       </div>
       {/* yellow glow line  */}
-        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
+      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
     </motion.div>
-    
   );
 };
 

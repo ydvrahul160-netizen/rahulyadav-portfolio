@@ -11,7 +11,7 @@ const Projects = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeInOut' }}
-      viewport={{ once: false, amount: 0.2}}
+      viewport={{ once: false, amount: 0.08}}
       id="projects"
       className='py-30 bg-dark-100'
     >
