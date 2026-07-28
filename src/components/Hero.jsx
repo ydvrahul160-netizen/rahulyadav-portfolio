@@ -1,8 +1,8 @@
-import React from "react";
+// import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import profileImg from "../assets/profileImg.jpeg";
-
+import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 
 import { SiReact, SiNodedotjs, SiMongodb, SiJavascript } from "react-icons/si";
@@ -44,21 +44,11 @@ const Hero = () => {
       id="home"
       className="grid-bg relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-black"
     >
-      
       {/* Background Glow */}
-      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <span className="particle left-[10%] top-[20%]"></span>
-        <span className="particle left-[30%] top-[70%]"></span>
-        <span className="particle left-[60%] top-[30%]"></span>
-        <span className="particle left-[80%] top-[60%]"></span>
-        <span className="particle left-[50%] top-[90%]"></span>
-      </div> */}
-      {/* <div className="absolute w-72 h-72 bg-yellow-400/20 blur-[120px] rounded-full top-20 left-10"></div>
-
-      <div className="absolute w-96 h-96 bg-blue-500/10 blur-[140px] rounded-full bottom-10 right-10"></div> */}
+      
       <div className="container mx-auto px-6 lg:px-14 py-20">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
-          {/* LEFT */}
+          {/* Left part */}
 
           <motion.div
             initial={{ opacity: 0, x: -80 }}
@@ -122,14 +112,14 @@ const Hero = () => {
                 View Projects
               </a>
 
-              <a
-                href="/resume.pdf"
-                download
-                className="px-7 py-3 rounded-xl border border-yellow-300 text-white hover:bg-yellow-300 hover:text-black transition duration-300 flex items-center gap-2 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)] transition-all duration-300 "
+              {/* resume show option */}
+              <Link
+                to="/resume"
+                className="px-7 py-3 rounded-xl border border-yellow-300 text-white hover:bg-yellow-300 hover:text-black transition duration-300 flex items-center gap-2 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)]"
               >
-                <FaDownload className="hover:rotate-12 hover:scale-125 transition-all duration-300" />
+                <FaDownload />
                 Resume
-              </a>
+              </Link>
             </div>
 
             <div className="flex gap-5 mt-10 text-2xl">
@@ -160,7 +150,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* RIGHT */}
+          {/* Right Part */}
 
           <motion.div
             initial={{ opacity: 0, x: 80 }}
@@ -209,6 +199,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+
       {/* scroll indicator */}
       <motion.a
         href="#about"
@@ -221,7 +212,6 @@ const Hero = () => {
         </div>
         <span className="text-sm mt-2">Scroll</span>
       </motion.a>
-      ;
       <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
     </section>
   );
