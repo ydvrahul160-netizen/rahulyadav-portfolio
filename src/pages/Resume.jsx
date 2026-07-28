@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
-
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
   import.meta.url,
@@ -61,7 +60,7 @@ const Resume = () => {
           )}
           <div className="overflow-y-auto h-full flex justify-center">
             <Document
-              file="public/resume.pdf"
+              file="/resume.pdf"
               onLoadSuccess={onDocumentLoadSuccess}
               loading=""
             >
