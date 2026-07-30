@@ -72,10 +72,9 @@ const Contact = () => {
               {/* BUTTON  */}
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-dark-100 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-dark-100 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
               >
-                <FaPaperPlane />
-
+                <FaPaperPlane className="text-lg" />
                 <span>Send Message</span>
               </button>
             </form>
@@ -120,17 +119,17 @@ const Contact = () => {
                   href="tel:+917080XXXXXX"
                   className="text-gray-400 hover:text-sky-400"
                 >
-                  +91 7080******
+                  +91 7080137287
                 </a>
               </div>
             </div>
 
             {/* Social Icons */}
             <div className="pt-4 glass rounded-2xl p-5 flex items-start gap-4">
-              <h3 className="text-lg font-semibold mb-4">Follow Me</h3>
+              <h3 className="text-lg font-semibold mb-4">Let's Connect</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/ydvrahul160-netizen"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-gray-900 hover:bg-black hover:text-white transition duration-300"
@@ -139,13 +138,13 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="www.linkedin.com/in/rahulyadav-77dev"
                   className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition duration-300"
                 >
                   <FaLinkedin />
                 </a>
 
-                <a
+                {/* <a
                   href="https://Linkedin.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -161,7 +160,7 @@ const Contact = () => {
                   className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-pink-400 hover:bg-pink-400 hover:text-white transition duration-300"
                 >
                   <FaDribbble />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

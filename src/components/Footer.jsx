@@ -63,7 +63,7 @@ const Footer = () => {
         <div className="flex items-center gap-4">
           <div className="flex gap-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/ydvrahul160-netizen" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="p-2 rounded-full bg-dark-200 hover:bg-gray-700 hover:text-white transition-all duration-200"
@@ -72,7 +72,7 @@ const Footer = () => {
               <FaGithub className="w-5 h-5" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="www.linkedin.com/in/rahulyadav-77dev"
               target="_blank" 
               rel="noopener noreferrer" 
               className="p-2 rounded-full bg-dark-200 hover:bg-gray-700 hover:text-white transition-all duration-200"
@@ -81,7 +81,7 @@ const Footer = () => {
               <FaLinkedin className="w-5 h-5" />
             </a>
             <a 
-              href="mailto:your-email@example.com" 
+              href="mailto:rahulyadav40777@gmail.com" 
               className="p-2 rounded-full bg-dark-200 hover:bg-gray-700 hover:text-white transition-all duration-200"
               aria-label="Email"
             >

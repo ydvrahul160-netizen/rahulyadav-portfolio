@@ -124,7 +124,7 @@ const Hero = () => {
 
             <div className="flex gap-5 mt-10 text-2xl">
               <a
-                href="https://github.com/"
+                href="https://github.com/ydvrahul160-netizen"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-yellow-300 transition"
@@ -133,7 +133,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="https://linkedin.com/"
+                href="www.linkedin.com/in/rahulyadav-77dev"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-yellow-300 transition"
@@ -142,7 +142,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="mailto:example@gmail.com"
+                href="mailto:rahulyadav40777@gmail.com"
                 className="hover:text-yellow-300 transition"
               >
                 <FaEnvelope className="hover:rotate-12 hover:scale-125 transition-all duration-300" />
