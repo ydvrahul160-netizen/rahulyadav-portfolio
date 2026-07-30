@@ -18,21 +18,22 @@
   --body-bg-color: #0a192f;
   --color-text: #ccd6f6;
 }
-/* body,html {
-    background-color: var(--body-bg-color);
-    color: var(--color-text);
-    margin: 0;
-    padding: 0;
-    height: 100%;
-} */
 
-/* body {
-    background-color: var(--color-dark-100);
-    color: var(--color-text);
-    margin: 0;
-    padding: 0;
-} */
+/* --------name logo-font-------------- */
+@font-face {
+  font-family: "Gasdrifo";
+  src: url("./assets/fonts/ncl-gasdrifo.zip") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
+.gasdrifo-font {
+  font-family: "Gasdrifo", serif;
+}
+/* ----------------------------------- */
+
+
+/* ----------------------typing animation in hero page----------------- */
 .typewriter {
   overflow: hidden;
   border-right: 0.16em solid orange;
@@ -66,6 +67,8 @@
     border-color: orange;
   }
 }
+
+/* ------------------------------------------------------------------------ */
 
 .particle {
   position: absolute;
@@ -102,6 +105,8 @@
 }
 /* <h1 className="gradient-text"> */
 
+
+/* -----------------glass background----------------- */
 .glass {
   background: rgba(255, 255, 255, 0.05);
 
@@ -112,6 +117,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 /* <div className="glass rounded-3xl p-6"> */
+/* --------------------------------------------------- */
 
 .glow {
   box-shadow:
@@ -130,6 +136,8 @@
 }
 /* className="hover-lift" */
 
+
+/* -------------hero Image floating animation---------- */
 /* floating animation */
 .float {
   animation: float 4s ease-in-out infinite;
@@ -149,8 +157,9 @@
   }
 }
 /* className="float" */
+/* -------------------------------------------------- */
 
-/* background grid */
+/* --------------------background grid---------------------- */
 .grid-bg {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
@@ -159,8 +168,9 @@
   background-size: 40px 40px;
 }
 /* <section className="grid-bg"> */
+/* ----------------------------------------------------------- */
 
-/* animated border */
+/* --------------------animated border------------------------ */
 .border-glow {
   position: relative;
 }
@@ -191,6 +201,7 @@
   }
 }
 /* <div className="border-glow"> */
+/* -------------------------------------------------------------- */
 
 /* scroll indicator */
 .mouse {
