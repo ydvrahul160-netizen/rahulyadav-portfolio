@@ -1,7 +1,7 @@
 // import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import profileImg from "../assets/profileImg.jpeg";
+import profileImg1 from "../assets/profileImg1.jpeg";
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 
@@ -68,7 +68,7 @@ const Hero = () => {
               className=" text-5xl lg:text-7xl font-extrabold leading-tight text-gray-400"
             >
               Hi, I'm
-              <span className="text-white">Rahul Yadav</span>
+              <span className="text-white"> Rahul Yadav</span>
             </motion.h1>
 
             <div className="text-2xl lg:text-4xl font-semibold text-gray-300 mt-6 h-16">
@@ -163,7 +163,8 @@ const Hero = () => {
 
               <motion.img
                 {...floating}
-                src={profileImg}
+                // src={profileImg}
+                src={profileImg1}
                 alt="Rahul Yadav"
                 className="relative w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-full border-4 border-white/20 shadow-[0_0_80px_rgba(253,224,71,.35)]"
               />

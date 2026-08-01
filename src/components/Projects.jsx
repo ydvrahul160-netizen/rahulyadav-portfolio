@@ -60,7 +60,11 @@ const Projects = () => {
             centeredSlides={true}
             slidesPerView={3}
             loop={true}
-            mousewheel={true}
+            mousewheel={{
+              forceToAxis: true,
+              releaseOnEdges: true,
+              sensitivity: 1,
+            }}
             navigation={false}
             pagination={{ clickable: true }}
             autoplay={{

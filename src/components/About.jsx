@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import profileImg from '../assets/profileImg.jpeg';
 import { aboutInfo } from '../assets/assets';
+import myphoto from '../assets/myphoto.png';
+
 
 const About = () => {
   return (
@@ -31,7 +33,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: 'easeInOut' }}
                     viewport={{ once: false, amount:0.2 }}
-                    src={profileImg}
+                    src={myphoto}
                     alt="img"
                     className="w-full max-w-sm h-[420px] object-cover rounded-2xl mx-auto"
                   />

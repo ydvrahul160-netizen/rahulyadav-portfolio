@@ -75,7 +75,7 @@ const Navbar = () => {
           </a>
 
           <a
-            href="#experience"
+            href="#work"
             className=" relative font-semibold text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
           >
             Experience
