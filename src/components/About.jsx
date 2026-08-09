@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import profileImg from '../assets/profileImg.jpeg';
 import { aboutInfo } from '../assets/assets';
 import myphoto from '../assets/myphoto.png';
+import { useTheme } from "../context/ThemeContext";
 
 
 const About = () => {
@@ -12,15 +13,15 @@ const About = () => {
       transition={{ duration: 0.6, ease: 'easeInOut' }}
       viewport={{ once: true }}
       id="about"
-      className='className="relative py-24 relative overflow-hidden"'
+      className="theme-bg grid-bg2 relative py-24 relative overflow-hidden"
     >
          {/* yellow glow line 
         <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div> */}
 
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
             {/****************************** HEADING **********************************/}
-            <h2 className='text-3xl font-bold text-center mb-4'>About <span className='text-yellow-300'>Me</span></h2>
-            <p className='text-gray-400 text-center max-w-2xl mx-auto mb-16'>Get to know more about my background and passion</p>
+            <h2 className='theme-heading text-3xl font-bold text-center mb-4'>About <span className='text-yellow-300'>Me</span></h2>
+            <p className=' text-gray-400 text-center max-w-2xl mx-auto mb-16'>Get to know more about my background and passion</p>
         
         
            {/******************************** IMAGE + MY JOURNEY  **************************/}
@@ -48,13 +49,13 @@ const About = () => {
                     className="w-full lg:w-3/5 xl:w-2/3"
                     >
                         <div className=" rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center md:text-left">
-                            <h2 className='text-3xl font-semibold mb-4'>My Journey</h2>
-                            <p className='className="text-gray-300 leading-8 max-w-xl"'>I'm Rahul Yadav, a BCA student and aspiring MERN Stack Developer
+                            <h2 className='theme-heading text-3xl font-semibold mb-4'>My Journey</h2>
+                            <p className='className=" theme-text text-gray-300 leading-8 max-w-xl"'>I'm Rahul Yadav, a BCA student and aspiring MERN Stack Developer
                                 passionate about building modern and user-friendly web applications.
                                 My journey started with HTML, CSS, and JavaScript,
                                 and gradually expanded to React.js, Node.js, Express.js, and MongoDB.
                             </p>
-                            <p className='text-gray-300 mb-12'>I am continuously improving my skills in full-stack web development by building projects and exploring modern web technologies.
+                            <p className='theme-text text-gray-300 mb-12'>I am continuously improving my skills in full-stack web development by building projects and exploring modern web technologies.
                                 I enjoy creating responsive interfaces, solving programming challenges,
                                 and exploring new technologies to improve my skills.
                                 Currently, I am focused on building real-world projects, strengthening my DSA knowledge, and preparing for software development opportunities.
@@ -64,12 +65,12 @@ const About = () => {
                             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto ">
                                 {
                                     aboutInfo.map((data, index) => (
-                                        <div key={index} className='glass
+                                        <div key={index} className='theme-bg3 glass
                                          rounded-2xl p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer'>
                                              <div className='text-sky-400 text-4xl mb-4'>
                                                 <data.icon/>
                                              </div>
-                                             <h3 className='text-xl font-semibold mb-3'>{data.title}</h3>
+                                             <h3 className='theme-heading text-xl font-semibold mb-3'>{data.title}</h3>
                                              <p className='text-gray-400'>{data.description}</p>
                                         </div>
                                     ))

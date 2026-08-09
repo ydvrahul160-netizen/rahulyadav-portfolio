@@ -56,7 +56,7 @@ const Resume = () => {
           )}
           <div className="overflow-y-auto h-full flex justify-center">
             <Document
-              file="/resume.pdf"
+              file="/Resume.pdf"
               onLoadSuccess={onDocumentLoadSuccess}
               loading=""
             >

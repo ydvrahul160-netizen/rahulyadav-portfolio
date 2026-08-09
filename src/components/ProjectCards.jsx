@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 const ProjectCards = ({ title, description, image, tech, feature, live }) => {
   return (
-    <div className="glass rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500 cursor-pointer group">
+    <div className="theme-bg3 glass rounded-3xl overflow-hidden hover:-translate-y-3 transition-all duration-500 cursor-pointer group">
       {/* Image Container */}
       <div>
         <img
@@ -20,8 +20,8 @@ const ProjectCards = ({ title, description, image, tech, feature, live }) => {
       </div>
 
       <div className="p-5">
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <p className="text-gray-400 mb-4">{description}</p>
+        <h3 className="theme-heading text-lg font-semibold mb-2">{title}</h3>
+        <p className="theme-text text-gray-400 mb-4">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {tech.map((item, index) => (
@@ -46,7 +46,7 @@ const ProjectCards = ({ title, description, image, tech, feature, live }) => {
             href="demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 text-center px-4 py-2 border border-sky-300 font-medium rounded-lg hover:bg-white-10"
+            className="theme-heading theme-bg2 flex-1 text-center px-4 py-2 border border-sky-300 font-medium rounded-lg hover:bg-white-10"
           >
             GitHub
             {/* <FaGithub /> */}

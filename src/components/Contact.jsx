@@ -19,60 +19,60 @@ const Contact = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.05 }}
       id="contact"
-      className="relative py-24 overflow-hidden"
+      className="grid-bg2 theme-bg relative py-24 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <h2 className="text-3xl font-black text-center mb-4">
+        <h2 className="theme-heading text-3xl font-black text-center mb-4">
           Get In <span className="text-yellow-300">Touch</span>
         </h2>
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
+        <p className="theme-text text-gray-400 text-center max-w-2xl mx-auto mb-16">
           Have a project in mind or want to collaborate? Let's Talk!
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* CONTACT FORM */}
-          <div className="glass rounded-3xl border border-white/10 p-8">
+          <div className="theme-bg2 glass rounded-3xl border border-white/10 p-8">
             <form className="space-y-6">
               {/* NAME BOX*/}
               <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2">
+                <label htmlFor="name" className=" theme-heading block text-gray-300 mb-2">
                   Your Name
                 </label>
                 <input
                   type="text"
                   placeholder="Full Name"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
+                  className="w-full theme-text theme-bg bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
                 />
               </div>
 
               {/* EMAIL ADDRESS BOX */}
               <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2">
+                <label htmlFor="email" className=" theme-heading block text-gray-300 mb-2">
                   Email Address
                 </label>
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
+                  className="theme-text theme-bg w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
                 />
               </div>
 
               {/* MESSAGE BOX */}
               <div>
-                <label htmlFor="message" className="block text-gray-300 mb-2">
+                <label htmlFor="message" className="theme-heading block text-gray-300 mb-2">
                   Your Message
                 </label>
                 <textarea
                   type="text"
                   placeholder="Message"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
+                  className="theme-text theme-bg w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
                 />
               </div>
 
               {/* BUTTON  */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-dark-100 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gray-700 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
               >
                 <FaPaperPlane className="text-lg" />
                 <span>Send Message</span>
@@ -81,43 +81,43 @@ const Contact = () => {
           </div>
 
           {/* CONTACT INFORMATION */}
-          <div className="space-y-8">
-            <div className="glass rounded-2xl p-5 flex items-start gap-4">
+          <div className=" space-y-8">
+            <div className="theme-bg2 glass rounded-2xl p-5 flex items-start gap-4">
               <div className="text-dark-400 text-2xl mr-4">
                 <FaMapMarkerAlt />
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2">Location</h3>
-                <p className="text-gray-400 hover:text-sky-400">
+                <h3 className="theme-heading text-lg font-semibold mb-2">Location</h3>
+                <p className="theme-text text-gray-400 hover:text-sky-400">
                   Ayodhya, Uttar Pradesh, India
                 </p>
               </div>
             </div>
 
-            <div className="glass rounded-2xl p-5 flex items-start gap-4">
+            <div className="theme-bg2 glass rounded-2xl p-5 flex items-start gap-4">
               <div className="text-dark-400 text-2xl mr-4">
                 <FaEnvelope />
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2">Email</h3>
+                <h3 className="theme-heading text-lg font-semibold mb-2">Email</h3>
                 <a
                   href="mailto:rahulyadav40777@gmail.com"
-                  className="text-gray-400 hover:text-sky-400"
+                  className="theme-text text-gray-400 hover:text-sky-400"
                 >
                   rahulyadav40777@gmail.com
                 </a>
               </div>
             </div>
 
-            <div className="glass rounded-2xl p-5 flex items-start gap-4">
+            <div className="theme-bg2 glass rounded-2xl p-5 flex items-start gap-4">
               <div className="text-dark-400 text-2xl mr-4">
                 <FaPhone />
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2">Phone</h3>
+                <h3 className="theme-heading text-lg font-semibold mb-2">Phone</h3>
                 <a
                   href="tel:+917080XXXXXX"
-                  className="text-gray-400 hover:text-sky-400"
+                  className="theme-text text-gray-400 hover:text-sky-400"
                 >
                   +91 7080137287
                 </a>
@@ -125,8 +125,8 @@ const Contact = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="pt-4 glass rounded-2xl p-5 flex items-start gap-4">
-              <h3 className="text-lg font-semibold mb-4">Let's Connect</h3>
+            <div className="theme-bg2 pt-4 glass rounded-2xl p-5 flex items-start gap-4">
+              <h3 className="theme-heading text-lg font-semibold mb-4">Let's Connect</h3>
               <div className="flex space-x-4">
                 <a
                   href="https://github.com/ydvrahul160-netizen"

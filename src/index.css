@@ -32,7 +32,6 @@
 }
 /* ----------------------------------- */
 
-
 /* ----------------------typing animation in hero page----------------- */
 .typewriter {
   overflow: hidden;
@@ -105,16 +104,16 @@
 }
 /* <h1 className="gradient-text"> */
 
-
 /* -----------------glass background----------------- */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--theme-glass-bg);
 
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--theme-glass-border);
 
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 /* <div className="glass rounded-3xl p-6"> */
 /* --------------------------------------------------- */
@@ -135,7 +134,6 @@
   transform: translateY(-6px);
 }
 /* className="hover-lift" */
-
 
 /* -------------hero Image floating animation---------- */
 /* floating animation */
@@ -256,3 +254,265 @@
 
   box-shadow: 0 15px 35px rgba(250, 204, 21, 0.35);
 }
+
+/*----------------------------Start Dark/Light Theme css ----------------------------------------*/
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: var(--theme-bg);
+}
+
+
+:root {
+  /* ---------- PAGE / SECTION ---------- */
+  --theme-bg: #fce7f3; /* pink-100 */
+  --theme-section-bg: #fdf2f8; /* pink-50 */
+
+  /* ---------- TEXT ---------- */
+  --theme-heading: #111827;
+  --theme-text: #374151;
+  --theme-text-secondary: #6b7280;
+  --theme-text-muted: #9ca3af;
+
+  /* ---------- CARD / SURFACE ---------- */
+  --theme-card: #ffffff;
+  --theme-card-secondary: #fff1f2;
+
+  /* ---------- BORDER ---------- */
+  --theme-border: #fbcfe8;
+  --theme-border-soft: rgba(236, 72, 153, 0.2);
+
+  /* ---------- BRAND / ACCENT ---------- */
+  --theme-yellow: #facc15;
+  --theme-yellow-hover: #eab308;
+
+  --theme-primary: #0ea5e9;
+  --theme-primary-hover: #0284c7;
+
+  /* ---------- GLASS ---------- */
+  --theme-glass-bg: rgba(255, 255, 255, 0.65);
+  --theme-glass-border: rgba(236, 72, 153, 0.2);
+
+  /* ---------- SOFT UI ---------- */
+  --theme-soft-bg: #fce7f3;
+
+  /* ---------- DECORATIVE GLOW ---------- */
+  --theme-blue-glow: rgba(59, 130, 246, 0.1);
+  --theme-purple-glow: rgba(168, 85, 247, 0.1);
+}
+
+/* =====================================================
+   LIGHT THEME
+===================================================== */
+
+.light {
+  /* ---------- hero bg ---------- */
+
+
+  /* PAGE / SECTION */
+  --theme-bg3: #DBEAFE;
+  --theme-bg: white;
+  --theme-section-bg: #fdf2f8;
+  --theme-bg2: #bcd8ee;
+  --theme-btn-bg:#DB2777;
+
+  /* TEXT */
+  --theme-heading: #111827;
+  --theme-text: #6b7280;
+  --theme-text-secondary: #6b7280;
+  --theme-text-muted: #9ca3af;
+  --theme-text-red: red;
+  --theme-text-green: green;
+
+  /* CARD / SURFACE */
+  --theme-card: #ffffff;
+  --theme-card-secondary: #fff1f2;
+
+  /* BORDER */
+  --theme-border: #fbcfe8;
+  --theme-border-soft: rgba(236, 72, 153, 0.2);
+
+  /* BRAND */
+  --theme-yellow: #facc15;
+  --theme-yellow-hover: #eab308;
+
+  --theme-primary: #0ea5e9;
+  --theme-primary-hover: #0284c7;
+
+  /* GLASS */
+  --theme-glass-bg: rgba(255, 255, 255, 0.65);
+  --theme-glass-border: rgba(236, 72, 153, 0.2);
+
+  /* SOFT UI */
+  --theme-soft-bg: #fce7f3;
+
+  /* GLOW */
+  --theme-blue-glow: rgba(59, 130, 246, 0.1);
+  --theme-purple-glow: rgba(168, 85, 247, 0.1);
+}
+
+/* ================= LIGHT NAVBAR ONLY ================= */
+
+.light .light-navbar-rahul {
+  color: #111827;
+}
+
+.light .light-navbar-yadav {
+  color: #eb2546;
+}
+
+.light .light-navbar-link {
+  color: #111827;
+}
+
+/* ----------hero bg2--------------- */
+.light .grid-bg2 {
+  background-image:
+    linear-gradient(rgba(254, 202, 202, 0.7) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(254, 202, 202, 0.7) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+}
+
+
+/* =====================================================
+   DARK THEME
+===================================================== */
+
+.dark {
+  /* PAGE / SECTION */
+  --theme-bg: #1d1e1f;
+  --theme-section-bg: #1a1a1a;
+
+  /* TEXT */
+  --theme-heading: #ffffff;
+  --theme-text: #ccd6f6;
+  --theme-text-secondary: #9ca3af;
+  --theme-text-muted: #6b7280;
+
+  /* CARD / SURFACE */
+  --theme-card: #1f2937;
+  --theme-card-secondary: #333333;
+
+  /* BORDER */
+  --theme-border: #374151;
+  --theme-border-soft: rgba(255, 255, 255, 0.1);
+
+  /* BRAND */
+  --theme-yellow: #facc15;
+  --theme-yellow-hover: #fde047;
+
+  --theme-primary: #38bdf8;
+  --theme-primary-hover: #7dd3fc;
+
+  /* GLASS */
+  --theme-glass-bg: rgba(255, 255, 255, 0.05);
+  --theme-glass-border: rgba(255, 255, 255, 0.08);
+
+  /* SOFT UI */
+  --theme-soft-bg: rgba(255, 255, 255, 0.05);
+
+  /* GLOW */
+  --theme-blue-glow: rgba(59, 130, 246, 0.1);
+  --theme-purple-glow: rgba(168, 85, 247, 0.1);
+}
+
+/* =====================================================
+   THEME UTILITY CLASSES
+===================================================== */
+
+.theme-logo-rahul {
+  color: var(--theme-logo-rahul);
+}
+
+.theme-logo-yadav {
+  color: var(--theme-logo-yadav);
+}
+
+.theme-nav-text {
+  color: var(--theme-nav-text);
+}
+
+.theme-text-red {
+  color: var(--theme-text-red);
+}
+.theme-text-green {
+  color: var(--theme-text-green);
+}
+
+.theme-btn-bg{
+  background-color: var(--theme-btn-bg)
+}
+
+.theme-bg {
+  background-color: var(--theme-bg);
+}
+
+.theme-section-bg {
+  background-color: var(--theme-section-bg);
+}
+.theme-bg2 {
+  background-color: var(--theme-bg2);
+}
+.theme-bg3 {
+  background-color: var(--theme-bg3);
+}
+
+.theme-card {
+  background-color: var(--theme-card);
+}
+
+.theme-card-secondary {
+  background-color: var(--theme-card-secondary);
+}
+
+.theme-text {
+  color: var(--theme-text);
+}
+
+.theme-heading {
+  color: var(--theme-heading);
+}
+
+.theme-gray {
+  color: var(--theme-text-secondary);
+}
+
+.theme-muted {
+  color: var(--theme-text-muted);
+}
+
+.theme-border {
+  border-color: var(--theme-border);
+}
+
+.theme-border-soft {
+  border-color: var(--theme-border-soft);
+}
+
+.theme-primary {
+  color: var(--theme-primary);
+}
+
+.theme-primary-bg {
+  background-color: var(--theme-primary);
+}
+
+.theme-primary-border {
+  border-color: var(--theme-primary);
+}
+
+.theme-yellow {
+  color: var(--theme-yellow);
+}
+
+.theme-yellow-bg {
+  background-color: var(--theme-yellow);
+}
+
+.theme-yellow-border {
+  border-color: var(--theme-yellow);
+}
+
+/*----------------------------End Dark/Light Theme css ----------------------------------------*/

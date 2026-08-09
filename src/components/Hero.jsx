@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 
 import { SiReact, SiNodedotjs, SiMongodb, SiJavascript } from "react-icons/si";
+import { useTheme } from "../context/ThemeContext";
+
 
 const Hero = () => {
+  const { theme, toggleTheme } = useTheme();
   const floating = {
     animate: {
       y: [0, -12, 0],
@@ -42,11 +45,11 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="grid-bg relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-black"
+      className="theme-bg grid-bg2 grid-bg relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-black"
     >
       {/* Background Glow */}
       
-      <div className="container mx-auto px-6 lg:px-14 py-20">
+      <div className="mt-16 container mx-auto px-6 lg:px-14 py-20">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
           {/* Left part */}
 
@@ -59,19 +62,19 @@ const Hero = () => {
             animate="show"
             className="md:w-1/2"
           >
-            <span className=" inline-block px-4 py-1 rounded-full bg-yellow-300/20 text-yellow-300 border border-yellow-300/30 mb-6">
+            <span className=" theme-text-green inline-block px-4 py-1 rounded-full bg-yellow-300/20 text-yellow-300 border border-yellow-300/30 mb-6">
               🟢 Available for Work
             </span>
 
             <motion.h1
               variants={item}
-              className=" text-5xl lg:text-7xl font-extrabold leading-tight text-gray-400"
+              className=" theme-text text-5xl lg:text-7xl font-extrabold leading-tight text-gray-400"
             >
               Hi, I'm
-              <span className="text-white"> Rahul Yadav</span>
+              <span className="theme-heading text-white"> Rahul Yadav</span>
             </motion.h1>
 
-            <div className="text-2xl lg:text-4xl font-semibold text-gray-300 mt-6 h-16">
+            <div className="theme-text text-2xl lg:text-4xl font-semibold text-gray-300 mt-6 h-16">
               <TypeAnimation
                 sequence={[
                   "MERN Stack Developer",
@@ -97,7 +100,7 @@ const Hero = () => {
 
             <motion.p
               variants={item}
-              className="mt-6 text-gray-400 text-lg leading-8 max-w-xl"
+              className="theme-text mt-6 text-gray-400 text-lg leading-8 max-w-xl"
             >
               I build responsive, scalable and modern web applications using
               React, Node.js, Express and MongoDB with clean UI and optimized
@@ -107,7 +110,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-5 mt-10">
               <a
                 href="#projects"
-                className="px-7 py-3 rounded-xl bg-yellow-300 text-black font-semibold hover:scale-105 transition duration-300 shadow-lg shadow-yellow-300/30 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)] transition-all duration-300"
+                className=" px-7 py-3 rounded-xl bg-yellow-300 text-black font-semibold hover:scale-105 transition duration-300 shadow-lg shadow-yellow-300/30 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)] transition-all duration-300"
               >
                 View Projects
               </a>
@@ -115,7 +118,7 @@ const Hero = () => {
               {/* resume show option */}
               <Link
                 to="/resume"
-                className="px-7 py-3 rounded-xl border border-yellow-300 text-white hover:bg-yellow-300 hover:text-black transition duration-300 flex items-center gap-2 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)]"
+                className="theme-heading theme-border theme-bg2 px-7 py-3 rounded-xl border border-yellow-300 text-white hover:bg-yellow-300 hover:text-black transition duration-300 flex items-center gap-2 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)]"
               >
                 <FaDownload />
                 Resume
@@ -129,7 +132,7 @@ const Hero = () => {
                 rel="noreferrer"
                 className="hover:text-yellow-300 transition"
               >
-                <FaGithub className="hover:rotate-12 hover:scale-125 transition-all duration-300" />
+                <FaGithub className="theme-primary hover:rotate-12 hover:scale-125 transition-all duration-300" />
               </a>
 
               <a
@@ -138,12 +141,12 @@ const Hero = () => {
                 rel="noreferrer"
                 className="hover:text-yellow-300 transition"
               >
-                <FaLinkedin className="hover:rotate-12 hover:scale-125 transition-all duration-300" />
+                <FaLinkedin className="theme-primary hover:rotate-12 hover:scale-125 transition-all duration-300" />
               </a>
 
               <a
                 href="mailto:rahulyadav40777@gmail.com"
-                className="hover:text-yellow-300 transition"
+                className="theme-primary hover:text-yellow-300 transition"
               >
                 <FaEnvelope className="hover:rotate-12 hover:scale-125 transition-all duration-300" />
               </a>

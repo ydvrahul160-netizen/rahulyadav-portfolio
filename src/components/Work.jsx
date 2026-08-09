@@ -12,13 +12,13 @@ const Work = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.05 }}
       id="work"
-      className="py-30 bg-dark-100"
+      className="grid-bg2 theme-bg py-30 bg-dark-100"
     >
-      <div className=" max-w-6xl mx-auto px-6 lg:px-10 ">
-        <h2 className="text-3xl font-bold text-center mb-4">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10 ">
+        <h2 className="theme-heading text-3xl font-bold text-center mb-4">
           Journey & <span className="text-yellow-300">Learning Exprience</span>
         </h2>
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
+        <p className="theme-text text-gray-400 text-center max-w-2xl mx-auto mb-16">
           Exploring, building, learning, and growing as a developer every day
         </p>
 
@@ -36,15 +36,15 @@ const Work = () => {
                 <div className="absolute left-[-0.6rem] top-2 w-5 h-5 rounded-full bg-sky-400 ring-4 ring-sky-400/20">💻</div>
 
                 {/* B0x/Card */}
-                <div className="glass rounded-3xl p-6 border border-white/10">
+                <div className="theme-bg2 glass rounded-3xl p-6 border border-white/10">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-2xl font-bold">{data.role}</h3>
-                    <span className="px-4 py-1 bg-sky-300/20 text-sky-300 rounded-full md:text-sm font-medium">
+                    <h3 className="theme-heading text-2xl font-bold">{data.role}</h3>
+                    <span className="theme-text px-4 py-1 bg-sky-300/20 text-sky-300 rounded-full md:text-sm font-medium">
                       {data.duration}
                     </span>
                   </div>
-                  <div className="text-sky-400 mb-2">{data.company}</div>
-                  <p className="text-gray-300 leading-7">{data.description}</p>
+                  <div className="theme-heading text-sky-400 mb-2">{data.company}</div>
+                  <p className="theme-text text-gray-300 leading-7">{data.description}</p>
                 </div>
               </div>
             ))}

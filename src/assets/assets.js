@@ -63,19 +63,21 @@ export const skills = [
     title: 'Version Control',
     icon: FaCodeBranch,
     description: 'Managing source code and collaborating using version control systems.',
-    level: 80,
+    level: 90,
     tags: ['Git', 'GitHub', 'GitHub Pages']
   },
   {
     title: 'Tools & Technologies',
     icon: FaTools,
     description: 'Development tools and technologies used in daily workflow.',
+    level: 85,
     tags: ['VS Code', 'Postman', 'Vite', 'npm']
   },
   {
     title: 'Continuous Learning',
     icon: FaBook,
     description: 'Continuously improving skills through projects and exploring new technologies.',
+    level: 95,
     tags: ['DSA', 'MERN Stack', 'Problem Solving', 'Web Development']
   }
 ];

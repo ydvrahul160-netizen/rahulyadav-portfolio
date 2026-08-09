@@ -29,17 +29,17 @@ const Projects = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.08 }}
       id="projects"
-      className="py-30 bg-dark-100"
+      className="grid-bg2 theme-bg py-30 bg-dark-100"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <h2 className="text-3xl font-bold text-center mb-4">
+        <h2 className="theme-heading text-3xl font-bold text-center mb-4">
           My <span className="text-yellow-300">Projects</span>
         </h2>
 
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 blur-[120px] rounded-full"></div>
         <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 blur-[120px] rounded-full"></div>
 
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-4">
+        <p className="theme-text text-gray-400 text-center max-w-2xl mx-auto mb-4">
           A selection of my recent work
         </p>
 
@@ -125,13 +125,13 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className=" text-center mt-12">
           <a
             href="#"
-            className="inline-flex items-center px-6 py-3 border border-sky-300 rounded-lg font-medium hover:bg-sky-300 transition duration-300"
+            className="bg-sky-400 inline-flex items-center px-6 py-3 border border-sky-300 rounded-lg font-medium hover:bg-sky-300 transition duration-300"
           >
-            <span>View All Project</span>
-            <FaArrowRight className="ml-2" />
+            <span className="theme-heading">View All Project</span>
+            <FaArrowRight className="theme-heading ml-2" />
           </a>
         </div>
       </div>

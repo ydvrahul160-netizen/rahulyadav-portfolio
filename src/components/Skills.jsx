@@ -10,10 +10,10 @@ const Skills = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.05 }}
       id="skills"
-      className="relative py-24 overflow-hidden"
+      className="grid-bg2 theme-bg relative py-24 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <h2 className="text-3xl font-bold text-center mb-4">
+      <div className=" max-w-7xl mx-auto px-6 lg:px-10">
+        <h2 className="theme-heading text-3xl font-bold text-center mb-4">
           My <span className="text-yellow-300">Skills</span>
         </h2>
 
@@ -24,18 +24,18 @@ const Skills = () => {
           Technologies I work with to bring ideas to life
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto ">
+        <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto ">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="glass rounded-3xl border border-white/10 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group"
+              className="theme-bg3 theme-border glass rounded-3xl border border-white/10 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group"
             >
               <div className="flex items-center mb-4">
                 <skill.icon className="w-12 h-12 text-sky-400 mr-6" />
-                <h3 className="text-xl font-bold text-white">{skill.title}</h3>
+                <h3 className="theme-heading text-xl font-bold text-white">{skill.title}</h3>
               </div>
 
-              <p className="text-gray-400 mb-4">{skill.description}</p>
+              <p className="theme-text text-gray-400 mb-4">{skill.description}</p>
 
               <div className="mt-5 mb-5">
                 <div className="flex justify-between text-sm mb-2">
@@ -45,7 +45,7 @@ const Skills = () => {
                   </span>
                 </div>
 
-                <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                <div className="theme-border h-2 rounded-full bg-white/10 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
@@ -60,7 +60,7 @@ const Skills = () => {
                 {skill.tags.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-white/5 rounded-full border border-white/10 hover:bg-sky-500/20 transition text-sm"
+                    className=" theme-text theme-bg2 px-3 py-1 bg-white/5 rounded-full border border-white/10 hover:bg-sky-500/20 transition text-sm"
                   >
                     {tech}
                   </span>
