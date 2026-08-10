@@ -31,8 +31,10 @@ const Navbar = () => {
   }, [showFeaturePopup]);
 
   return (
-    <nav className="fixed w-full z-50  backdrop-blur-sm py-4 px-10 shadow-xl  ">
-      <div className=" container mx-auto flex justify-between items-center">
+    
+    <nav className="fixed w-full z-50 py-4 flex justify-center px-4 pt-5          ">
+      <div className="backdrop-blur-sm w-full max-w-[88rem] rounded-[20px] shadow-sm border
+          px-8 py-3 flex justify-between items-center relative        bg-white/60 dark:bg-black/20  border-black/10 dark:border-white/10 dark:shadow-white/5">
         <div>
           <a
             href="#"
@@ -127,12 +129,12 @@ const Navbar = () => {
                     {theme === "dark" ? "Light" : "Dark"}
                   </button>
 
-                  <button
+                  {/* <button
                     onClick={() => setShowFeaturePopup(true)}
                     className="mt-3 theme-text theme-bg3 w-full text-left px-3 py-2 hover:bg-white/10 rounded-lg"
                   >
                     Theme
-                  </button>
+                  </button> */}
 
                   <button
                     onClick={() => setShowFeaturePopup(true)}
@@ -262,7 +264,7 @@ const Navbar = () => {
                 </button>
 
                 {showSettings && (
-                  <div className="theme-bg theme-heading pt-1.5 fixed top-155 right-6 w-64 bg-dark-300 border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl z-50">
+                  <div className="theme-bg theme-heading pt-1.5 fixed top-100 right-6 w-60 bg-dark-300 border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl z-50">
                     <div className="theme-bg3 px-4 py-3 rounded-2xl ml-1.5 mr-1.5 border-b border-white/10 flex items-center justify-between">
                       <h3 className="font-semibold text-gray-400">Settings</h3>
 
@@ -287,7 +289,7 @@ const Navbar = () => {
                       onClick={toggleTheme}
                       className="theme-text  w-full text-left  px-4 py-3 hover:bg-yellow-400/10 transition"
                     >
-                      {theme === "dark" ? "Dark" : "Light"}
+                      {theme === "dark" ? "Light" : "Dark"}
                     </button>
 
                     <button
@@ -353,7 +355,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
+
     </nav>
   );
 };
