@@ -1,13 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rahulyadav-portfolio</title>
-  </head>
-  <body class=" bg-[#1a1a1a] text-[#f8fafc]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Prevents white flash during initial page load before React and ThemeContext are ready -->
+  <style>
+    html,
+    body {
+      margin: 0;
+      background: #070b14;
+    }
+
+    #root {
+      min-height: 100vh;
+    }
+  </style>
+  <!-- Applies the saved theme before React renders to prevent theme flashing -->
+  <script>
+    const theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+  <!-- ------------- -->
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rahulyadav-portfolio</title>
+</head>
+
+<body class=" bg-[#1a1a1a] text-[#f8fafc]">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
