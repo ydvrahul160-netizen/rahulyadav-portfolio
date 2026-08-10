@@ -84,11 +84,11 @@ const PortfolioIntro = ({ onComplete }) => {
           <motion.span
             key={index}
             className="
-  inline-block
-  font-['Great_Vibes']
-  text-6xl sm:text-7xl md:text-8xl lg:text-9xl
-  text-gray-900 dark:text-white
-"
+                inline-block
+                font-['Great_Vibes']
+                text-5xl sm:text-7xl md:text-8xl lg:text-9xl
+               text-gray-900 dark:text-white
+            "
             initial={{
               opacity: 0,
               y: index % 2 === 0 ? 120 : -120,
