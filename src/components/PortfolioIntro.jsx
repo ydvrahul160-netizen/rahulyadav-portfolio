@@ -86,7 +86,7 @@ const PortfolioIntro = ({ onComplete }) => {
             className="
                 inline-block
                 font-['Great_Vibes']
-                text-5xl sm:text-7xl md:text-8xl lg:text-9xl
+                =-0987c6 -7xl md:text-8xl lg:text-9xl
                text-gray-900 dark:text-white
             "
             initial={{
