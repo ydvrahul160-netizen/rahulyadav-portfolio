@@ -1,21 +1,20 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 import { projects } from "../assets/assets";
 import ProjectCards from "./ProjectCards";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Autoplay,
   EffectCoverflow,
-  Navigation,
-  Pagination,
   Mousewheel,
+  Pagination,
 } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Projects = () => {
@@ -23,64 +22,91 @@ const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   return (
-    <motion.div
+    <motion.section
+      id="projects"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.08 }}
-      id="projects"
-      className="grid-bg2 theme-bg py-30 bg-dark-100"
+      className="theme-bg grid-bg2 relative overflow-hidden py-20 sm:py-24 lg:py-28"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <h2 className="theme-heading text-3xl font-bold text-center mb-4">
-          My <span className="text-yellow-300">Projects</span>
-        </h2>
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue-500/10 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
 
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 blur-[120px] rounded-full"></div>
+      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-purple-500/10 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
 
-        <p className="theme-text text-gray-400 text-center max-w-2xl mx-auto mb-4">
-          A selection of my recent work
-        </p>
+      {/* Main Container */}
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
 
-        <div className=" max-w-6xl mx-auto py-20">
+        {/* Section Header */}
+        <div className="mx-auto max-w-2xl text-center">
+
+          <span className="mb-3 inline-block text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
+            My Work
+          </span>
+
+          <h2 className="theme-heading text-3xl font-bold sm:text-4xl lg:text-5xl">
+            Featured{" "}
+            <span className="text-yellow-300">
+              Projects
+            </span>
+          </h2>
+
+          <p className="theme-text mt-4 text-sm leading-6 text-gray-400 sm:text-base">
+            A selection of projects I have built using modern web
+            technologies, focusing on clean design, performance, and
+            real-world functionality.
+          </p>
+
+        </div>
+
+        {/* Projects Slider */}
+        <div className="mx-auto mt-10 w-full max-w-6xl sm:mt-14 lg:mt-16">
+
           <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
             onSlideChange={(swiper) => {
               setCurrentSlide(swiper.realIndex + 1);
             }}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
             modules={[
               Autoplay,
               EffectCoverflow,
-              Navigation,
-              Pagination,
               Mousewheel,
+              Pagination,
             ]}
             effect="coverflow"
-            centeredSlides={true}
-            slidesPerView={3}
-            loop={true}
+            centeredSlides
+            loop
+            grabCursor
+            watchSlidesProgress
             mousewheel={{
               forceToAxis: true,
               releaseOnEdges: true,
-              sensitivity: 1,
+              sensitivity: 0.8,
             }}
-            navigation={false}
-            pagination={{ clickable: true }}
             autoplay={{
-              delay: 3000,
+              delay: 3500,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            pagination={{
+              clickable: true,
             }}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 150,
-              modifier: 2,
+              depth: 120,
+              modifier: 1.5,
               scale: 0.9,
               slideShadows: false,
             }}
             breakpoints={{
               0: {
+                slidesPerView: 1,
+              },
+              640: {
                 slidesPerView: 1,
               },
               768: {
@@ -90,54 +116,76 @@ const Projects = () => {
                 slidesPerView: 3,
               },
             }}
+            className="projects-swiper !pb-10"
           >
             {projects.map((project, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide
+                key={project.id || index}
+                className="h-auto"
+              >
                 <ProjectCards {...project} />
               </SwiperSlide>
             ))}
           </Swiper>
 
-          {/* Counter */}
-          <div className="relative flex justify-center items-center gap-2 mt-8 text-gray-400">
-            {/* Left Arrow */}
+          {/* Slider Controls */}
+          <div className="relative mt-6 flex items-center justify-center">
+
+            {/* Previous */}
             <button
+              type="button"
               onClick={() => swiperRef.current?.slidePrev()}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-dark-200 border border-white/10 hover:bg-yellow-300 hover:text-black transition"
+              aria-label="Previous project"
+              className="absolute left-0 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/20 text-gray-300 backdrop-blur-sm transition-all duration-300 hover:border-yellow-300/50 hover:bg-yellow-300 hover:text-black sm:left-2 sm:h-11 sm:w-11 lg:left-0"
             >
-              <FaArrowLeft className="mx-auto" />
+              <FaArrowLeft className="text-xs sm:text-sm" />
             </button>
 
-            <span className="text-sky-300 font-semibold">
-              {String(currentSlide).padStart(2, "0")}
-            </span>
+            {/* Counter */}
+            <div className="flex items-center gap-2 text-sm">
+              <span className="font-semibold text-sky-300">
+                {String(currentSlide).padStart(2, "0")}
+              </span>
 
-            <span>/</span>
+              <span className="text-gray-500">
+                /
+              </span>
 
-            <span>{String(projects.length).padStart(2, "0")}</span>
-            {/* Right Arrow */}
+              <span className="text-gray-400">
+                {String(projects.length).padStart(2, "0")}
+              </span>
+            </div>
+
+            {/* Next */}
             <button
+              type="button"
               onClick={() => swiperRef.current?.slideNext()}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-dark-200 border border-white/10 hover:bg-yellow-300 hover:text-black transition"
+              aria-label="Next project"
+              className="absolute right-0 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/20 text-gray-300 backdrop-blur-sm transition-all duration-300 hover:border-yellow-300/50 hover:bg-yellow-300 hover:text-black sm:right-2 sm:h-11 sm:w-11 lg:right-0"
             >
-              <FaArrowRight className="mx-auto" />
+              <FaArrowRight className="text-xs sm:text-sm" />
             </button>
+
           </div>
         </div>
 
-        <div className=" text-center mt-12">
+        {/* View All Projects */}
+        <div className="mt-12 text-center sm:mt-14">
+
           <a
             href="#"
-            className="bg-sky-400 inline-flex items-center px-6 py-3 border border-sky-300 rounded-lg font-medium hover:bg-sky-300 transition duration-300"
+            className="inline-flex items-center gap-2 rounded-lg border border-sky-300 bg-sky-400 px-5 py-2.5 font-medium text-black transition-all duration-300 hover:bg-sky-300 hover:shadow-lg hover:shadow-sky-400/20 sm:px-6 sm:py-3"
           >
-            <span className="theme-heading">View All Project</span>
-            <FaArrowRight className="theme-heading ml-2" />
+            View All Projects
+            <FaArrowRight className="text-sm" />
           </a>
+
         </div>
       </div>
-      {/* yellow glow line  */}
-      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
-    </motion.div>
+
+      {/* Bottom Glow Line */}
+      <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40" />
+    </motion.section>
   );
 };
 

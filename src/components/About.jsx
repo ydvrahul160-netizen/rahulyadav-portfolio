@@ -65,9 +65,9 @@ const About = () => {
                             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto ">
                                 {
                                     aboutInfo.map((data, index) => (
-                                        <div key={index} className='theme-bg3 glass
+                                        <div key={index} className='theme-bg3 glass 
                                          rounded-2xl p-4 transition-transform duration-300 hover:-translate-y-2 cursor-pointer'>
-                                             <div className='text-sky-400 text-4xl mb-4'>
+                                             <div className='text-sky-400 text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center sm:justify-start'>
                                                 <data.icon/>
                                              </div>
                                              <h3 className='theme-heading text-xl font-semibold mb-3'>{data.title}</h3>
