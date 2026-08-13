@@ -17,7 +17,7 @@ const ProjectCards = ({
           src={image}
           alt={`${title} project preview`}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-56"
+          className="h-48 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-56"
         />
 
         {/* Image Overlay */}

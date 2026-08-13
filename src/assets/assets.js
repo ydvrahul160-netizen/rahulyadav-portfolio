@@ -158,7 +158,7 @@ export const projects = [
     description:
       "Built an AI-powered code reviewer using React.js, Node.js, Express.js, Google Gemini API",
     image: projectImg6,
-    tech: ["React", "OpenAI API", "Cloudinary", "Tailwind CSS"],
+    tech: ["React", "OpenAI API", "Tailwind CSS"],
     icons: [FaRobot, FaReact, FaCloud],
     github: "#",
     live: true,

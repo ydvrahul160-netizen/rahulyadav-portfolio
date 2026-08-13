@@ -29,12 +29,25 @@ const Navbar = () => {
       return () => clearTimeout(timer);
     }
   }, [showFeaturePopup]);
+  // Lock background scroll when mobile menu is open
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showMenu]);
 
   return (
-    
     <nav className="fixed w-full z-50 py-4 flex justify-center px-4 pt-5          ">
-      <div className="backdrop-blur-sm w-full max-w-[88rem] rounded-[20px] shadow-sm border
-          px-8 py-3 flex justify-between items-center relative        bg-white/60 dark:bg-black/20  border-black/10 dark:border-white/10 dark:shadow-white/5">
+      <div
+        className="backdrop-blur-sm w-full max-w-[88rem] rounded-[20px] shadow-sm border
+          px-8 py-3 flex justify-between items-center relative        bg-white/60 dark:bg-black/20  border-black/10 dark:border-white/10 dark:shadow-white/5"
+      >
         <div>
           <a
             href="#"
@@ -179,134 +192,170 @@ const Navbar = () => {
       <AnimatePresence>
         {showMenu && (
           <motion.div
-            className="theme-bg3 fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+            className=" fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
             onClick={() => setshowMenu(false)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="theme-bg absolute right-0 top-0 h-screen w-72 bg-dark-300 border-l border-yellow-400/20 shadow-2xl p-8"
+              className="theme-bg fixed right-0 top-0 flex h-dvh w-[85%] max-w-sm flex-col overflow-y-auto border-l border-white/10 shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.3 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 30,
+              }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="theme-heading flex justify-end mb-10">
-                <FaXmark
-                  className="text-3xl cursor-pointer hover:text-yellow-400"
+              {/* Mobile Menu Header */}
+              <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+                <div>
+                  <p className="theme-heading text-lg font-semibold">Menu</p>
+
+                  <p className="theme-text mt-0.5 text-xs opacity-60">
+                    Explore my portfolio
+                  </p>
+                </div>
+
+                <button
+                  type="button"
                   onClick={() => setshowMenu(false)}
-                />
+                  className="theme-heading flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300 hover:bg-yellow-400/10 hover:text-yellow-400"
+                  aria-label="Close menu"
+                >
+                  <FaXmark className="text-2xl" />
+                </button>
               </div>
 
-              <div className="theme-bg flex flex-col space-y-8">
+              <div className="theme-bg flex flex-col gap-2 px-4 py-6">
                 <a
                   href="#home"
                   onClick={() => setshowMenu(false)}
-                  className="theme-text theme-bg3 flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium text-gray-300 hover:bg-yellow-400/10 hover:text-yellow-400 hover:translate-x-2 transition-all duration-300"
+                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
                 >
-                  <FaHouse className=" text-lg flex-shrink-0 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)] group-hover:scale-110 transition-all duration-300" />
+                  <FaHouse className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
                   <span>Home</span>
                 </a>
 
                 <a
                   href="#about"
                   onClick={() => setshowMenu(false)}
-                  className="theme-text theme-bg3 flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium text-gray-300 hover:bg-yellow-400/10 hover:text-yellow-400 hover:translate-x-2 transition-all duration-300"
+                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
                 >
-                  <FaUser className="text-lg flex-shrink-0 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)] group-hover:scale-110 transition-all duration-300" />
+                  <FaUser className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
                   About
                 </a>
 
                 <a
                   href="#skills"
                   onClick={() => setshowMenu(false)}
-                  className="theme-text theme-bg3 flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium text-gray-300 hover:bg-yellow-400/10 hover:text-yellow-400 hover:translate-x-2 transition-all duration-300"
+                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
                 >
-                  <FaCode className="text-lg flex-shrink-0 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)] group-hover:scale-110 transition-all duration-300" />
+                  <FaCode className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
                   Skills
                 </a>
 
                 <a
                   href="#projects"
                   onClick={() => setshowMenu(false)}
-                  className="theme-text theme-bg3 flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium text-gray-300 hover:bg-yellow-400/10 hover:text-yellow-400 hover:translate-x-2 transition-all duration-300"
+                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
                 >
-                  <FaFolderOpen className="text-lg flex-shrink-0 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)] group-hover:scale-110 transition-all duration-300" />
+                  <FaFolderOpen className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
                   Projects
                 </a>
 
                 <a
                   href="#experience"
                   onClick={() => setshowMenu(false)}
-                  className="theme-text theme-bg3 flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium text-gray-300 hover:bg-yellow-400/10 hover:text-yellow-400 hover:translate-x-2 transition-all duration-300"
+                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
                 >
-                  <FaBriefcase className="text-lg flex-shrink-0 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)] group-hover:scale-110 transition-all duration-300" />
+                  <FaBriefcase className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
                   Experience
                 </a>
 
                 <a
                   href="#contact"
                   onClick={() => setshowMenu(false)}
-                  className="theme-text theme-bg3 flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium text-gray-300 hover:bg-yellow-400/10 hover:text-yellow-400 hover:translate-x-2 transition-all duration-300"
+                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
                 >
-                  <FaEnvelope className="text-lg flex-shrink-0 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)] group-hover:scale-110 transition-all duration-300" />
+                  <FaEnvelope className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
                   Contact
                 </a>
 
                 <button
-                  onClick={() => setShowSettings(!showSettings)}
-                  className="theme-text flex items-center justify-center gap-2 mt-6 py-3 rounded-lg bg-white/10 hover:bg-yellow-400 hover:text-black transition duration-300"
+                  type="button"
+                  onClick={() => setShowSettings((prev) => !prev)}
+                  className="theme-text flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:bg-yellow-400/10 hover:text-yellow-400"
                 >
-                  <FaGear />
-                  <span>Settings</span>
+                  <span className="flex items-center gap-4">
+                    <FaGear
+                      className={`transition-transform duration-500 ${
+                        showSettings ? "rotate-90" : ""
+                      }`}
+                    />
+                    <span>Settings</span>
+                  </span>
+
+                  <span
+                    className={`text-sm transition-transform duration-300 ${
+                      showSettings ? "rotate-180" : ""
+                    }`}
+                  >
+                    ↓
+                  </span>
                 </button>
 
-                {showSettings && (
-                  <div className="theme-bg theme-heading pt-1.5 fixed top-100 right-6 w-60 bg-dark-300 border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl z-50">
-                    <div className="theme-bg3 px-4 py-3 rounded-2xl ml-1.5 mr-1.5 border-b border-white/10 flex items-center justify-between">
-                      <h3 className="font-semibold text-gray-400">Settings</h3>
-
-                      <button
-                        onClick={() => setShowSettings(false)}
-                        className="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:bg-red-400/20 hover:text-red-400 transition"
-                      >
-                        <FaXmark />
-                      </button>
-                    </div>
-
-                    {/* <button
-                      onClick={() =>
-                        window.open("/Rahul_Yadav_Resume.pdf", "_blank")
-                      }
-                      className="w-full text-left px-4 py-3 hover:bg-yellow-400/10"
+                <AnimatePresence initial={false}>
+                  {showSettings && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden"
                     >
-                      📄 Resume
-                    </button> */}
+                      <div className="mt-2 space-y-1 rounded-xl border border-white/10 bg-white/5 p-2">
+                        {/* Theme */}
+                        <button
+                          type="button"
+                          onClick={toggleTheme}
+                          className="theme-text flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm transition-colors hover:bg-yellow-400/10 hover:text-yellow-400"
+                        >
+                          <span>
+                            {theme === "dark" ? "Light Theme" : "Dark Theme"}
+                          </span>
 
-                    <button
-                      onClick={toggleTheme}
-                      className="theme-text  w-full text-left  px-4 py-3 hover:bg-yellow-400/10 transition"
-                    >
-                      {theme === "dark" ? "Light" : "Dark"}
-                    </button>
+                          <span className="text-xs opacity-60">
+                            {theme === "dark" ? "☀" : "☾"}
+                          </span>
+                        </button>
 
-                    <button
-                      onClick={() => setShowFeaturePopup(true)}
-                      className="theme-text mt-2.5 w-full text-left px-4 py-3 hover:bg-yellow-400/10 transition"
-                    >
-                      Animations
-                    </button>
+                        {/* Animations */}
+                        <button
+                          type="button"
+                          onClick={() => setShowFeaturePopup(true)}
+                          className="theme-text flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm transition-colors hover:bg-yellow-400/10 hover:text-yellow-400"
+                        >
+                          <span>Animations</span>
+                          <span className="text-xs opacity-60">→</span>
+                        </button>
 
-                    <button
-                      onClick={() => setShowFeaturePopup(true)}
-                      className="theme-text mt-2.5  w-full text-left px-4 py-3 hover:bg-yellow-400/10 transition"
-                    >
-                      Accent Color
-                    </button>
-                  </div>
-                )}
+                        {/* Accent Color */}
+                        <button
+                          type="button"
+                          onClick={() => setShowFeaturePopup(true)}
+                          className="theme-text flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm transition-colors hover:bg-yellow-400/10 hover:text-yellow-400"
+                        >
+                          <span>Accent Color</span>
+                          <span className="text-xs opacity-60">→</span>
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </motion.div>
           </motion.div>
@@ -320,13 +369,17 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className=" fixed inset-0 z-[999] mt-100 flex items-center justify-center bg-black/60 backdrop-blur-md px-4"
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 px-4 backdrop-blur-md"
           >
             <motion.div
-              initial={{ scale: 0.8, y: 30, opacity: 0 }}
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.8, y: 30, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 25,
+              }}
               className=" w-full max-w-sm rounded-3xl bg-[#161b22]/95 border border-yellow-400/20 shadow-2xl p-6"
             >
               <div className="flex justify-center mb-4">
@@ -354,8 +407,6 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-
     </nav>
   );
 };

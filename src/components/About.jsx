@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
-import profileImg from '../assets/profileImg.jpeg';
 import { aboutInfo } from '../assets/assets';
 import myphoto from '../assets/myphoto.png';
-import { useTheme } from "../context/ThemeContext";
 
 
 const About = () => {

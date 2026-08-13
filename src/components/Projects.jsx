@@ -28,7 +28,7 @@ const Projects = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.08 }}
-      className="theme-bg grid-bg2 relative overflow-hidden py-20 sm:py-24 lg:py-28"
+      className="theme-bg grid-bg2 relative overflow-hidden py-20 sm:py-20 lg:py-28"
     >
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue-500/10 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
@@ -41,16 +41,11 @@ const Projects = () => {
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center">
 
-          <span className="mb-3 inline-block text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
+          {/* <span className="mb-3 inline-block text-sm font-medium uppercase tracking-[0.2em] text-sky-400">
             My Work
-          </span>
+          </span> */}
 
-          <h2 className="theme-heading text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Featured{" "}
-            <span className="text-yellow-300">
-              Projects
-            </span>
-          </h2>
+          <h2 className='theme-heading text-3xl font-bold text-center mb-4'>My <span className='text-yellow-300'>Projects</span></h2>
 
           <p className="theme-text mt-4 text-sm leading-6 text-gray-400 sm:text-base">
             A selection of projects I have built using modern web
