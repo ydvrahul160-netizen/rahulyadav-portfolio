@@ -6,11 +6,9 @@ import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 
 import { SiReact, SiNodedotjs, SiMongodb, SiJavascript } from "react-icons/si";
-import { useTheme } from "../context/ThemeContext";
 
 
 const Hero = () => {
-  const { theme, toggleTheme } = useTheme();
   const floating = {
     animate: {
       y: [0, -12, 0],
@@ -110,7 +108,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-5 mt-10">
               <a
                 href="#projects"
-                className=" px-7 py-3 rounded-xl bg-yellow-300 text-black font-semibold hover:scale-105 transition duration-300 shadow-lg shadow-yellow-300/30 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)] transition-all duration-300"
+                className=" px-7 py-3 rounded-xl bg-yellow-300 text-black font-semibold transition shadow-lg shadow-yellow-300/30 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)] transition-all duration-300"
               >
                 View Projects
               </a>

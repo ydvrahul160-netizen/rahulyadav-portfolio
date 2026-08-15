@@ -95,6 +95,7 @@ const Contact = () => {
       id="contact"
       className="grid-bg2 theme-bg relative py-24 overflow-hidden"
     >
+      
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <h2 className="theme-heading text-3xl font-black text-center mb-4">
           Get In <span className="text-yellow-300">Touch</span>

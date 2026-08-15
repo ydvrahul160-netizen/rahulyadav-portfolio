@@ -1,4 +1,3 @@
-import React from "react";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { useState, useEffect } from "react";
@@ -11,24 +10,17 @@ import {
   FaBriefcase,
   FaEnvelope,
 } from "react-icons/fa6";
-import { FaGear } from "react-icons/fa6";
+import { FaGear, FaSun, FaMoon } from "react-icons/fa6";
 import { useTheme } from "../context/ThemeContext";
+
+
 
 const Navbar = () => {
   const [showMenu, setshowMenu] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showFeaturePopup, setShowFeaturePopup] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  // popup use effect
-  useEffect(() => {
-    if (showFeaturePopup) {
-      const timer = setTimeout(() => {
-        setShowFeaturePopup(false);
-      }, 3000);
 
-      return () => clearTimeout(timer);
-    }
-  }, [showFeaturePopup]);
   // Lock background scroll when mobile menu is open
   useEffect(() => {
     if (showMenu) {
@@ -43,10 +35,10 @@ const Navbar = () => {
   }, [showMenu]);
 
   return (
-    <nav className="fixed w-full z-50 py-4 flex justify-center px-4 pt-5          ">
+    <nav className="fixed w-full z-50 py-4 flex justify-center px-3 sm:px-4 pt-3 sm:pt-4">
       <div
-        className="backdrop-blur-sm w-full max-w-[88rem] rounded-[20px] shadow-sm border
-          px-8 py-3 flex justify-between items-center relative        bg-white/60 dark:bg-black/20  border-black/10 dark:border-white/10 dark:shadow-white/5"
+        className="backdrop-blur-xl w-full max-w-[1400px] rounded-2xl  border
+          px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center relative bg-white/70 dark:bg-black/30  border-black/10 dark:border-white/10 shadow-md shadow-black/5 dark:shadow-white/5"
       >
         <div>
           <a
@@ -58,10 +50,11 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className="hidden md:flex space-x-8">
+        {/* desktop menu */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           <a
             href="#home"
-            className=" theme-heading relative font-semibold text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
+            className=" theme-heading relative font-sm text-xl text-gray-300 hover:text-yellow-400   transition duration-300 group"
           >
             Home
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
@@ -69,7 +62,7 @@ const Navbar = () => {
 
           <a
             href="#about"
-            className="theme-heading  relative font-semibold text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
+            className="theme-heading  relative font-sm text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
           >
             About
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
@@ -77,7 +70,7 @@ const Navbar = () => {
 
           <a
             href="#skills"
-            className=" theme-heading relative font-semibold text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
+            className=" theme-heading relative font-sm text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
           >
             Skills
             <span className=" absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
@@ -85,7 +78,7 @@ const Navbar = () => {
 
           <a
             href="#projects"
-            className=" theme-heading relative font-semibold text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
+            className=" theme-heading relative font-sm text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
           >
             Projects
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
@@ -93,7 +86,7 @@ const Navbar = () => {
 
           <a
             href="#work"
-            className=" theme-heading relative font-semibold text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
+            className=" theme-heading relative font-sm text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
           >
             Experience
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
@@ -101,32 +94,61 @@ const Navbar = () => {
 
           <a
             href="#contact"
-            className=" theme-heading relative font-semibold text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
+            className=" theme-heading relative font-sm text-xl text-gray-300 hover:text-yellow-400 transition duration-300 group"
           >
             Contact
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
           </a>
 
+
           {/* setting icon and function */}
           <div className=" relative hidden md:block">
             <button
               onClick={() => setShowSettings(!showSettings)}
-              className=" w-18 h-10 rounded-full bg-gray-600  flex items-center justify-center hover:bg-yellow-400 hover:text-black transition duration-300"
+              className={`
+                  flex items-center justify-center
+                  w-10 h-10
+                  rounded-xl
+                  border
+                  transition-all duration-300
+
+                  ${
+                    showSettings
+                      ? "bg-yellow-400 text-black border-yellow-400 rotate-45"
+                      : "theme-bg3 theme-heading border-black/10 dark:border-white/10 hover:bg-yellow-400 hover:text-black"
+                  }
+                `}
             >
-              <FaGear />
+              <FaGear
+                className={`
+                    text-[17px]
+                    transition-transform duration-300
+                    ${showSettings ? "-rotate-45" : ""}
+                  `}
+              />
             </button>
 
+             {/* setting dropdown */}
             <AnimatePresence>
               {showSettings && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                  initial={{ opacity: 0, y: -10, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.96 }}
                   transition={{ duration: 0.2 }}
                   className=" theme-bg absolute right-0 mt-5 w-56 rounded-xl bg-[#161b22] border border-white/10 shadow-2xl z-50 p-3"
                 >
+                  {/* header */}
                   <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
-                    <h3 className="font-semibold text-gray-400">Settings</h3>
+                    <div>
+                        <p className="text-sm font-semibold theme-heading">
+                          Settings
+                        </p>
+
+                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                          Customize your experience
+                        </p>
+                      </div>
 
                     <button
                       onClick={() => setShowSettings(false)}
@@ -162,17 +184,37 @@ const Navbar = () => {
                   >
                     Accent Color
                   </button>
-                  <h3 className="mt-3 font-semibold text-yellow-400">
-                    Made with ❤️ by Rahul Yadav
-                  </h3>
+                   {/* Footer */}
+                    <div
+                      className="
+                        mx-3 mb-3
+                        mt-1
+                        px-5 py-3
+                        rounded-xl
+                        bg-yellow-400/5
+                        border border-yellow-400/10
+                      "
+                    >
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        Crafted with
+                        <span className="mx-1 text-red-400">
+                          ❤️
+                        </span>
+                        by
+                      </p>
+
+                      <p className="text-sm font-semibold text-yellow-400">
+                        Rahul Yadav
+                      </p>
+                    </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
         </div>
 
-        {/*--------------------------- Mobile Menu Icon --------------------------*/}
-        <div className=" theme-heading md:hidden ">
+        {/*---------------------------tablet / Mobile Menu Icon --------------------------*/}
+        <div className="flex items-center gap-2 theme-heading lg:hidden ">
           {showMenu ? (
             <FaXmark
               className="text-2xl cursor-pointer"
@@ -192,7 +234,7 @@ const Navbar = () => {
       <AnimatePresence>
         {showMenu && (
           <motion.div
-            className=" fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+            className=" fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
             onClick={() => setshowMenu(false)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
