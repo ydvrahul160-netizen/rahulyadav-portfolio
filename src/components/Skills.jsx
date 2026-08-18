@@ -24,19 +24,22 @@ const Skills = () => {
           Technologies I work with to bring ideas to life
         </p>
 
+        {/* skills cards */}
         <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto ">
           {skills.map((skill, index) => (
             <div
               key={index}
               className="theme-bg3 theme-border glass rounded-3xl border border-white/10 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group"
             >
+              {/* icon and title */}
               <div className="flex items-center mb-4">
                 <skill.icon className="w-12 h-12 text-sky-400 mr-6" />
                 <h3 className="theme-heading text-xl font-bold text-white">{skill.title}</h3>
               </div>
-
+               {/* description */}
               <p className="theme-text text-gray-400 mb-4">{skill.description}</p>
 
+              {/*proficiency  */}
               <div className="mt-5 mb-5">
                 <div className="flex justify-between text-sm mb-2">
                   <span className="text-gray-400">Proficiency</span>
@@ -55,7 +58,8 @@ const Skills = () => {
                   />
                 </div>
               </div>
-
+                
+              {/* tags */}
               <div className="flex flex-wrap gap-2">
                 {skill.tags.map((tech) => (
                   <span

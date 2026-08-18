@@ -5,14 +5,11 @@ import { useState } from "react";
 import { validateContact } from "../validation/contact.schema";
 import { submitContactForm } from "../services/contact.service";
 import { FaPaperPlane } from "react-icons/fa";
-import {
-  FaDribbble,
-  FaGithub,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaDribbble, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import monkey from "../assets/monkeyImg.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +38,7 @@ const Contact = () => {
     setSuccess("");
   };
   // ---------------------
-  // 
+  //
   // handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +81,7 @@ const Contact = () => {
     }
   };
   // --------------------------
-  // 
+  //
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -94,7 +91,6 @@ const Contact = () => {
       id="contact"
       className=" theme-bg relative py-24 overflow-hidden"
     >
-      
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <h2 className="theme-heading text-3xl font-black text-center mb-4">
           Get In <span className="text-yellow-300">Touch</span>
@@ -103,9 +99,39 @@ const Contact = () => {
           Have a project in mind or want to collaborate? Let's Talk!
         </p>
 
-        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* CONTACT FORM */}
-          <div className="theme-bg2 glass rounded-3xl border border-white/10 p-8">
+          <div className="theme-bg2 glass rounded-3xl border border-white/10 p-6 ">
+            {/* monkey PNG */}
+            <motion.img
+              src={monkey}
+              alt="Cute monkey"
+             
+              className="
+    absolute
+    z-20
+    pointer-events-none
+      w-25
+      sm:w-32
+      md:w-40
+      lg:w-48
+
+    left-1/2
+    -translate-x-1/2
+
+  -top-16
+  sm:-top-18
+  md:-top-24
+  lg:-top-30
+
+  left-[36px]        // left se 20px
+sm:left-[40px]
+md:left-[80px]
+lg:left-[80px]
+
+scale-x-[-1]
+  "
+            />
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* NAME BOX*/}
               <div>
@@ -144,7 +170,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email"
-                 className="theme-text theme-bg w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 resize-none placeholder:text-gray-400"
+                  className="theme-text theme-bg w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 resize-none placeholder:text-gray-400"
                 />
 
                 {errors.email && (
