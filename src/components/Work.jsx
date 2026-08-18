@@ -12,7 +12,7 @@ const Work = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.05 }}
       id="work"
-      className="grid-bg2 theme-bg py-30 bg-dark-100"
+      className=" theme-bg py-30 bg-dark-100"
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-10 ">
         <h2 className="theme-heading text-3xl font-bold text-center mb-4">
@@ -52,7 +52,7 @@ const Work = () => {
         </div>
       </div>
       {/* yellow glow line  */}
-      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
+      
     </motion.div>
   );
 };

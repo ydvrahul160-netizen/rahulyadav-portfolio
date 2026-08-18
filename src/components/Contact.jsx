@@ -9,7 +9,6 @@ import {
   FaDribbble,
   FaGithub,
   FaMapMarkerAlt,
-  FaTwitter,
 } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
@@ -93,7 +92,7 @@ const Contact = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.05 }}
       id="contact"
-      className="grid-bg2 theme-bg relative py-24 overflow-hidden"
+      className=" theme-bg relative py-24 overflow-hidden"
     >
       
       <div className="max-w-7xl mx-auto px-6 lg:px-10">

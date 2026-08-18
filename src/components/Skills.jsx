@@ -10,7 +10,7 @@ const Skills = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.05 }}
       id="skills"
-      className="grid-bg2 theme-bg relative py-24 overflow-hidden"
+      className=" theme-bg relative py-24 overflow-hidden"
     >
       <div className=" max-w-7xl mx-auto px-6 lg:px-10">
         <h2 className="theme-heading text-3xl font-bold text-center mb-4">
@@ -70,8 +70,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      {/* yellow glow line  */}
-      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
+      
     </motion.div>
   );
 };

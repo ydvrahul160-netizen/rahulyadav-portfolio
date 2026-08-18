@@ -28,7 +28,7 @@ const Projects = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.08 }}
-      className="theme-bg grid-bg2 relative overflow-hidden py-20 sm:py-20 lg:py-28"
+      className="theme-bg relative overflow-hidden py-20 sm:py-20 lg:py-28"
     >
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue-500/10 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
@@ -178,8 +178,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Bottom Glow Line */}
-      <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40" />
+      
     </motion.section>
   );
 };

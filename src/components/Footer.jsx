@@ -99,6 +99,7 @@ const Footer = () => {
           </button>
         </div>
       </div>
+      
     </footer>
   );
 };
