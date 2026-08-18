@@ -11,6 +11,8 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import monkey from "../assets/monkeyImg.png";
 
+import { User, Mail, MessageSquare } from "lucide-react";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -106,7 +108,6 @@ const Contact = () => {
             <motion.img
               src={monkey}
               alt="Cute monkey"
-             
               className="
     absolute
     z-20
@@ -137,9 +138,10 @@ scale-x-[-1]
               <div>
                 <label
                   htmlFor="name"
-                  className=" theme-heading block text-gray-300 mb-2"
+                  className="theme-heading flex items-center gap-2 text-gray-300 mb-2"
                 >
-                  Your Name
+                  <User size={20} className="text-blue-500 shrink-0" />
+                  <span>Your Name</span>
                 </label>
                 <input
                   id="name"
@@ -159,9 +161,10 @@ scale-x-[-1]
               <div>
                 <label
                   htmlFor="email"
-                  className=" theme-heading block text-gray-300 mb-2"
+                  className="  theme-heading text-gray-300 mb-2 flex items-center gap-2"
                 >
-                  Email Address
+                  <Mail size={20} className="text-blue-500 shrink-0" />
+                  <span>Email Address</span>
                 </label>
                 <input
                   id="email"
@@ -182,9 +185,10 @@ scale-x-[-1]
               <div>
                 <label
                   htmlFor="message"
-                  className="theme-heading block text-gray-300 mb-2"
+                  className="theme-heading text-gray-300 mb-2 flex items-center gap-2"
                 >
-                  Your Message
+                  <MessageSquare size={20} className="text-blue-500 shrink-0" />
+                  <span>Your Message</span>
                 </label>
                 <textarea
                   id="message"
@@ -222,7 +226,7 @@ scale-x-[-1]
           {/* CONTACT INFORMATION */}
           <div className=" space-y-8">
             <div className="theme-bg2 glass rounded-2xl p-6 flex items-start gap-4">
-              <div className="text-dark-400 text-2xl mr-4">
+              <div className="text-blue-400 text-2xl mr-4">
                 <FaMapMarkerAlt />
               </div>
               <div>
@@ -236,7 +240,7 @@ scale-x-[-1]
             </div>
 
             <div className="theme-bg2 glass rounded-2xl p-6 flex items-start gap-4">
-              <div className="text-dark-400 text-2xl mr-4">
+              <div className="text-blue-400 text-2xl mr-4">
                 <FaEnvelope />
               </div>
               <div>
@@ -253,7 +257,7 @@ scale-x-[-1]
             </div>
 
             <div className="theme-bg2 glass rounded-2xl p-6 flex items-start gap-4">
-              <div className="text-dark-400 text-2xl mr-4">
+              <div className="text-blue-400 text-2xl mr-4">
                 <FaPhone />
               </div>
               <div>
@@ -261,7 +265,7 @@ scale-x-[-1]
                   Phone
                 </h3>
                 <a
-                  href="tel:+917080XXXXXX"
+                  href="tel:+917080137287"
                   className="theme-text text-gray-400 hover:text-sky-400"
                 >
                   +91 7080137287
@@ -279,16 +283,16 @@ scale-x-[-1]
                   href="https://github.com/ydvrahul160-netizen"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-gray-900 hover:bg-black hover:text-white transition duration-300"
+                  className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-blue-400 hover:bg-black hover:text-white transition duration-300"
                 >
-                  <FaGithub />
+                  <FaGithub size={22}/>
                 </a>
 
                 <a
                   href="www.linkedin.com/in/rahulyadav-77dev"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition duration-300"
+                  className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition duration-300"
                 >
-                  <FaLinkedin />
+                  <FaLinkedin size={22} />
                 </a>
               </div>
             </div>
