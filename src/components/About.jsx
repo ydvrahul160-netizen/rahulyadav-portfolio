@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { aboutInfo } from "../assets/assets";
 import myphoto from "../assets/myphoto.png";
+import profileImg1 from "../assets/profileImg1.jpeg";
+import ProfileCard from "./ProfileCard";
 
 const About = () => {
   return (
@@ -10,7 +12,7 @@ const About = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: true }}
       id="about"
-      className="theme-bg relative py-24 relative overflow-hidden"
+      className="theme-bg relative py-16 relative overflow-hidden"
     >
       {/* yellow glow line 
         <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div> */}
@@ -20,15 +22,15 @@ const About = () => {
         <h2 className="theme-heading text-3xl font-bold text-center mb-4">
           About <span className="text-yellow-300">Me</span>
         </h2>
-        <p className=" text-gray-400 text-center max-w-2xl mx-auto mb-16">
+        <p className=" text-gray-400 text-center max-w-2xl mx-auto mb-10 md:mb-5">
           Get to know more about my background and passion
         </p>
 
         {/******************************** IMAGE + MY JOURNEY  **************************/}
-        <div className="flex flex-col md:flex-row md:items-start items-center gap-12">
+        <div className="flex flex-col md:flex-row md:items-start items-center gap-4">
           {/* IMAGE */}
           <div className="hidden lg:block lg:w-2/5 xl:w-1/3">
-            <motion.img
+            {/* <motion.img
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
@@ -36,7 +38,28 @@ const About = () => {
               src={myphoto}
               alt="img"
               className="w-full max-w-sm h-[420px] object-cover rounded-2xl mx-auto"
+            /> */}
+            <ProfileCard
+              name="BCA Graduate"
+              title="MERN Stack Developer"
+              handle="rahulyadav"
+              status="Available"
+              contactText="Let's Talk"
+              avatarUrl={profileImg1}
+              showUserInfo
+              enableTilt={true}
+              enableMobileTilt
+              behindGlowEnabled
+              onContactClick={() => {
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              behindGlowColor="rgba(0, 120, 72, 0.5)"
+              iconUrl="/iconpattern.png"
+              innerGradient="linear-gradient(145deg,#00784855 0%,#71C4FF22 100%)"
             />
+            
           </div>
 
           {/* TEXT CONTENT */}
@@ -47,18 +70,18 @@ const About = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="w-full lg:w-3/5 xl:w-2/3"
           >
-            <div className=" rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center md:text-left">
+            <div className=" rounded-2xl p-4 md:p-6 max-w-3xl mx-auto text-center md:text-left">
               <h2 className="theme-heading text-3xl font-semibold mb-4">
                 My Journey
               </h2>
-              <p className='theme-text text-gray-300 leading-8 max-w-xl'>
+              <p className="theme-text text-gray-300 leading-7 max-w-xl">
                 I'm Rahul Yadav, a BCA student and aspiring MERN Stack Developer
                 passionate about building modern and user-friendly web
                 applications. My journey started with HTML, CSS, and JavaScript,
                 and gradually expanded to React.js, Node.js, Express.js, and
                 MongoDB.
               </p>
-              <p className="theme-text text-gray-300 mb-12">
+              <p className="theme-text text-gray-300 mb-8">
                 I am continuously improving my skills in full-stack web
                 development by building projects and exploring modern web
                 technologies. I enjoy creating responsive interfaces, solving
@@ -81,7 +104,7 @@ const About = () => {
                     },
                   },
                 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
               >
                 {aboutInfo.map((data, index) => (
                   <motion.div
@@ -126,7 +149,6 @@ const About = () => {
           </motion.div>
         </div>
       </div>
-     
     </motion.div>
   );
 };

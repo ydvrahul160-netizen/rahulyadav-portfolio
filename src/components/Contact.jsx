@@ -125,7 +125,7 @@ const Contact = () => {
   md:-top-24
   lg:-top-30
 
-  left-[36px]        // left se 20px
+  left-[38px]        // left se 20px
 sm:left-[40px]
 md:left-[80px]
 lg:left-[80px]
