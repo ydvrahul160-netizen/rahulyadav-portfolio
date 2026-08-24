@@ -14,6 +14,9 @@ const About = () => {
       id="about"
       className="theme-bg relative py-16 relative overflow-hidden"
     >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
       {/* yellow glow line 
         <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div> */}
 
@@ -59,7 +62,6 @@ const About = () => {
               iconUrl="/iconpattern.png"
               innerGradient="linear-gradient(145deg,#00784855 0%,#71C4FF22 100%)"
             />
-            
           </div>
 
           {/* TEXT CONTENT */}
@@ -109,29 +111,16 @@ const About = () => {
                 {aboutInfo.map((data, index) => (
                   <motion.div
                     key={index}
-                    variants={{
-                      hidden: {
-                        opacity: 0,
-                        y: 40,
-                      },
-                      show: {
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          duration: 0.5,
-                          ease: "easeOut",
-                        },
-                      },
-                    }}
-                    whileHover={{
-                      y: -8,
-                      scale: 1.02,
-                      transition: {
-                        duration: 0.2,
-                        ease: "easeOut",
-                      },
-                    }}
-                    className="theme-bg3 glass rounded-2xl p-4 cursor-pointer"
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 + index * 0.2 }}
+                    whileHover={{ rotate: 0, scale: 1.02 }}
+                    className={`
+                      relative theme-bg3 rounded-3xl border border-blue/30 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group
+                      ${index === 0 ? "rotate-[-4deg] md:-mt-6 shadow-xl" : ""}
+                      ${index === 1 ? "rotate-[3deg] md:-mt-6 shadow-xl" : ""}
+                      ${index === 2 ? "rotate-[-3deg] md:-mt-6 shadow-xl" : ""}
+                     `}
                   >
                     <div className="text-sky-400 text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center sm:justify-start">
                       <data.icon />

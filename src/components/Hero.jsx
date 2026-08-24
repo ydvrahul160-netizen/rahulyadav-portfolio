@@ -46,14 +46,14 @@ const Hero = () => {
       className="theme-bg grid-bg2 grid-bg relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-black"
     >
       {/* Background Glow */}
+      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
       
       <div className="mt-16 container mx-auto px-6 lg:px-14 py-20">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
           {/* Left part */}
 
           <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             variants={container}
             initial="hidden"
@@ -160,14 +160,14 @@ const Hero = () => {
             className="md:w-1/2 flex justify-center"
           >
             <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-yellow-300 blur-3xl opacity-20"></div>
+              <div className="absolute inset-0 rounded-full bg-blue-300 blur-3xl opacity-20"></div>
 
               <motion.img
                 {...floating}
                 // src={profileImg}
                 src={profileImg1}
                 alt="Rahul Yadav"
-                className="relative w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-full border-4 border-white/20 shadow-[0_0_80px_rgba(253,224,71,.35)]"
+                className="relative w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-full  shadow-[0_0_80px_rgba(59,130,246,.5)]"
               />
 
               <motion.div

@@ -12,8 +12,12 @@ const Work = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.05 }}
       id="work"
-      className=" theme-bg py-30 bg-dark-100"
+      className="relative overflow-hidden theme-bg py-30 bg-dark-100"
     >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+
       <div className="max-w-6xl mx-auto px-6 lg:px-10 ">
         <h2 className="theme-heading text-3xl font-bold text-center mb-4">
           Journey & <span className="text-yellow-300">Learning Exprience</span>
@@ -36,7 +40,7 @@ const Work = () => {
                 <div className="absolute left-[-0.6rem] top-2 w-5 h-5 rounded-full bg-sky-400 ring-4 ring-sky-400/20">💻</div>
 
                 {/* B0x/Card */}
-                <div className="theme-bg2 glass rounded-3xl p-6 border border-white/10">
+                <div className="theme-bg3 rounded-3xl border border-blue/30 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="theme-heading text-2xl font-bold">{data.role}</h3>
                     <span className="theme-text px-4 py-1 bg-sky-300/20 text-sky-300 rounded-full md:text-sm font-medium">

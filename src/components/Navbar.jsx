@@ -38,7 +38,7 @@ const Navbar = () => {
     <nav className="fixed w-full z-50 py-4 flex justify-center px-3 sm:px-4 pt-3 sm:pt-4">
       <div
         className="backdrop-blur-xl w-full max-w-[1400px] rounded-2xl  border
-          px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center relative bg-white/70 dark:bg-black/30  border-black/10 dark:border-white/10 shadow-md shadow-black/5 dark:shadow-white/5"
+          px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center relative bg-white/70 dark:bg-black/20  border-black/10 dark:border-white/10 shadow-md shadow-black/5 dark:shadow-white/5"
       >
         <div>
           <a
@@ -310,7 +310,7 @@ const Navbar = () => {
                 </a>
 
                 <a
-                  href="#experience"
+                  href="#work"
                   onClick={() => setshowMenu(false)}
                   className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
                 >

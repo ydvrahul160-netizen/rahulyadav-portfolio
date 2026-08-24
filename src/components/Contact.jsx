@@ -93,6 +93,9 @@ const Contact = () => {
       id="contact"
       className=" theme-bg relative py-24 overflow-hidden"
     >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <h2 className="theme-heading text-3xl font-black text-center mb-4">
           Get In <span className="text-yellow-300">Touch</span>
@@ -108,30 +111,8 @@ const Contact = () => {
             <motion.img
               src={monkey}
               alt="Cute monkey"
-              className="
-    absolute
-    z-20
-    pointer-events-none
-      w-25
-      sm:w-32
-      md:w-40
-      lg:w-48
-
-    left-1/2
-    -translate-x-1/2
-
-  -top-16
-  sm:-top-18
-  md:-top-24
-  lg:-top-30
-
-  left-[38px]        // left se 20px
-sm:left-[40px]
-md:left-[80px]
-lg:left-[80px]
-
-scale-x-[-1]
-  "
+              className="absolute z-20 pointer-events-none w-25 sm:w-32 md:w-40 lg:w-48 left-1/2 -translate-x-1/2 -top-16 sm:-top-18 md:-top-24 lg:-top-30
+              left-[38px] sm:left-[40px] md:left-[80px] lg:left-[80px] scale-x-[-1]"
             />
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* NAME BOX*/}
@@ -285,7 +266,7 @@ scale-x-[-1]
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-blue-400 hover:bg-black hover:text-white transition duration-300"
                 >
-                  <FaGithub size={22}/>
+                  <FaGithub size={22} />
                 </a>
 
                 <a

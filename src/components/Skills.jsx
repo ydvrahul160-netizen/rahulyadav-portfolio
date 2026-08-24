@@ -12,6 +12,10 @@ const Skills = () => {
       id="skills"
       className=" theme-bg relative py-24 overflow-hidden"
     >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      
       <div className=" max-w-7xl mx-auto px-6 lg:px-10">
         <h2 className="theme-heading text-3xl font-bold text-center mb-4">
           My <span className="text-yellow-300">Skills</span>
@@ -29,7 +33,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="theme-bg3 theme-border glass rounded-3xl border border-white/10 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group"
+              className="theme-bg3 rounded-3xl border border-blue/30 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group"
             >
               {/* icon and title */}
               <div className="flex items-center mb-4">

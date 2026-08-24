@@ -10,7 +10,7 @@ const ProjectCards = ({
   github,
 }) => {
   return (
-    <article className="theme-bg3 glass group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <article className="theme-bg3  group flex h-full flex-col overflow-hidden rounded-3xl border border-blue/30 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       {/* Project Image */}
       <div className="relative overflow-hidden">
         <img

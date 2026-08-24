@@ -32,9 +32,9 @@ const Projects = () => {
       className="theme-bg relative overflow-hidden py-20 sm:py-20 lg:py-28"
     >
       {/* Background Glow */}
-      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue-500/10 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
 
-      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-purple-500/10 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
 
       {/* Main Container */}
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
@@ -154,7 +154,7 @@ const Projects = () => {
         <div className="mt-12 text-center sm:mt-14">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 rounded-lg border border-sky-300 bg-sky-400 px-5 py-2.5 font-medium text-black transition-all duration-300 hover:bg-sky-300 hover:shadow-lg hover:shadow-sky-400/20 sm:px-6 sm:py-3"
+            className="inline-flex items-center gap-2 rounded-lg border border-sky-300 bg-sky-400 px-5 py-2.5 font-semibold text-gray-900 transition-all duration-300 hover:bg-sky-300 hover:shadow-lg hover:shadow-sky-400/20 sm:px-6 sm:py-3"
           >
             View All Projects
             <FaArrowRight className="text-sm" />
