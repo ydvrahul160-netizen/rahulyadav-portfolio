@@ -206,11 +206,11 @@ const Hero = () => {
             </Link>
           </div>
 
-          <div className="mt-4 flex items-center justify-between">
+          <a href="#contact" className="mt-4 flex items-center justify-between">
             <span className="text-[10px] text-green-400">● Available</span>
 
             <span className="text-gray-500 dark:text-white/40">→</span>
-          </div>
+          </a>
         </motion.div>
 
         {/* ------------------------------------- SCROLL INDICAT --------------------------------------------- */}
