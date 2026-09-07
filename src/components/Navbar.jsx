@@ -13,8 +13,6 @@ import {
 import { FaGear, FaSun, FaMoon } from "react-icons/fa6";
 import { useTheme } from "../context/ThemeContext";
 
-
-
 const Navbar = () => {
   const [showMenu, setshowMenu] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -35,11 +33,11 @@ const Navbar = () => {
   }, [showMenu]);
 
   return (
-    <nav className="fixed w-full z-50 py-4 flex justify-center px-3 sm:px-4 pt-3 sm:pt-4">
+    <nav className="fixed w-full z-50 py-8 flex justify-center px-3 sm:px-6 pt-3 sm:pt-6">
       <div
-        className="backdrop-blur-xl w-full max-w-[1400px] rounded-2xl  border
-          px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center relative bg-white/70 dark:bg-black/20  border-black/10 dark:border-white/10 shadow-md shadow-black/5 dark:shadow-white/5"
-      >
+        className=" w-full max-w-[1400px] rounded-2xl 
+          px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center relative  dark:shadow-white/5"
+        >
         <div>
           <a
             href="#"
@@ -100,7 +98,6 @@ const Navbar = () => {
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
           </a>
 
-
           {/* setting icon and function */}
           <div className=" relative hidden md:block">
             <button
@@ -128,7 +125,7 @@ const Navbar = () => {
               />
             </button>
 
-             {/* setting dropdown */}
+            {/* setting dropdown */}
             <AnimatePresence>
               {showSettings && (
                 <motion.div
@@ -141,14 +138,14 @@ const Navbar = () => {
                   {/* header */}
                   <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
                     <div>
-                        <p className="text-sm font-semibold theme-heading">
-                          Settings
-                        </p>
+                      <p className="text-sm font-semibold theme-heading">
+                        Settings
+                      </p>
 
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          Customize your experience
-                        </p>
-                      </div>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        Customize your experience
+                      </p>
+                    </div>
 
                     <button
                       onClick={() => setShowSettings(false)}
@@ -184,9 +181,9 @@ const Navbar = () => {
                   >
                     Accent Color
                   </button>
-                   {/* Footer */}
-                    <div
-                      className="
+                  {/* Footer */}
+                  <div
+                    className="
                         mx-3 mb-3
                         mt-1
                         px-5 py-3
@@ -194,19 +191,17 @@ const Navbar = () => {
                         bg-yellow-400/5
                         border border-yellow-400/10
                       "
-                    >
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        Crafted with
-                        <span className="mx-1 text-red-400">
-                          ❤️
-                        </span>
-                        by
-                      </p>
+                  >
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Crafted with
+                      <span className="mx-1 text-red-400">❤️</span>
+                      by
+                    </p>
 
-                      <p className="text-sm font-semibold text-yellow-400">
-                        Rahul Yadav
-                      </p>
-                    </div>
+                    <p className="text-sm font-semibold text-yellow-400">
+                      Rahul Yadav
+                    </p>
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>

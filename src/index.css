@@ -255,118 +255,182 @@
   box-shadow: 0 15px 35px rgba(250, 204, 21, 0.35);
 }
 
-/*----------------------------Start Dark/Light Theme css ----------------------------------------*/
+/* =========================================================
+   DARK / LIGHT THEME CSS
+   ========================================================= */
+
+/* =========================================================
+   TAILWIND V4 - MANUAL DARK MODE SUPPORT
+   ========================================================= */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================================
+   BASE PAGE
+   ========================================================= */
+
 html,
 body,
 #root {
   min-height: 100%;
-  background-color: var(--theme-bg, #070b14);
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   DEFAULT / ROOT VARIABLES
+   ========================================================= */
 
 :root {
   /* ---------- PAGE / SECTION ---------- */
-  --theme-bg: #fce7f3; /* pink-100 */
-  --theme-section-bg: #fdf2f8; /* pink-50 */
+
+  --theme-bg: #fce7f3;
+  --theme-section-bg: #fdf2f8;
+
+  --theme-bg2: #bcd8ee;
+  --theme-bg3: #dbeafe;
 
   /* ---------- TEXT ---------- */
+
   --theme-heading: #111827;
   --theme-text: #374151;
+
   --theme-text-secondary: #6b7280;
   --theme-text-muted: #9ca3af;
 
+  --theme-text-red: #dc2626;
+  --theme-text-green: #16a34a;
+
+  /* ---------- NAVBAR ---------- */
+
+  --theme-logo-rahul: #111827;
+  --theme-logo-yadav: #eb2546;
+  --theme-nav-text: #111827;
+
   /* ---------- CARD / SURFACE ---------- */
+
   --theme-card: #ffffff;
   --theme-card-secondary: #fff1f2;
 
   /* ---------- BORDER ---------- */
+
   --theme-border: #fbcfe8;
   --theme-border-soft: rgba(236, 72, 153, 0.2);
 
   /* ---------- BRAND / ACCENT ---------- */
+
   --theme-yellow: #facc15;
   --theme-yellow-hover: #eab308;
 
   --theme-primary: #0ea5e9;
   --theme-primary-hover: #0284c7;
 
+  --theme-btn-bg: #db2777;
+
   /* ---------- GLASS ---------- */
+
   --theme-glass-bg: rgba(255, 255, 255, 0.65);
   --theme-glass-border: rgba(236, 72, 153, 0.2);
 
   /* ---------- SOFT UI ---------- */
+
   --theme-soft-bg: #fce7f3;
 
   /* ---------- DECORATIVE GLOW ---------- */
+
   --theme-blue-glow: rgba(59, 130, 246, 0.1);
   --theme-purple-glow: rgba(168, 85, 247, 0.1);
 }
 
-/* =====================================================
+/* =========================================================
    LIGHT THEME
-===================================================== */
+   ========================================================= */
 
 .light {
-  /* ---------- hero bg ---------- */
+  /* ---------- PAGE / SECTION ---------- */
 
-
-  /* PAGE / SECTION */
-  --theme-bg3: #DBEAFE;
-  --theme-bg: white;
+  --theme-bg: #ffffff;
   --theme-section-bg: #fdf2f8;
-  --theme-bg2: #bcd8ee;
-  --theme-btn-bg:#DB2777;
 
-  /* TEXT */
+  --theme-bg2: #bcd8ee;
+  --theme-bg3: #dbeafe;
+
+  /* ---------- TEXT ---------- */
+
   --theme-heading: #111827;
-  --theme-text: #6b7280;
+  --theme-text: #374151;
+
   --theme-text-secondary: #6b7280;
   --theme-text-muted: #9ca3af;
-  --theme-text-red: red;
-  --theme-text-green: green;
 
-  /* CARD / SURFACE */
+  --theme-text-red: #dc2626;
+  --theme-text-green: #16a34a;
+
+  /* ---------- NAVBAR ---------- */
+
+  --theme-logo-rahul: #111827;
+  --theme-logo-yadav: #eb2546;
+  --theme-nav-text: #111827;
+
+  /* ---------- CARD / SURFACE ---------- */
+
   --theme-card: #ffffff;
   --theme-card-secondary: #fff1f2;
 
-  /* BORDER */
+  /* ---------- BORDER ---------- */
+
   --theme-border: #fbcfe8;
   --theme-border-soft: rgba(236, 72, 153, 0.2);
 
-  /* BRAND */
+  /* ---------- BRAND / ACCENT ---------- */
+
   --theme-yellow: #facc15;
   --theme-yellow-hover: #eab308;
 
   --theme-primary: #0ea5e9;
   --theme-primary-hover: #0284c7;
 
-  /* GLASS */
+  --theme-btn-bg: #db2777;
+
+  /* ---------- GLASS ---------- */
+
   --theme-glass-bg: rgba(255, 255, 255, 0.65);
   --theme-glass-border: rgba(236, 72, 153, 0.2);
 
-  /* SOFT UI */
+  /* ---------- SOFT UI ---------- */
+
   --theme-soft-bg: #fce7f3;
 
-  /* GLOW */
+  /* ---------- GLOW ---------- */
+
   --theme-blue-glow: rgba(59, 130, 246, 0.1);
   --theme-purple-glow: rgba(168, 85, 247, 0.1);
 }
 
-/* ================= LIGHT NAVBAR ONLY ================= */
+/* =========================================================
+   LIGHT NAVBAR
+   ========================================================= */
 
 .light .light-navbar-rahul {
-  color: #111827;
+  color: var(--theme-logo-rahul);
 }
 
 .light .light-navbar-yadav {
-  color: #eb2546;
+  color: var(--theme-logo-yadav);
 }
 
 .light .light-navbar-link {
-  color: #111827;
+  color: var(--theme-nav-text);
 }
 
-/* ----------hero bg2--------------- */
+/* =========================================================
+   LIGHT HERO / GRID BACKGROUND
+   ========================================================= */
+
 .light .grid-bg2 {
   background-image:
     linear-gradient(rgba(254, 202, 202, 0.7) 1px, transparent 1px),
@@ -375,52 +439,88 @@ body,
   background-size: 40px 40px;
 }
 
-
-/* =====================================================
+/* =========================================================
    DARK THEME
-===================================================== */
+   ========================================================= */
 
 .dark {
-  /* PAGE / SECTION */
+  /* ---------- PAGE / SECTION ---------- */
+
   --theme-bg: #1d1e1f;
   --theme-section-bg: #1a1a1a;
 
-  /* TEXT */
+  --theme-bg2: #252729;
+  --theme-bg3: #111315;
+
+  /* ---------- TEXT ---------- */
+
   --theme-heading: #ffffff;
   --theme-text: #ccd6f6;
+
   --theme-text-secondary: #9ca3af;
   --theme-text-muted: #6b7280;
 
-  /* CARD / SURFACE */
+  --theme-text-red: #f87171;
+  --theme-text-green: #4ade80;
+
+  /* ---------- NAVBAR ---------- */
+
+  --theme-logo-rahul: #ffffff;
+  --theme-logo-yadav: #f43f5e;
+  --theme-nav-text: #e5e7eb;
+
+  /* ---------- CARD / SURFACE ---------- */
+
   --theme-card: #1f2937;
   --theme-card-secondary: #333333;
 
-  /* BORDER */
+  /* ---------- BORDER ---------- */
+
   --theme-border: #374151;
   --theme-border-soft: rgba(255, 255, 255, 0.1);
 
-  /* BRAND */
+  /* ---------- BRAND / ACCENT ---------- */
+
   --theme-yellow: #facc15;
   --theme-yellow-hover: #fde047;
 
   --theme-primary: #38bdf8;
   --theme-primary-hover: #7dd3fc;
 
-  /* GLASS */
+  --theme-btn-bg: #db2777;
+
+  /* ---------- GLASS ---------- */
+
   --theme-glass-bg: rgba(255, 255, 255, 0.05);
   --theme-glass-border: rgba(255, 255, 255, 0.08);
 
-  /* SOFT UI */
+  /* ---------- SOFT UI ---------- */
+
   --theme-soft-bg: rgba(255, 255, 255, 0.05);
 
-  /* GLOW */
+  /* ---------- GLOW ---------- */
+
   --theme-blue-glow: rgba(59, 130, 246, 0.1);
   --theme-purple-glow: rgba(168, 85, 247, 0.1);
 }
 
-/* =====================================================
+/* =========================================================
+   DARK GRID BACKGROUND
+   ========================================================= */
+
+.dark .grid-bg2 {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+}
+
+/* =========================================================
    THEME UTILITY CLASSES
-===================================================== */
+   ========================================================= */
+
+/* ---------- LOGO ---------- */
 
 .theme-logo-rahul {
   color: var(--theme-logo-rahul);
@@ -430,42 +530,13 @@ body,
   color: var(--theme-logo-yadav);
 }
 
+/* ---------- NAVBAR ---------- */
+
 .theme-nav-text {
   color: var(--theme-nav-text);
 }
 
-.theme-text-red {
-  color: var(--theme-text-red);
-}
-.theme-text-green {
-  color: var(--theme-text-green);
-}
-
-.theme-btn-bg{
-  background-color: var(--theme-btn-bg)
-}
-
-.theme-bg {
-  background-color: var(--theme-bg);
-}
-
-.theme-section-bg {
-  background-color: var(--theme-section-bg);
-}
-.theme-bg2 {
-  background-color: var(--theme-bg2);
-}
-.theme-bg3 {
-  background-color: var(--theme-bg3);
-}
-
-.theme-card {
-  background-color: var(--theme-card);
-}
-
-.theme-card-secondary {
-  background-color: var(--theme-card-secondary);
-}
+/* ---------- TEXT ---------- */
 
 .theme-text {
   color: var(--theme-text);
@@ -483,6 +554,50 @@ body,
   color: var(--theme-text-muted);
 }
 
+.theme-text-red {
+  color: var(--theme-text-red);
+}
+
+.theme-text-green {
+  color: var(--theme-text-green);
+}
+
+/* ---------- BACKGROUND ---------- */
+
+.theme-bg {
+  background-color: var(--theme-bg);
+}
+
+.theme-section-bg {
+  background-color: var(--theme-section-bg);
+}
+
+.theme-bg2 {
+  background-color: var(--theme-bg2);
+}
+
+.theme-bg3 {
+  background-color: var(--theme-bg3);
+}
+
+/* ---------- CARD ---------- */
+
+.theme-card {
+  background-color: var(--theme-card);
+}
+
+.theme-card-secondary {
+  background-color: var(--theme-card-secondary);
+}
+
+/* ---------- BUTTON ---------- */
+
+.theme-btn-bg {
+  background-color: var(--theme-btn-bg);
+}
+
+/* ---------- BORDER ---------- */
+
 .theme-border {
   border-color: var(--theme-border);
 }
@@ -490,6 +605,8 @@ body,
 .theme-border-soft {
   border-color: var(--theme-border-soft);
 }
+
+/* ---------- PRIMARY ---------- */
 
 .theme-primary {
   color: var(--theme-primary);
@@ -503,6 +620,8 @@ body,
   border-color: var(--theme-primary);
 }
 
+/* ---------- YELLOW ---------- */
+
 .theme-yellow {
   color: var(--theme-yellow);
 }
@@ -515,4 +634,73 @@ body,
   border-color: var(--theme-yellow);
 }
 
-/*----------------------------End Dark/Light Theme css ----------------------------------------*/
+/* =========================================================
+   GLASS EFFECT
+   ========================================================= */
+
+.theme-glass {
+  background-color: var(--theme-glass-bg);
+  border: 1px solid var(--theme-glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* =========================================================
+   SOFT BACKGROUND
+   ========================================================= */
+
+.theme-soft-bg {
+  background-color: var(--theme-soft-bg);
+}
+
+/* =========================================================
+   GLOW EFFECTS
+   ========================================================= */
+
+.theme-blue-glow {
+  box-shadow: 0 0 80px var(--theme-blue-glow);
+}
+
+.theme-purple-glow {
+  box-shadow: 0 0 80px var(--theme-purple-glow);
+}
+
+/* =========================================================
+   HOVER HELPERS
+   ========================================================= */
+
+.theme-primary-hover:hover {
+  color: var(--theme-primary-hover);
+}
+
+.theme-primary-bg-hover:hover {
+  background-color: var(--theme-primary-hover);
+}
+
+.theme-yellow-hover:hover {
+  color: var(--theme-yellow-hover);
+}
+
+/* =========================================================
+   SMOOTH THEME TRANSITION
+   ========================================================= */
+
+body,
+#root,
+section,
+nav,
+div,
+button,
+a,
+input,
+textarea,
+select {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================================================
+   END DARK / LIGHT THEME CSS
+   ========================================================= */

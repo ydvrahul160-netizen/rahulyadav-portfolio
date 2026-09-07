@@ -1,220 +1,228 @@
-// import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import profileImg1 from "../assets/profileImg1.jpeg";
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
-
-import { SiReact, SiNodedotjs, SiMongodb, SiJavascript } from "react-icons/si";
-
 
 const Hero = () => {
-  const floating = {
-    animate: {
-      y: [0, -12, 0],
-    },
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
   return (
     <section
       id="home"
-      className="theme-bg grid-bg2 grid-bg relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-black"
+      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-3 sm:py-5 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-      
-      <div className="mt-16 container mx-auto px-6 lg:px-14 py-20">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
-          {/* Left part */}
+      {/* MAIN EDITORIAL CARD */}
+      <div className="relative min-h-[calc(100vh-24px)] sm:min-h-[calc(100vh-40px)] overflow-hidden rounded-[28px] sm:rounded-[40px] border border-white/10 bg-white dark:bg-[#101010] shadow-2xl">
+        {/* Background glow */}
+        <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] rounded-full bg-purple-700/10 blur-[140px]" />
 
-          <motion.div
-            transition={{ duration: 0.8 }}
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="md:w-1/2"
+        <div className="absolute -bottom-40 right-0 w-[450px] h-[450px] rounded-full bg-blue-700/10 blur-[140px]" />
+
+        {/* --------------------------------- HUGE BACKGROUND TEXT ----------------------------------------- */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="absolute whitespace-nowrap text-[18vw] sm:text-[20vw] lg:text-[18vw] font-black tracking-[-0.08em] text-black/[0.08] dark:text-white/[0.12] uppercase"
           >
-            <span className=" theme-text-green inline-block px-4 py-1 rounded-full bg-yellow-300/20 text-yellow-300 border border-yellow-300/30 mb-6">
-              🟢 Available for Work
-            </span>
+            DEVELOPER
+          </motion.h1>
+        </div>
 
-            <motion.h1
-              variants={item}
-              className=" theme-text text-5xl lg:text-7xl font-extrabold leading-tight text-gray-400"
-            >
-              Hi, I'm
-              <span className="theme-heading text-white"> Rahul Yadav</span>
-            </motion.h1>
-
-            <div className="theme-text text-2xl lg:text-4xl font-semibold text-gray-300 mt-6 h-16">
-              <TypeAnimation
-                sequence={[
-                  "MERN Stack Developer",
-
-                  2000,
-
-                  "Frontend Developer",
-
-                  2000,
-
-                  "React Developer",
-
-                  2000,
-
-                  "Full Stack Developer",
-
-                  2000,
-                ]}
-                wrapper="span"
-                repeat={Infinity}
-              />
-            </div>
-
-            <motion.p
-              variants={item}
-              className="theme-text mt-6 text-gray-400 text-lg leading-8 max-w-xl"
-            >
-              I build responsive, scalable and modern web applications using
-              React, Node.js, Express and MongoDB with clean UI and optimized
-              performance.
-            </motion.p>
-
-            <div className="flex flex-wrap gap-5 mt-10">
-              <a
-                href="#projects"
-                className=" px-7 py-3 rounded-xl bg-yellow-300 text-black font-semibold transition shadow-lg shadow-yellow-300/30 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)] transition-all duration-300"
-              >
-                View Projects
-              </a>
-
-              {/* resume show option */}
-              <Link
-                to="/resume"
-                className="theme-heading theme-border theme-bg2 px-7 py-3 rounded-xl border border-yellow-300 text-white hover:bg-yellow-300 hover:text-black transition duration-300 flex items-center gap-2 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,.5)]"
-              >
-                <FaDownload />
-                Resume
-              </Link>
-            </div>
-
-            <div className="flex gap-5 mt-10 text-2xl">
-              <a
-                href="https://github.com/ydvrahul160-netizen"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-yellow-300 transition"
-              >
-                <FaGithub className="theme-primary hover:rotate-12 hover:scale-125 transition-all duration-300" />
-              </a>
-
-              <a
-                href="www.linkedin.com/in/rahulyadav-77dev"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-yellow-300 transition"
-              >
-                <FaLinkedin className="theme-primary hover:rotate-12 hover:scale-125 transition-all duration-300" />
-              </a>
-
-              <a
-                href="mailto:rahulyadav40777@gmail.com"
-                className="theme-primary hover:text-yellow-300 transition"
-              >
-                <FaEnvelope className="hover:rotate-12 hover:scale-125 transition-all duration-300" />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Right Part */}
-
+        {/* ---------------------------- CENTER IMAGE ----------------------------- */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="md:w-1/2 flex justify-center"
+            initial={{
+              opacity: 0,
+              y: 80,
+              scale: 0.9,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            className="relative z-10 mt-12 sm:mt-16"
           >
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-blue-300 blur-3xl opacity-20"></div>
+            {/* Image glow */}
+            <div className="absolute inset-10 bg-purple-600/20 blur-[80px]" />
 
-              <motion.img
-                {...floating}
-                // src={profileImg}
-                src={profileImg1}
-                alt="Rahul Yadav"
-                className="relative w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-full  shadow-[0_0_80px_rgba(59,130,246,.5)]"
-              />
-
-              <motion.div
-                {...floating}
-                className="absolute -top-6 left-0 bg-[#1f2937] p-3 rounded-full text-sky-400 text-3xl shadow-xl"
-              >
-                <SiReact />
-              </motion.div>
-
-              <motion.div
-                {...floating}
-                className="absolute top-12 -right-6 bg-[#1f2937] p-3 rounded-full text-green-500 text-3xl shadow-xl"
-              >
-                <SiNodedotjs />
-              </motion.div>
-
-              <motion.div
-                {...floating}
-                className="absolute bottom-10 -left-6 bg-[#1f2937] p-3 rounded-full text-green-400 text-3xl shadow-xl"
-              >
-                <SiMongodb />
-              </motion.div>
-
-              <motion.div
-                {...floating}
-                className="absolute bottom-0 right-5 bg-[#1f2937] p-3 rounded-full text-yellow-300 text-3xl shadow-xl"
-              >
-                <SiJavascript />
-              </motion.div>
-            </div>
+            <motion.img
+              src={profileImg1}
+              alt="Rahul Yadav"
+              animate={{
+                y: [0, -8, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative w-[260px] h-[360px] sm:w-[330px] sm:h-[440px] lg:w-[390px] lg:h-[500px]
+                object-cover rounded-[20px] grayscale-[20%] shadow-[0_30px_100px_rgba(0,0,0,0.7)] "
+            />
           </motion.div>
         </div>
+
+        {/* --------------------------------- PURPLE TEXT -------------------------------- */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className=" absolute z-20 left-6 sm:left-12 lg:left-16 top-[38%] lg:top-[40%]"
+        >
+          <div
+            className=" text-purple-500 text-[45px] sm:text-[70px] lg:text-[100px] leading-none font-semibold  tracking-[-0.05em] "
+            style={{
+              fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
+            }}
+          >
+            Modern
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className=" absolute z-20 right-4 sm:right-10 lg:right-14 top-[48%] lg:top-[44%] "
+        >
+          <div
+            className=" text-purple-500 text-[40px] sm:text-[65px] lg:text-[95px] leading-none font-semibold  tracking-[-0.05em]"
+            style={{
+              fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
+            }}
+          >
+            Developer
+          </div>
+        </motion.div>
+
+        {/* -------------------------------------- LEFT BOTTOM CONTENT ------------------------------------------- */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className=" absolute z-20 left-6 sm:left-12  lg:left-16  bottom-20 sm:bottom-16  max-w-[280px]  sm:max-w-[340px]"
+        >
+          <h2 className=" theme-heading text-3xl sm:text-3xl lg:text-4xl font-light tracking-tight">
+            Hi, I'm Rahul.
+          </h2>
+
+          <div className="mt-2 text-gray-600 dark:text-white/60 text-sm sm:text-base">
+            <TypeAnimation
+              sequence={[
+                "MERN Stack Developer",
+                2000,
+                "React Developer",
+                2000,
+                "Full Stack Developer",
+                2000,
+              ]}
+              repeat={Infinity}
+            />
+          </div>
+
+          <p className="mt-4 text-xs sm:text-sm leading-6 text-gray-500 dark:text-white/40">
+            I build modern, scalable and interactive web applications with
+            React, Node.js, Express and MongoDB.
+          </p>
+
+          {/* ---------------------------------- VIEW PROJECT BUTTONS ------------------------------------- */}
+          <div className="flex flex-wrap gap-3 mt-5">
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg theme-btn-bg text-white text-xs sm:text-sm font-medium
+                hover:opacity-90 hover:scale-[1.02] transition-all duration-300"
+            >
+              View Projects
+            </a>
+          </div>
+
+          {/* Social links */}
+          <div className="flex gap-4 mt-5 text-lg">
+            <a
+              href="https://github.com/ydvrahul160-netizen"
+              target="_blank"
+              rel="noreferrer"
+              className="theme-gray dark:text-white/50 hover:text-black dark:hover:text-white transition"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/rahulyadav-77dev"
+              target="_blank"
+              rel="noreferrer"
+              className="theme-gray dark:text-white/50 hover:text-black dark:hover:text-white transition"
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="mailto:rahulyadav40777@gmail.com"
+              className="theme-gray dark:text-white/50 hover:text-black dark:hover:text-white transition"
+            >
+              <FaEnvelope />
+            </a>
+          </div>
+        </motion.div>
+
+        {/* ----------------------------------- RIGHT INFO CARD ---------------------------------------- */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className=" absolute  z-20  right-5  sm:right-10  lg:right-14  bottom-20  sm:bottom-16  w-[150px]  sm:w-[180px]  rounded-2xl  border  border-gray-200 dark:border-white/10  bg-black/[0.03] dark:bg-white/[0.04]  backdrop-blur-xl  p-4  sm:p-5  "
+        >
+          <p className="mt-2 text-[10px] sm:text-xs leading-5 text-gray-500 dark:text-white/40">
+            Current Focus
+          </p>
+
+          <h3 className="mt-2 text-sm sm:text-base font-semibold">
+            Full Stack Web
+          </h3>
+
+          <p className="mt-2 text-[10px] sm:text-xs leading-5 theme-muted">
+            Building production-ready applications with modern technologies.
+          </p>
+
+          {/* ---------------------------------------- RESUME BUTTONS ---------------------------------------------- */}
+          <div className="flex flex-wrap gap-3 mt-5">
+            <Link
+              to="/resume"
+              className=" inline-flex items-center justify-center px-5 py-1.5 rounded-lg border theme-border theme-text bg-black/[0.1] dark:bg-white/[0.03]  text-xs sm:text-sm font-medium hover:theme-card hover:theme-heading  transition-all duration-300"
+            >
+              Resume
+            </Link>
+          </div>
+
+          <div className="mt-4 flex items-center justify-between">
+            <span className="text-[10px] text-green-400">● Available</span>
+
+            <span className="text-gray-500 dark:text-white/40">→</span>
+          </div>
+        </motion.div>
+
+        {/* ------------------------------------- SCROLL INDICAT --------------------------------------------- */}
+        <motion.a
+          href="#about"
+          animate={{ y: [0, 8, 0] }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+          }}
+          className="  absolute  z-30  bottom-5  left-1/2  -translate-x-1/2  text-gray-400 dark:text-white/30 hover:text-black dark:hover:text-white   transition  "
+        >
+          <FaArrowDown />
+        </motion.a>
+
+        {/* Bottom line */}
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/60 to-transparent" />
       </div>
-
-      {/* scroll indicator */}
-      <motion.a
-        href="#about"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-400 hover:text-yellow-300"
-      >
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-2 bg-yellow-300 rounded-full mt-2"></div>
-        </div>
-        <span className="text-sm mt-2">Scroll</span>
-      </motion.a>
-      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div>
     </section>
   );
 };

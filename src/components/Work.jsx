@@ -20,7 +20,7 @@ const Work = () => {
 
       <div className="max-w-6xl mx-auto px-6 lg:px-10 ">
         <h2 className="theme-heading text-3xl font-bold text-center mb-4">
-          Journey & <span className="text-yellow-300">Learning Exprience</span>
+          Journey & <span className="text-yellow-300">Learning Experience</span>
         </h2>
         <p className="theme-text text-gray-400 text-center max-w-2xl mx-auto mb-16">
           Exploring, building, learning, and growing as a developer every day
