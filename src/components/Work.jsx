@@ -12,7 +12,7 @@ const Work = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false, amount: 0.05 }}
       id="work"
-      className="relative overflow-hidden theme-bg py-30 bg-dark-100"
+      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-20 sm:py-5 overflow-hidden"
     >
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />

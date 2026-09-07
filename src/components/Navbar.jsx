@@ -42,9 +42,16 @@ const Navbar = () => {
           <a
             href="#"
             className="text-3xl font-semibold text-primary light-navbar-rahul"
+            style={{
+              fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
+            }}
           >
             Rahul
-            <span className="text-yellow-400">Yadav</span>
+            <span className="text-yellow-400"
+             style={{
+              fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
+            }}
+            >Yadav</span>
           </a>
         </div>
 

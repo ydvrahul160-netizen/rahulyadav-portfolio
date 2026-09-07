@@ -12,13 +12,11 @@ const About = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: true }}
       id="about"
-      className="theme-bg relative py-16 relative overflow-hidden"
+      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-24 sm:py-5 overflow-hidden"
     >
       {/* Background Glow */}
-      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-      {/* yellow glow line 
-        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent opacity-40"></div> */}
+      <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] rounded-full bg-purple-700/10 blur-[140px]" />
+      <div className="absolute -bottom-40 right-0 w-[450px] h-[450px] rounded-full bg-blue-700/10 blur-[140px]" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/****************************** HEADING **********************************/}
@@ -76,14 +74,14 @@ const About = () => {
               <h2 className="theme-heading text-3xl font-semibold mb-4">
                 My Journey
               </h2>
-              <p className="theme-text text-gray-300 leading-7 max-w-xl">
+              <p className="theme-muted text-gray-300 leading-7 max-w-xl">
                 I'm Rahul Yadav, a BCA student and aspiring MERN Stack Developer
                 passionate about building modern and user-friendly web
                 applications. My journey started with HTML, CSS, and JavaScript,
                 and gradually expanded to React.js, Node.js, Express.js, and
                 MongoDB.
               </p>
-              <p className="theme-text text-gray-300 mb-8">
+              <p className="theme-muted text-gray-300 mb-8">
                 I am continuously improving my skills in full-stack web
                 development by building projects and exploring modern web
                 technologies. I enjoy creating responsive interfaces, solving
