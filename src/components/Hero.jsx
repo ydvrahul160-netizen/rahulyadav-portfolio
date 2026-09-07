@@ -46,7 +46,13 @@ const Hero = () => {
               duration: 1,
               ease: "easeOut",
             }}
-            className="relative z-10 mt-12 sm:mt-16"
+            className="
+  relative
+  z-10
+  -translate-y-20
+  sm:-translate-y-12
+  lg:-translate-y-4
+"
           >
             {/* Image glow */}
             <div className="absolute inset-10 bg-purple-600/20 blur-[80px]" />
