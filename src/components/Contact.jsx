@@ -85,17 +85,10 @@ const Contact = () => {
   // --------------------------
   //
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
-      viewport={{ once: false, amount: 0.05 }}
+    <section
       id="contact"
-      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-20 sm:py-5 overflow-hidden"
+      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-16 sm:py-24 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <h2 className="theme-heading text-3xl font-black text-center mb-4">
           Get In <span className="text-yellow-300">Touch</span>
@@ -112,7 +105,7 @@ const Contact = () => {
               src={monkey}
               alt="Cute monkey"
               className="absolute z-20 pointer-events-none w-25 sm:w-32 md:w-40 lg:w-48 left-1/2 -translate-x-1/2 -top-16 sm:-top-18 md:-top-24 lg:-top-30
-              left-[38px] sm:left-[40px] md:left-[80px] lg:left-[80px] scale-x-[-1]"
+               scale-x-[-1]"
             />
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* NAME BOX*/}
@@ -281,7 +274,7 @@ const Contact = () => {
         </div>
         {/* form end */}
       </div>
-    </motion.div>
+    </section>
   );
 };
 

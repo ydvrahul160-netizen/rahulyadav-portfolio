@@ -23,19 +23,10 @@ const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   return (
-    <motion.section
+    <section
       id="projects"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
-      viewport={{ once: false, amount: 0.08 }}
-      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-20 sm:py-5 overflow-hidden"
+      className=" bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-16 sm:py-24 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-
-      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-
       {/* Main Container */}
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* Section Header */}
@@ -161,7 +152,7 @@ const Projects = () => {
           </Link>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

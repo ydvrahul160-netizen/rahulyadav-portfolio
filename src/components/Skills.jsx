@@ -4,26 +4,18 @@ import { skills } from "../assets/assets";
 
 const Skills = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
-      viewport={{ once: false, amount: 0.05 }}
+    <section
       id="skills"
-      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-24 sm:py-5 overflow-hidden"
+      className="bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-16 sm:py-20 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-0 top-20 h-52 w-52 rounded-full bg-blue/40 blur-[100px] sm:left-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-10 right-0 h-52 w-52 rounded-full bg-blue/30 blur-[100px] sm:right-10 sm:h-72 sm:w-72 sm:blur-[120px]" />
-      
       <div className=" max-w-7xl mx-auto px-6 lg:px-10">
         <h2 className="theme-heading text-3xl font-bold text-center mb-4">
           My <span className="text-yellow-300">Skills</span>
         </h2>
 
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 blur-[120px] rounded-full"></div>
+        {/* <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 blur-[120px] rounded-full"></div>
 
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/10 blur-[120px] rounded-full"></div> */}
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
           Technologies I work with to bring ideas to life
         </p>
@@ -38,10 +30,14 @@ const Skills = () => {
               {/* icon and title */}
               <div className="flex items-center mb-4">
                 <skill.icon className="w-12 h-12 text-sky-400 mr-6" />
-                <h3 className="theme-heading text-xl font-bold text-white">{skill.title}</h3>
+                <h3 className="theme-heading text-xl font-bold text-white">
+                  {skill.title}
+                </h3>
               </div>
-               {/* description */}
-              <p className="theme-text text-gray-400 mb-4">{skill.description}</p>
+              {/* description */}
+              <p className="theme-text text-gray-400 mb-4">
+                {skill.description}
+              </p>
 
               {/*proficiency  */}
               <div className="mt-5 mb-5">
@@ -62,7 +58,7 @@ const Skills = () => {
                   />
                 </div>
               </div>
-                
+
               {/* tags */}
               <div className="flex flex-wrap gap-2">
                 {skill.tags.map((tech) => (
@@ -78,8 +74,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      
-    </motion.div>
+    </section>
   );
 };
 

@@ -6,19 +6,11 @@ import ProfileCard from "./ProfileCard";
 
 const About = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
-      viewport={{ once: true }}
+    <section
       id="about"
-      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-24 sm:py-5 overflow-hidden"
+      className=" bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-16 sm:py-24 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] rounded-full bg-purple-700/10 blur-[140px]" />
-      <div className="absolute -bottom-40 right-0 w-[450px] h-[450px] rounded-full bg-blue-700/10 blur-[140px]" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className=" max-w-7xl mx-auto px-6 lg:px-10">
         {/****************************** HEADING **********************************/}
         <h2 className="theme-heading text-3xl font-bold text-center mb-4">
           About <span className="text-yellow-300">Me</span>
@@ -82,8 +74,6 @@ const About = () => {
                 MongoDB.
               </p>
               <p className="theme-muted text-gray-300 mb-8">
-                I am continuously improving my skills in full-stack web
-                development by building projects and exploring modern web
                 technologies. I enjoy creating responsive interfaces, solving
                 programming challenges, and exploring new technologies to
                 improve my skills. Currently, I am focused on building
@@ -136,7 +126,7 @@ const About = () => {
           </motion.div>
         </div>
       </div>
-    </motion.div>
+    </section>
   );
 };
 
