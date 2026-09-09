@@ -10,11 +10,11 @@ import {
   FaBriefcase,
   FaEnvelope,
 } from "react-icons/fa6";
-import { FaGear, FaSun, FaMoon } from "react-icons/fa6";
+import { FaGear } from "react-icons/fa6";
 import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
-  const [showMenu, setshowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showFeaturePopup, setShowFeaturePopup] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -37,7 +37,7 @@ const Navbar = () => {
       <div
         className=" w-full max-w-[1400px] rounded-2xl 
           px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center relative  dark:shadow-white/5"
-        >
+      >
         <div>
           <a
             href="#"
@@ -47,15 +47,18 @@ const Navbar = () => {
             }}
           >
             Rahul
-            <span className="text-yellow-400"
-             style={{
-              fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
-            }}
-            >Yadav</span>
+            <span
+              className="text-yellow-400"
+              style={{
+                fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
+              }}
+            >
+              Yadav
+            </span>
           </a>
         </div>
 
-        {/* desktop menu */}
+        {/*--------------------------------- desktop menu ---------------------------------------*/}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           <a
             href="#home"
@@ -132,7 +135,7 @@ const Navbar = () => {
               />
             </button>
 
-            {/* setting dropdown */}
+            {/*--------------------------------- desktop setting dropdown ---------------------------------------*/}
             <AnimatePresence>
               {showSettings && (
                 <motion.div
@@ -168,13 +171,6 @@ const Navbar = () => {
                     {theme === "dark" ? "Light" : "Dark"}
                   </button>
 
-                  {/* <button
-                    onClick={() => setShowFeaturePopup(true)}
-                    className="mt-3 theme-text theme-bg3 w-full text-left px-3 py-2 hover:bg-white/10 rounded-lg"
-                  >
-                    Theme
-                  </button> */}
-
                   <button
                     onClick={() => setShowFeaturePopup(true)}
                     className="mt-3 theme-text theme-bg3 w-full text-left px-3 py-2 hover:bg-white/10 rounded-lg"
@@ -189,16 +185,7 @@ const Navbar = () => {
                     Accent Color
                   </button>
                   {/* Footer */}
-                  <div
-                    className="
-                        mx-3 mb-3
-                        mt-1
-                        px-5 py-3
-                        rounded-xl
-                        bg-yellow-400/5
-                        border border-yellow-400/10
-                      "
-                  >
+                  <div className="mx-3 mb-3  mt-1 px-5 py-3 rounded-xl bg-yellow-400/5 border border-yellow-400/10">
                     <p className="text-xs text-gray-500 dark:text-gray-400">
                       Crafted with
                       <span className="mx-1 text-red-400">❤️</span>
@@ -215,142 +202,318 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/*---------------------------tablet / Mobile Menu Icon --------------------------*/}
-        <div className="flex items-center gap-2 theme-heading lg:hidden ">
-          {showMenu ? (
-            <FaXmark
-              className="text-2xl cursor-pointer"
-              onClick={() => setshowMenu(!showMenu)}
-            />
-          ) : (
-            <FaBars
-              className="text-2xl cursor-pointer"
-              onClick={() => setshowMenu(!showMenu)}
-            />
-          )}
+        {/*--------------------------- tablet / Mobile Menu Icon --------------------------*/}
+        <div className="flex items-center theme-heading lg:hidden">
+          <button
+            type="button"
+            onClick={() => setShowMenu(true)}
+            className="flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300 hover:bg-gray-600 hover:text-white dark:border-white/10 "
+            aria-label="Open menu"
+          >
+            <FaBars className="text-lg" />
+          </button>
         </div>
       </div>
 
-      {/* conditions to show menu when */}
+      {/*-------------------------------------- conditions to show menu when --------------------------------------------------*/}
+
+      {/* -------------------------------------Mobile / Tablet full screen menu------------------------------------------------ */}
 
       <AnimatePresence>
         {showMenu && (
           <motion.div
-            className=" fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
-            onClick={() => setshowMenu(false)}
+            className={`fixed inset-0 z-[100] flex justify-end backdrop-blur-md lg:hidden
+            ${theme === "dark" ? "bg-[#080b13]/75" : "bg-[#dfe4ee]/70"}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setShowMenu(false)}
           >
+            {/*----------------------------------------Menu card---------------------------------------------*/}
+
             <motion.div
-              className="theme-bg fixed right-0 top-0 flex h-dvh w-[85%] max-w-sm flex-col overflow-y-auto border-l border-white/10 shadow-2xl"
+              className={`relative flex h-full w-[88%] max-w-[400px] flex-col overflow-hidden rounded-l-[30px] border-l border-y shadow-2xl
+                ${
+                  theme === "dark"
+                    ? "border-white/[0.08] bg-[#0d111b]"
+                    : "border-black/[0.08] bg-[#f8f9fc]"
+                }`
+              }
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{
                 type: "spring",
-                stiffness: 300,
+                stiffness: 280,
                 damping: 30,
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Mobile Menu Header */}
-              <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
-                <div>
-                  <p className="theme-heading text-lg font-semibold">Menu</p>
+              {/*---------------------------------------Subtle Purple Glow-------------------------------------------*/}
 
-                  <p className="theme-text mt-0.5 text-xs opacity-60">
-                    Explore my portfolio
-                  </p>
+              <div className="pointer-events-none absolute -right-24 top-20 h-48 w-48 rounded-full bg-purple-500/10 blur-3xl " />
+
+              <div className="pointer-events-none absolute -left-24 bottom-20 h-48 w-48 rounded-full bg-pink-500/10 blur-3xl" />
+
+              {/*-------------------------------------- Close btn -------------------------------------------- */}
+
+              <motion.button
+                type="button"
+                onClick={() => setShowMenu(false)}
+                className={`absolute right-5 top-5 z-20 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300
+
+                 ${
+                   theme === "dark"
+                     ? "bg-white/[0.07] text-white hover:bg-black"
+                     : "bg-black/[0.06] text-gray-800 hover:bg-black/50 hover:text-white"
+                 }
+               `}
+                initial={{ opacity: 0, scale: 0, rotate: -90 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ delay: 0.2, type: "spring", stiffness: 300 }}
+              >
+                <FaXmark className="text-lg" />
+              </motion.button>
+
+              {/*---------------------------------------- Profile header ------------------------------------------ */}
+
+              <motion.div
+                className="relative px-6 pb-5 pt-7"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15, duration: 0.4 }}
+              >
+                {/* Profile Circle */}
+
+                <div
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-black-500 to-gray-500 text-xl
+                    font-bold text-white shadow-lg shadow-purple-500/20 "
+                >
+                  R
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setshowMenu(false)}
-                  className="theme-heading flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300 hover:bg-yellow-400/10 hover:text-yellow-400"
-                  aria-label="Close menu"
-                >
-                  <FaXmark className="text-2xl" />
-                </button>
-              </div>
+                {/* Name */}
 
-              <div className="theme-bg flex flex-col gap-2 px-4 py-6">
-                <a
+                <h2
+                  className={`mt-3 text-xl font-semibold
+                   ${theme === "dark" ? "text-white" : "text-gray-900"}
+                 `}
+                >
+                  Rahul Yadav
+                </h2>
+
+                {/* Role */}
+
+                <p
+                  className={`mt-1 text-xs
+                   ${theme === "dark" ? "text-gray-400" : "text-gray-500"}
+                 `}
+                >
+                  MERN Stack Developer
+                </p>
+              </motion.div>
+
+              {/*------------------------------------ Divider --------------------------------------------*/}
+
+              <div
+                className={`mx-6 h-px
+                  ${theme === "dark" ? "bg-white/10" : "bg-black/10"}
+               `}
+              />
+
+              {/*------------------------------------- Navigation -------------------------------------------------*/}
+
+              <div
+                className="relative flex-1 overflow-y-auto px-4 py-5"
+              >
+                {/*--------------------------------- Home --------------------------------------- */}
+
+                <motion.a
                   href="#home"
-                  onClick={() => setshowMenu(false)}
-                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
+                  onClick={() => setShowMenu(false)}
+                  className={`flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
+                   ${
+                     theme === "dark"
+                     ? "bg-purple-500/15 text-white hover:bg-purple-500/20"
+                     : "bg-purple-500/10 text-gray-900 hover:bg-purple-500/15"
+                    }
+                 `}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.25 }}
                 >
-                  <FaHouse className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
+                  <span
+                    className=" flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-black-500  to-gray-500 text-white"
+                  >
+                    <FaHouse className="text-sm" />
+                  </span>
+
                   <span>Home</span>
-                </a>
+                </motion.a>
 
-                <a
+                {/*------------------------------- About ------------------------------------------------ */}
+
+                <motion.a
                   href="#about"
-                  onClick={() => setshowMenu(false)}
-                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
-                >
-                  <FaUser className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
-                  About
-                </a>
+                  onClick={() => setShowMenu(false)}
+                  className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
 
-                <a
+                   ${
+                      theme === "dark"
+                      ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                      : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                    }
+                 `}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <span className="w-8 text-center">
+                    <FaUser />
+                  </span>
+
+                  <span>About</span>
+                </motion.a>
+
+                {/* --------------------------------------- Skills --------------------------------------------*/}
+
+                <motion.a
                   href="#skills"
-                  onClick={() => setshowMenu(false)}
-                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
-                >
-                  <FaCode className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
-                  Skills
-                </a>
+                  onClick={() => setShowMenu(false)}
+                  className={`mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
 
-                <a
+                   ${
+                     theme === "dark"
+                     ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                     : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                    }
+                 `}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.35 }}
+                >
+                  <span className="w-8 text-center">
+                    <FaCode />
+                  </span>
+
+                  <span>Skills</span>
+                </motion.a>
+
+                {/*------------------------------------ Projects ------------------------------------------- */}
+
+                <motion.a
                   href="#projects"
-                  onClick={() => setshowMenu(false)}
-                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
-                >
-                  <FaFolderOpen className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
-                  Projects
-                </a>
+                  onClick={() => setShowMenu(false)}
+                  className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
 
-                <a
+                    ${
+                      theme === "dark"
+                      ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                      : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                    }
+                 `}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <span className="w-8 text-center">
+                    <FaFolderOpen />
+                  </span>
+
+                  <span>Projects</span>
+                </motion.a>
+
+                {/*--------------------------------- Experience ---------------------------------------------*/}
+
+                <motion.a
                   href="#work"
-                  onClick={() => setshowMenu(false)}
-                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
-                >
-                  <FaBriefcase className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
-                  Experience
-                </a>
+                  onClick={() => setShowMenu(false)}
+                  className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
 
-                <a
+                   ${
+                     theme === "dark"
+                     ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                     : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                    }
+                 `}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.45 }}
+                >
+                  <span className="w-8 text-center">
+                    <FaBriefcase />
+                  </span>
+
+                  <span>Experience</span>
+                </motion.a>
+
+                {/*----------------------------------------- Contact ---------------------------------------------------- */}
+
+                <motion.a
                   href="#contact"
-                  onClick={() => setshowMenu(false)}
-                  className="theme-text group flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:translate-x-1 hover:bg-yellow-400/10 hover:text-yellow-400"
-                >
-                  <FaEnvelope className="shrink-0 text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
-                  Contact
-                </a>
+                  onClick={() => setShowMenu(false)}
+                  className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
 
-                <button
+                   ${
+                      theme === "dark"
+                      ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                      : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                    }
+                 `}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <span className="w-8 text-center">
+                    <FaEnvelope />
+                  </span>
+
+                  <span>Contact</span>
+                </motion.a>
+
+                {/*------------------------------------------- Divider Under ----------------------------------------*/}
+
+                <div
+                  className={`my-5 h-px
+                   ${theme === "dark" ? "bg-white/10" : "bg-black/10"}
+                 `}
+                />
+
+                {/*--------------------------------------- Settings --------------------------------------------*/}
+
+                <motion.button
                   type="button"
                   onClick={() => setShowSettings((prev) => !prev)}
-                  className="theme-text flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium transition-all duration-300 hover:bg-yellow-400/10 hover:text-yellow-400"
+                  className={`flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-sm font-medium transition-all
+                    ${
+                      theme === "dark"
+                        ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                        : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                    }
+                  `}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.55 }}
                 >
                   <span className="flex items-center gap-4">
-                    <FaGear
-                      className={`transition-transform duration-500 ${
-                        showSettings ? "rotate-90" : ""
-                      }`}
-                    />
+                    <span className="w-8 text-center">
+                      <FaGear />
+                    </span>
+
                     <span>Settings</span>
                   </span>
 
                   <span
-                    className={`text-sm transition-transform duration-300 ${
-                      showSettings ? "rotate-180" : ""
-                    }`}
+                    className={`text-xs transition-transform duration-300
+                     ${showSettings ? "rotate-180" : ""}
+                   `}
                   >
                     ↓
                   </span>
-                </button>
+                </motion.button>
+
+                {/*---------------------------------------------- Settings content ------------------------------------------------*/}
 
                 <AnimatePresence initial={false}>
                   {showSettings && (
@@ -358,55 +521,123 @@ const Navbar = () => {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-2 space-y-1 rounded-xl border border-white/10 bg-white/5 p-2">
+                      <div
+                        className={` mt-1 rounded-xl border p-2
+                          ${
+                            theme === "dark"
+                              ? "border-white/10 bg-white/[0.03]"
+                              : "border-black/10 bg-black/[0.02]"
+                          }
+                       `}
+                      >
                         {/* Theme */}
+
                         <button
                           type="button"
                           onClick={toggleTheme}
-                          className="theme-text flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm transition-colors hover:bg-yellow-400/10 hover:text-yellow-400"
+                          className={` flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm
+                           ${
+                             theme === "dark"
+                               ? "text-gray-300 hover:bg-white/5"
+                               : "text-gray-600 hover:bg-black/5"
+                           }
+                         `}
                         >
                           <span>
                             {theme === "dark" ? "Light Theme" : "Dark Theme"}
                           </span>
 
-                          <span className="text-xs opacity-60">
-                            {theme === "dark" ? "☀" : "☾"}
-                          </span>
+                          <span>{theme === "dark" ? "☀" : "☾"}</span>
                         </button>
 
                         {/* Animations */}
+
                         <button
                           type="button"
                           onClick={() => setShowFeaturePopup(true)}
-                          className="theme-text flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm transition-colors hover:bg-yellow-400/10 hover:text-yellow-400"
+                          className={`flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm
+                            ${
+                              theme === "dark"
+                                ? "text-gray-300 hover:bg-white/5"
+                                : "text-gray-600 hover:bg-black/5"
+                            }
+                         `}
                         >
                           <span>Animations</span>
-                          <span className="text-xs opacity-60">→</span>
+
+                          <span>→</span>
                         </button>
 
                         {/* Accent Color */}
+
                         <button
                           type="button"
                           onClick={() => setShowFeaturePopup(true)}
-                          className="theme-text flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm transition-colors hover:bg-yellow-400/10 hover:text-yellow-400"
+                          className={` flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm
+
+                           ${
+                             theme === "dark"
+                               ? "text-gray-300 hover:bg-white/5"
+                               : "text-gray-600 hover:bg-black/5"
+                           }
+                            `}
                         >
                           <span>Accent Color</span>
-                          <span className="text-xs opacity-60">→</span>
+
+                          <span>→</span>
                         </button>
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
+
+              {/*---------------------------------------------- Bottom Resume Btn --------------------------------------------------- */}
+
+              <motion.div
+                className="relative px-5 pb-5"
+                initial={{opacity: 0,y: 20 }}
+                animate={{opacity: 1,y: 0}}
+                transition={{delay: 0.6}}
+              >
+                <div
+                  className={` mb-4 h-px
+                   ${theme === "dark" ? "bg-white/10" : "bg-black/10"}
+                 `}
+                />
+
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-black to-gray-600 px-4 py-3 text-sm
+                     font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:scale-[1.02] "
+                >
+                  View Resume
+                </a>
+
+                <p
+                  className={` mt-3 text-center text-[10px]
+                   ${theme === "dark" ? "text-white/30" : "text-gray-400"}
+                 `}
+                >
+                  © 2026 Rahul Yadav
+                </p>
+              </motion.div>
+
+              {/*----------------------------------- Decorative Bottom Glow ---------------------------------------*/}
+
+              <div
+                className="pointer-events-none absolute bottom-[-60px] right-[-50px] h-40 w-40 rounded-full bg-purple-500/10 blur-3xl"
+              />
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* setting function block Under Development popup */}
+      {/*---------------------------------- setting function block Under Development popup -------------------------------------*/}
       <AnimatePresence>
         {showFeaturePopup && (
           <motion.div
