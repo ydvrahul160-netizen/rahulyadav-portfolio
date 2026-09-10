@@ -141,7 +141,7 @@ export const projects = [
     tech: ["React", "tailwind", "Framer Motion"],
     icons: [FaReact, FaCloud],
     github: "#",
-    live: true,
+    live: "https://rahulyadav-portfolio-psi.vercel.app/",
   },
   {
     title: "Todo App",
@@ -170,8 +170,8 @@ export const projects = [
     image: projectImg6,
     tech: ["React", "OpenAI API", "Cloudinary", "Tailwind CSS"],
     icons: [FaRobot, FaReact, FaCloud],
-    github: "#",
-    live: true,
+    github: "https://github.com/ydvrahul160-netizen/InterviewPilot",
+    live: "https://interviewpilot-1-hp61.onrender.com/",
   },
 ];
 
