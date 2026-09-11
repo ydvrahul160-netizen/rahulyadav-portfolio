@@ -17,10 +17,8 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaJs,
-  SiTailwindcss,
-  SiFramer,
-  SiMongodb,
 } from "react-icons/fa";
+import { SiFramer, SiTailwindcss, SiMongodb } from "react-icons/si";
 
 import profileImg from "../assets/profile.avif";
 import projectImg1 from "../assets/project1.avif";
