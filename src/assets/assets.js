@@ -4,7 +4,6 @@ import {
   FaCode,
   FaReact,
   FaServer,
-  FaMobileAlt,
   FaTools,
   FaCodeBranch,
   FaBook,
@@ -15,6 +14,9 @@ import {
   FaDatabase,
   FaCloud,
   FaRobot,
+  FaHtml5, 
+  FaCss3Alt, 
+  FaJs,
 } from "react-icons/fa";
 
 import profileImg from "../assets/profile.avif";
@@ -173,6 +175,16 @@ export const projects = [
     github: "https://github.com/ydvrahul160-netizen/InterviewPilot",
     live: "https://interviewpilot-1-hp61.onrender.com/",
   },
+  {
+  title: "Smart TranslateMate",
+  description:
+    "A modern translation web app that allows users to translate text quickly across multiple languages with a clean and responsive interface.",
+  image: projectImg5,
+  tech: ["HTML", "CSS", "JavaScript", "Node.js"],
+  icons: [FaHtml5, FaCss3Alt, FaJs, FaNodeJs],
+  github: "https://github.com/ydvrahul160-netizen/TranslateApp",
+  live: "https://translate-web-app.netlify.app/",
+},
 ];
 
 export const workData = [
