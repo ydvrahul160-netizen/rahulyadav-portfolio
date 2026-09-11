@@ -14,9 +14,12 @@ import {
   FaDatabase,
   FaCloud,
   FaRobot,
-  FaHtml5, 
-  FaCss3Alt, 
+  FaHtml5,
+  FaCss3Alt,
   FaJs,
+  SiTailwindcss,
+  SiFramer,
+  SiMongodb,
 } from "react-icons/fa";
 
 import profileImg from "../assets/profile.avif";
@@ -113,7 +116,7 @@ export const projects = [
     tech: ["HTML", "CSS", "JavaScript"],
     icons: [FaReact, FaNodeJs, FaDatabase, FaStripe],
     github: "https://github.com/yourusername/ecommerce-platform",
-    live: "",
+    live: "true",
   },
   {
     title: "Education Hub",
@@ -128,20 +131,20 @@ export const projects = [
   {
     title: "Weather App",
     description:
-      "A mobile app for tracking workouts, nutrition, and health metrics.",
+      "A responsive weather application that shows real-time weather information based on the user's location or searched city.",
     image: projectImg3,
-    tech: ["React", "tailwind"],
-    icons: [FaReact, FaDatabase],
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    icons: [FaHtml5, FaCss3Alt, FaJs],
     github: "#",
-    live: true,
+    live: "https://weather-aap0.netlify.app/",
   },
   {
     title: "Portfolio Website",
     description:
-      "A personal portfolio to showcase projects, skills, and blogs with dark/light mode support.",
+      "A responsive personal portfolio website to showcase my skills, projects, resume, and contact information with dark and light theme support.",
     image: projectImg4,
-    tech: ["React", "tailwind", "Framer Motion"],
-    icons: [FaReact, FaCloud],
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    icons: [FaReact, SiTailwindcss, SiFramer],
     github: "#",
     live: "https://rahulyadav-portfolio-psi.vercel.app/",
   },
@@ -153,7 +156,7 @@ export const projects = [
     tech: ["React", "Tailwind", "Node.js", "MongoDB"],
     icons: [FaReact, FaNodeJs, FaDatabase],
     github: "#",
-    live: true,
+    live: false,
   },
   {
     title: "AI-Powered Code Reviewer",
@@ -163,28 +166,36 @@ export const projects = [
     tech: ["React", "OpenAI API", "Tailwind CSS"],
     icons: [FaRobot, FaReact, FaCloud],
     github: "#",
-    live: true,
+    live: false,
   },
   {
     title: "InterviewPilot",
     description:
-      "Developing an AI-powered mock interview platform using React.js, Node.js, Express.js, MongoDB, Firebase Authentication, Tailwind CSS, and Gemini API",
+      "An AI-powered mock interview platform that analyzes resumes, generates personalized questions, evaluates answers, and provides final interview feedback.",
     image: projectImg6,
-    tech: ["React", "OpenAI API", "Cloudinary", "Tailwind CSS"],
-    icons: [FaRobot, FaReact, FaCloud],
+    tech: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "OpenRouter API",
+      "Tailwind CSS",
+    ],
+    icons: [FaRobot, FaReact, FaNodeJs, SiMongodb],
     github: "https://github.com/ydvrahul160-netizen/InterviewPilot",
     live: "https://interviewpilot-1-hp61.onrender.com/",
   },
   {
-  title: "Smart TranslateMate",
-  description:
-    "A modern translation web app that allows users to translate text quickly across multiple languages with a clean and responsive interface.",
-  image: projectImg5,
-  tech: ["HTML", "CSS", "JavaScript", "Node.js"],
-  icons: [FaHtml5, FaCss3Alt, FaJs, FaNodeJs],
-  github: "https://github.com/ydvrahul160-netizen/TranslateApp",
-  live: "https://translate-web-app.netlify.app/",
-},
+    title: "Smart TranslateMate",
+    description:
+      "A modern translation web app that allows users to translate text quickly across multiple languages with a clean and responsive interface.",
+    image: projectImg5,
+    tech: ["HTML", "CSS", "JavaScript", "Node.js"],
+    icons: [FaHtml5, FaCss3Alt, FaJs, FaNodeJs],
+    github: "https://github.com/ydvrahul160-netizen/TranslateApp",
+    live: "https://translate-web-app.netlify.app/",
+  },
 ];
 
 export const workData = [
