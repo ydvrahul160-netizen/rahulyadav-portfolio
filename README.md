@@ -1,16 +1,116 @@
-# React + Vite
+# Rahul Yadav — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi, I'm Rahul Yadav, a BCA graduate and a web developer focused on building modern and responsive web applications.
 
-Currently, two official plugins are available:
+I created this portfolio to showcase my skills, projects, resume, and the technologies I'm currently working with.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Portfolio
 
-## React Compiler
+[Visit my Portfolio](https://rahulyadav-portfolio-psi.vercel.app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ What you'll find here
 
-## Expanding the ESLint configuration
+* About me and my background
+* My technical skills
+* Projects I've built
+* Resume
+* Contact section
+* Responsive design for desktop, tablet, and mobile
+* Dark and light theme
+* Smooth and simple UI interactions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+* React
+* Vite
+* JavaScript
+* Tailwind CSS
+* Framer Motion
+* React PDF
+* Swiper
+* EmailJS
+* Vercel
+
+## 📂 Portfolio Sections
+
+### Home
+
+A simple introduction with my current role, skills, and availability.
+
+### About
+
+A short introduction about my education, development journey, and career goals.
+
+### Skills
+
+Technologies and tools that I have worked with, including frontend and backend technologies.
+
+### Projects
+
+A collection of my development projects with their live demos and source code.
+
+### Resume
+
+My resume is available directly from the portfolio.
+
+### Contact
+
+A contact form that allows visitors to get in touch with me.
+
+## 🚀 Run Locally
+
+Clone the repository:
+
+```bas
+git clone https://github.com/ydvrahul160-netizen/RahulYadav_Portfolio.git
+```
+
+Go to the project folder:
+
+```bash
+cd RahulYadav_Portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The project will run on the local Vite development server.
+
+## 📁 Main Technologies
+
+```text
+Frontend      → React + Vite
+Styling       → Tailwind CSS
+Animations    → Framer Motion
+PDF           → React PDF
+Contact       → EmailJS
+Deployment    → Vercel
+```
+
+## 📌 Why I Built This
+
+I wanted a single place where I could show the projects I've built, the technologies I'm learning, and my progress as a developer.
+
+This portfolio will also continue to evolve as I build more projects and improve my skills.
+
+## 👨‍💻 About Me
+
+I'm currently focused on improving my skills in **React, JavaScript, Node.js, Express.js, MongoDB, and Java** while preparing for opportunities as a fresher developer.
+
+## 🔗 Connect With Me
+
+* GitHub: https://github.com/ydvrahul160-netizen
+* LinkedIn: https://www.linkedin.com/in/rahulyadav-77dev/
+
+---
+
+⭐ If you like the portfolio, feel free to check out the projects and repositories.
