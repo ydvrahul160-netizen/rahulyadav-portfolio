@@ -99,13 +99,13 @@ const Contact = () => {
 
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* CONTACT FORM */}
-          <div className="relative theme-bg2 glass rounded-3xl border border-white/10 p-6 ">
+          <div className="theme-bg2 glass rounded-3xl border border-white/10 p-6 ">
             {/* monkey PNG */}
             <motion.img
               src={monkey}
               alt="Cute monkey"
-              className="absolute z-20 pointer-events-none w-25 sm:w-32 md:w-40 lg:w-48
-               left-[15%] -translate-x-1/2 -top-16 sm:-top-18 md:-top-24 lg:-top-30 scale-x-[-1]"
+              className="absolute z-20 pointer-events-none w-25 sm:w-32 md:w-40 lg:w-48 left-1/2 -translate-x-1/2 -top-16 sm:-top-18 md:-top-24 lg:-top-30
+               scale-x-[-1]"
             />
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* NAME BOX*/}

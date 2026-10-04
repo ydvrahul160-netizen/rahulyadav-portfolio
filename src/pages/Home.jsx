@@ -6,6 +6,7 @@ import Projects from '../components/Projects'
 import Work from '../components/Work'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import FinalCTA from "../components/FinalCTA";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Projects/>
       <Work/>
       <Contact/>
+      <FinalCTA />
       <Footer/>
     </div>
   )
