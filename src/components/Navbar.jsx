@@ -238,8 +238,7 @@ const Navbar = () => {
                   theme === "dark"
                     ? "border-white/[0.08] bg-[#0d111b]"
                     : "border-black/[0.08] bg-[#f8f9fc]"
-                }`
-              }
+                }`}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -250,12 +249,6 @@ const Navbar = () => {
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/*---------------------------------------Subtle Purple Glow-------------------------------------------*/}
-
-              <div className="pointer-events-none absolute -right-24 top-20 h-48 w-48 rounded-full bg-purple-500/10 blur-3xl " />
-
-              <div className="pointer-events-none absolute -left-24 bottom-20 h-48 w-48 rounded-full bg-pink-500/10 blur-3xl" />
-
               {/*-------------------------------------- Close btn -------------------------------------------- */}
 
               <motion.button
@@ -284,17 +277,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.4 }}
               >
-                {/* Profile Circle */}
-
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-black-500 to-gray-500 text-xl
-                    font-bold text-white shadow-lg shadow-purple-500/20 "
-                >
-                  R
-                </div>
-
                 {/* Name */}
-
                 <h2
                   className={`mt-3 text-xl font-semibold
                    ${theme === "dark" ? "text-white" : "text-gray-900"}
@@ -324,9 +307,7 @@ const Navbar = () => {
 
               {/*------------------------------------- Navigation -------------------------------------------------*/}
 
-              <div
-                className="relative flex-1 overflow-y-auto px-4 py-5"
-              >
+              <div className="relative flex-1 overflow-y-auto px-4 py-5">
                 {/*--------------------------------- Home --------------------------------------- */}
 
                 <motion.a
@@ -335,17 +316,15 @@ const Navbar = () => {
                   className={`flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
                    ${
                      theme === "dark"
-                     ? "bg-purple-500/15 text-white hover:bg-purple-500/20"
-                     : "bg-purple-500/10 text-gray-900 hover:bg-purple-500/15"
-                    }
+                       ? "bg-purple-500/15 text-white hover:bg-purple-500/20"
+                       : "bg-purple-500/10 text-gray-900 hover:bg-purple-500/15"
+                   }
                  `}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.25 }}
                 >
-                  <span
-                    className=" flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-black-500  to-gray-500 text-white"
-                  >
+                  <span className=" flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-black-500  to-gray-500 text-white">
                     <FaHouse className="text-sm" />
                   </span>
 
@@ -360,10 +339,10 @@ const Navbar = () => {
                   className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
 
                    ${
-                      theme === "dark"
-                      ? "text-gray-300 hover:bg-white/5 hover:text-white"
-                      : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
-                    }
+                     theme === "dark"
+                       ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                       : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                   }
                  `}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -385,9 +364,9 @@ const Navbar = () => {
 
                    ${
                      theme === "dark"
-                     ? "text-gray-300 hover:bg-white/5 hover:text-white"
-                     : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
-                    }
+                       ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                       : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                   }
                  `}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -409,8 +388,8 @@ const Navbar = () => {
 
                     ${
                       theme === "dark"
-                      ? "text-gray-300 hover:bg-white/5 hover:text-white"
-                      : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                        ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                        : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
                     }
                  `}
                   initial={{ opacity: 0, x: 30 }}
@@ -433,9 +412,9 @@ const Navbar = () => {
 
                    ${
                      theme === "dark"
-                     ? "text-gray-300 hover:bg-white/5 hover:text-white"
-                     : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
-                    }
+                       ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                       : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                   }
                  `}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -456,10 +435,10 @@ const Navbar = () => {
                   className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
 
                    ${
-                      theme === "dark"
-                      ? "text-gray-300 hover:bg-white/5 hover:text-white"
-                      : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
-                    }
+                     theme === "dark"
+                       ? "text-gray-300 hover:bg-white/5 hover:text-white"
+                       : "text-gray-600 hover:bg-black/5 hover:text-gray-900"
+                   }
                  `}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -598,9 +577,9 @@ const Navbar = () => {
 
               <motion.div
                 className="relative px-5 pb-5"
-                initial={{opacity: 0,y: 20 }}
-                animate={{opacity: 1,y: 0}}
-                transition={{delay: 0.6}}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
               >
                 <div
                   className={` mb-4 h-px
@@ -613,7 +592,7 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className=" flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-black to-gray-600 px-4 py-3 text-sm
-                     font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:scale-[1.02] "
+                     font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] "
                 >
                   View Resume
                 </a>
@@ -629,9 +608,7 @@ const Navbar = () => {
 
               {/*----------------------------------- Decorative Bottom Glow ---------------------------------------*/}
 
-              <div
-                className="pointer-events-none absolute bottom-[-60px] right-[-50px] h-40 w-40 rounded-full bg-purple-500/10 blur-3xl"
-              />
+              <div className="pointer-events-none absolute bottom-[-60px] right-[-50px] h-40 w-40 rounded-full bg-purple-500/10 blur-3xl" />
             </motion.div>
           </motion.div>
         )}

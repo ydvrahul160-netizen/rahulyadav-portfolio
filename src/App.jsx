@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Resume from "./pages/Resume";
 import AllProjects from "./pages/AllProjects";
 import PortfolioIntro from "./components/PortfolioIntro";
+import ClickSparkles from "./components/ClickSparkles";
 
 const App = () => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const App = () => {
 
   return (
     <>
+     <ClickSparkles />
       <AnimatePresence mode="wait">
         {showIntro ? (
           <PortfolioIntro

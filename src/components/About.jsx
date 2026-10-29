@@ -42,10 +42,10 @@ const About = () => {
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-[75%] w-[75%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#52763B]/15 blur-[90px] dark:bg-[#91B86B]/10" />
 
             {/* Decorative outline */}
-            <div className="absolute inset-x-5 bottom-5 top-5 rotate-6 rounded-[32px] border border-[#52763B]/20 transition-transform duration-500 hover:rotate-3 sm:inset-x-8 sm:rounded-[40px] lg:inset-x-10" />
+            <div className="absolute inset-x-5 bottom-5 top-5 rotate-6 rounded-[32px] border border-[#52763B]/20 transition-transform duration-500 hover:rotate-3 sm:inset-x-8 sm:rounded-[40px] lg:inset-x-8" />
 
             {/* Image container */}
-            <div className="relative mx-auto w-[85%] max-w-[360px] overflow-hidden rounded-[28px] border border-black/[0.08] bg-[#E9EDE5] p-2 shadow-[0_30px_80px_rgba(0,0,0,0.12)] dark:border-white/[0.10] dark:bg-[#171B16] dark:shadow-[0_30px_100px_rgba(0,0,0,0.4)] sm:max-w-[400px] sm:rounded-[36px] sm:p-3 lg:w-full lg:max-w-[440px]">
+            <div className="relative mx-auto w-[85%] max-w-[360px] overflow-hidden rounded-[28px] border border-black/[0.08] bg-[#E9EDE5] p-2 shadow-[0_30px_80px_rgba(0,0,0,0.12)] dark:border-white/[0.10] dark:bg-[#171B16] dark:shadow-[0_30px_100px_rgba(0,0,0,0.4)] sm:max-w-[400px] sm:rounded-[36px] sm:p-3 lg:w-full lg:max-w-[380px]">
               <motion.img
                 src={profileImg1}
                 alt="Rahul Yadav - Full Stack Developer"
@@ -85,7 +85,7 @@ const About = () => {
               <span className="h-px w-10 bg-[#52763B]/50" />
 
               <span className="font-medium uppercase tracking-[0.25em]">
-                Code. Create. Innovate.
+                Always Building, Always Learning.
               </span>
 
               <span className="h-px w-10 bg-[#52763B]/50" />

@@ -18,7 +18,7 @@ const Footer = () => {
       title: "Quick Links",
       links: [
         { name: "Experience", href: "#experience" },
-        { name: "Education", href: "#education" },
+        { name: "Education", href: "#about" },
         { name: "Services", href: "#services" },
         { name: "Contact", href: "#contact" },
       ],
@@ -70,20 +70,7 @@ const Footer = () => {
           : "border-gray-200 bg-[#f8faf8] text-gray-700"
       }`}
     >
-      {/* Decorative background shapes */}
-      {/* <div
-        aria-hidden="true"
-        className={`pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full blur-3xl ${
-          isDark ? "bg-emerald-500/[0.08]" : "bg-emerald-400/[0.12]"
-        }`}
-      /> */}
-
-      {/* <div
-        aria-hidden="true"
-        className={`pointer-events-none absolute -bottom-32 -left-24 h-72 w-72 rounded-full blur-3xl ${
-          isDark ? "bg-teal-500/[0.06]" : "bg-teal-300/[0.12]"
-        }`}
-      /> */}
+      
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-8 pt-12 sm:px-8 sm:pb-10 sm:pt-16 lg:px-12">
         {/* Main footer */}
@@ -199,7 +186,7 @@ const Footer = () => {
           }`}
         >
           <p className="text-xs leading-5 opacity-65">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Rahul Yadav. All rights reserved.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-xs"></div>

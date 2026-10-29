@@ -124,7 +124,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Full Name"
-                  className="theme-text theme-bg w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 resize-none placeholder:text-gray-400"
+                  className="theme-text theme-bg w-full bg-[#111827] border border-white/10 rounded-xl px-4 py-3 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 resize-none placeholder:text-gray-400"
                 />
                 {errors.name && (
                   <p className="text-red-400 text-sm mt-2">{errors.name}</p>
@@ -188,7 +188,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gray-700 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-300 hover:scale-[1.02] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gray-500 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-300 hover:scale-[1.02] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <FaPaperPlane className="text-lg" />
 
