@@ -1,8 +1,17 @@
 import { motion } from "framer-motion";
 import { aboutInfo } from "../assets/assets";
-import myphoto from "../assets/myphoto.png";
+// import myphoto from "../assets/myphoto.png";
 import profileImg1 from "../assets/profileImg1.jpeg";
-import ProfileCard from "./ProfileCard";
+// import ProfileCard from "./ProfileCard";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaArrowDown,
+  FaArrowRight,
+  FaCode,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 const About = () => {
   return (
@@ -22,37 +31,66 @@ const About = () => {
         {/******************************** IMAGE + MY JOURNEY  **************************/}
         <div className="flex flex-col md:flex-row md:items-start items-center gap-4">
           {/* IMAGE */}
-          <div className="hidden lg:block lg:w-2/5 xl:w-1/3">
-            {/* <motion.img
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: "easeInOut" }}
-              viewport={{ once: false, amount: 0.2 }}
-              src={myphoto}
-              alt="img"
-              className="w-full max-w-sm h-[420px] object-cover rounded-2xl mx-auto"
-            /> */}
-            <ProfileCard
-              name="BCA Graduate"
-              title="MERN Stack Developer"
-              handle="rahulyadav"
-              status="Available"
-              contactText="Let's Talk"
-              avatarUrl={profileImg1}
-              showUserInfo
-              enableTilt={true}
-              enableMobileTilt
-              behindGlowEnabled
-              onContactClick={() => {
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-              behindGlowColor="rgba(0, 120, 72, 0.5)"
-              iconUrl="/iconpattern.png"
-              innerGradient="linear-gradient(145deg,#00784855 0%,#71C4FF22 100%)"
-            />
-          </div>
+          {/* RIGHT CONTENT: PROFILE */}
+          <motion.div
+            initial={{ opacity: 0, x: 35, scale: 0.97 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+            className="relative order-1 w-full min-w-0 md:w-[40%] md:shrink-0 lg:w-[40%] xl:w-[35%]"
+          >
+            {/* Image glow */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-[75%] w-[75%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#52763B]/15 blur-[90px] dark:bg-[#91B86B]/10" />
+
+            {/* Decorative outline */}
+            <div className="absolute inset-x-5 bottom-5 top-5 rotate-6 rounded-[32px] border border-[#52763B]/20 transition-transform duration-500 hover:rotate-3 sm:inset-x-8 sm:rounded-[40px] lg:inset-x-10" />
+
+            {/* Image container */}
+            <div className="relative mx-auto w-[85%] max-w-[360px] overflow-hidden rounded-[28px] border border-black/[0.08] bg-[#E9EDE5] p-2 shadow-[0_30px_80px_rgba(0,0,0,0.12)] dark:border-white/[0.10] dark:bg-[#171B16] dark:shadow-[0_30px_100px_rgba(0,0,0,0.4)] sm:max-w-[400px] sm:rounded-[36px] sm:p-3 lg:w-full lg:max-w-[440px]">
+              <motion.img
+                src={profileImg1}
+                alt="Rahul Yadav - Full Stack Developer"
+                loading="eager"
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative aspect-[4/5] w-full rounded-[22px] object-cover object-center sm:rounded-[28px]"
+              />
+
+              {/* Image overlay */}
+              <div className="pointer-events-none absolute inset-2 rounded-[22px] bg-gradient-to-t from-black/50 via-transparent to-transparent sm:inset-3 sm:rounded-[28px]" />
+
+              {/* Image label */}
+              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3 sm:bottom-7 sm:left-7 sm:right-7">
+                <div>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/70">
+                    Based in
+                  </p>
+
+                  <p className="mt-1 text-sm font-semibold text-white sm:text-base">
+                    India
+                  </p>
+                </div>
+
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md">
+                  <FaCode />
+                </div>
+              </div>
+            </div>
+
+            {/* Decorative index */}
+            <div className="mt-8 flex items-center justify-center gap-3 text-xs text-gray-400 dark:text-white/30 lg:mt-10">
+              <span className="h-px w-10 bg-[#52763B]/50" />
+
+              <span className="font-medium uppercase tracking-[0.25em]">
+                Code. Create. Innovate.
+              </span>
+
+              <span className="h-px w-10 bg-[#52763B]/50" />
+            </div>
+          </motion.div>
 
           {/* TEXT CONTENT */}
           <motion.div
