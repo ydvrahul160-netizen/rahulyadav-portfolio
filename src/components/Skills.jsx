@@ -29,8 +29,8 @@ const Skills = () => {
             >
               {/* icon and title */}
               <div className="flex items-center mb-4">
-                <skill.icon className="w-12 h-12 text-sky-400 mr-6" />
-                <h3 className="theme-heading text-xl font-bold text-white">
+                <skill.icon className="w-12 h-12 text-gray-400 mr-6" />
+                <h3 className="theme-heading text-xl font-bold text-gray-300">
                   {skill.title}
                 </h3>
               </div>
@@ -42,19 +42,19 @@ const Skills = () => {
               {/*proficiency  */}
               <div className="mt-5 mb-5">
                 <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-400">Proficiency</span>
-                  <span className="text-sky-400 font-semibold">
+                  <span className="text-gray-500">Proficiency</span>
+                  <span className="text-gray-500 font-semibold">
                     {skill.level}%
                   </span>
                 </div>
 
-                <div className="theme-border h-2 rounded-full bg-white/10 overflow-hidden">
+                <div className="theme-border h-2 rounded-full bg-gray-300 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
-                    className="h-full rounded-full bg-sky-400"
+                    className="h-full rounded-full bg-gray-500"
                   />
                 </div>
               </div>
