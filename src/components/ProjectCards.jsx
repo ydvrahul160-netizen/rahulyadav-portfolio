@@ -66,7 +66,7 @@ const ProjectCards = ({
               href={live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-sky-400 px-4 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-sky-300 hover:shadow-lg hover:shadow-sky-400/20 sm:text-base"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-gray-300 boreder border-b-dark-400 px-4 py-1.5 text-sm font-semibold text-black transition-all duration-300 hover:text-green-800 sm:text-base"
             >
               Live Demo
               <FaExternalLinkAlt className="text-xs" />
@@ -83,7 +83,7 @@ const ProjectCards = ({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="theme-heading theme-bg2 inline-flex items-center justify-center gap-2 rounded-lg border border-sky-300/30 px-4 py-2.5 text-sm font-semibold transition-all duration-300 hover:border-sky-300 hover:bg-white/10 sm:text-base"
+              className="theme-heading theme-bg2 inline-flex items-center justify-center gap-2 rounded-lg border border-gray-600 px-2 py-1.5 text-sm font-semibold transition-all duration-200 hover:text-green-800 sm:text-base"
             >
               <FaGithub />
               GitHub
