@@ -106,8 +106,8 @@ const FinalCTA = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-16 sm:py-24 overflow-hidden">
-      <div className="relative mx-auto w-[92%] max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-black py-24 sm:py-28 md:py-32">
+    <section className=" bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-16 sm:py-24 overflow-hidden pt-2 sm:pt-4 md:pt-6">
+      <div className="relative mx-auto w-[92%] max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-black py-12 sm:py-16 md:py-20 ">
         {/* Particle Background */}
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 

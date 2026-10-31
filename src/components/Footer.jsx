@@ -64,12 +64,9 @@ const Footer = () => {
 
   return (
     <footer
-      className={`relative overflow-hidden border-t transition-colors duration-300 ${
-        isDark
-          ? "border-white/10 bg-[#0b0f0d] text-gray-300"
-          : "border-gray-200 bg-[#f8faf8] text-gray-700"
-      }`}
+      className={`relative overflow-hidden transition-colors duration-300 bg-gray-100 dark:bg-[#080808]`}
     >
+      {/* border-gray-300/70 dark:border-white/[0.08] */}
       
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-8 pt-12 sm:px-8 sm:pb-10 sm:pt-16 lg:px-12">
