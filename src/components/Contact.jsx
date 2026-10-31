@@ -99,7 +99,7 @@ const Contact = () => {
 
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* CONTACT FORM */}
-          <div className="theme-bg2 glass rounded-3xl border border-white/10 p-6 ">
+          <div className="theme-bg3 glass rounded-3xl border border-gray-300 dark:border-gray-950 dark:bg-black/25 p-6 ">
             {/* monkey PNG */}
             <motion.img
               src={monkey}
@@ -114,7 +114,7 @@ const Contact = () => {
                   htmlFor="name"
                   className="theme-heading flex items-center gap-2 text-gray-300 mb-2"
                 >
-                  <User size={20} className="text-blue-500 shrink-0" />
+                  <User size={20} className="text-gray-600 dark:text-gray-300 shrink-0" />
                   <span>Your Name</span>
                 </label>
                 <input
@@ -137,7 +137,7 @@ const Contact = () => {
                   htmlFor="email"
                   className="  theme-heading text-gray-300 mb-2 flex items-center gap-2"
                 >
-                  <Mail size={20} className="text-blue-500 shrink-0" />
+                  <Mail size={20} className="text-gray-600 dark:text-gray-300 shrink-0" />
                   <span>Email Address</span>
                 </label>
                 <input
@@ -161,7 +161,7 @@ const Contact = () => {
                   htmlFor="message"
                   className="theme-heading text-gray-300 mb-2 flex items-center gap-2"
                 >
-                  <MessageSquare size={20} className="text-blue-500 shrink-0" />
+                  <MessageSquare size={20} className="text-gray-600 dark:text-gray-300 shrink-0" />
                   <span>Your Message</span>
                 </label>
                 <textarea
@@ -188,7 +188,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gray-500 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-300 hover:scale-[1.02] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-black text-white dark:text-black dark:bg-white rounded-xl font-semibold hover:bg-sky-600 transition-all duration-300 hover:scale-[1.02] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <FaPaperPlane className="text-lg" />
 
@@ -199,10 +199,14 @@ const Contact = () => {
 
           {/* CONTACT INFORMATION */}
           <div className=" space-y-8">
-            <div className="theme-bg2 glass rounded-2xl p-6 flex items-start gap-4">
-              <div className="text-blue-400 text-2xl mr-4">
-                <FaMapMarkerAlt />
+            <div className="theme-bg3 glass rounded-2xl p-6 flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-gray-200/70 dark:bg-white/[0.06] border border-gray-300/70 dark:border-white/[0.08]">
+                <FaMapMarkerAlt className="text-gray-600 dark:text-gray-300 text-xl" />
               </div>
+
+              {/* <div className="text-blue-400 text-2xl mr-4">
+                <FaMapMarkerAlt />
+              </div> */}
               <div>
                 <h3 className="theme-heading text-lg font-semibold mb-2">
                   Location
@@ -213,10 +217,12 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="theme-bg2 glass rounded-2xl p-6 flex items-start gap-4">
-              <div className="text-blue-400 text-2xl mr-4">
-                <FaEnvelope />
+            <div className="theme-bg3 glass rounded-2xl p-6 flex items-start gap-4">
+
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-gray-200/70 dark:bg-white/[0.06] border border-gray-300/70 dark:border-white/[0.08]">
+                <FaEnvelope className="text-gray-600 dark:text-gray-300 text-xl" />
               </div>
+              
               <div>
                 <h3 className="theme-heading text-lg font-semibold mb-2">
                   Email
@@ -230,9 +236,9 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="theme-bg2 glass rounded-2xl p-6 flex items-start gap-4">
-              <div className="text-blue-400 text-2xl mr-4">
-                <FaPhone />
+            <div className="theme-bg3 glass rounded-2xl p-6 flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-gray-200/70 dark:bg-white/[0.06] border border-gray-300/70 dark:border-white/[0.08]">
+                <FaPhone className="text-gray-600 dark:text-gray-300 text-xl" />
               </div>
               <div>
                 <h3 className="theme-heading text-lg font-semibold mb-2">
@@ -248,7 +254,7 @@ const Contact = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="theme-bg2 pt-4 glass rounded-2xl p-6 flex items-start gap-4">
+            <div className="theme-bg3 pt-4 glass rounded-2xl p-6 flex items-start gap-4">
               <h3 className="theme-heading text-lg font-semibold mb-4">
                 Let's Connect
               </h3>

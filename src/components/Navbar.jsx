@@ -143,7 +143,7 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.96 }}
                   transition={{ duration: 0.2 }}
-                  className=" theme-bg absolute right-0 mt-5 w-56 rounded-xl bg-[#161b22] border border-white/10 shadow-2xl z-50 p-3"
+                  className=" theme-bg absolute right-0 mt-5 w-56 rounded-xl bg-[#161b22] border border-white/10 shadow-2xl z-50 p-3 pb-5"
                 >
                   {/* header */}
                   <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
@@ -183,19 +183,7 @@ const Navbar = () => {
                     className="mt-3 theme-text theme-bg3 w-full text-left px-3 py-2 hover:bg-white/10 rounded-lg"
                   >
                     Accent Color
-                  </button>
-                  {/* Footer */}
-                  <div className="mx-3 mb-3  mt-1 px-5 py-3 rounded-xl bg-yellow-400/5 border border-yellow-400/10">
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
-                      Crafted with
-                      <span className="mx-1 text-red-400">❤️</span>
-                      by
-                    </p>
-
-                    <p className="text-sm font-semibold text-yellow-400">
-                      Rahul Yadav
-                    </p>
-                  </div>
+                  </button> 
                 </motion.div>
               )}
             </AnimatePresence>

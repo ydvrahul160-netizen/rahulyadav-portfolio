@@ -141,7 +141,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-3 mt-5">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg theme-btn-bg text-white text-xs sm:text-sm font-medium
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-emerald-500 dark:text-black text-white text-xs sm:text-sm font-medium
                 hover:opacity-90 hover:scale-[1.02] transition-all duration-300"
             >
               View Projects
