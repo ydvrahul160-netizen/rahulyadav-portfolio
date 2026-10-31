@@ -142,14 +142,17 @@ const About = () => {
                     transition={{ duration: 0.6 + index * 0.2 }}
                     whileHover={{ rotate: 0, scale: 1.02 }}
                     className={`
-                      relative theme-bg3 rounded-3xl border border-blue/30 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group
+                      relative theme-bg3 rounded-3xl border border-gray-300 dark:border-gray-950 dark:bg-black/25 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group
                       ${index === 0 ? "rotate-[-4deg] md:-mt-6 shadow-xl" : ""}
                       ${index === 1 ? "rotate-[3deg] md:-mt-6 shadow-xl" : ""}
                       ${index === 2 ? "rotate-[-3deg] md:-mt-6 shadow-xl" : ""}
                      `}
                   >
-                    <div className="text-sky-400 text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center sm:justify-start">
-                      <data.icon />
+                    <div className="flex items-center mb-4 gap-3 sm:gap-4">
+                      {/* icon background */}
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl bg-gray-200/70 dark:bg-white/[0.06] border border-gray-300/70 dark:border-white/[0.08] shrink-0">
+                        <data.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-300" />
+                      </div>
                     </div>
 
                     <h3 className="theme-heading text-xl font-semibold mb-3">
