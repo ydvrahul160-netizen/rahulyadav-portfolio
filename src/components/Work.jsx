@@ -1,61 +1,114 @@
-// import React from 'react'
+import React from "react";
 import { motion } from "framer-motion";
 import { workData } from "../assets/assets";
 import { FaLaptopCode } from "react-icons/fa6";
-import { FaCode } from "react-icons/fa";
 
 const Work = () => {
   return (
     <section
       id="work"
-      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-3 sm:px-5 lg:px-8 py-16 sm:py-24 overflow-hidden"
+      className="min-h-screen bg-gray-100 dark:bg-[#080808] text-gray-900 dark:text-white px-4 sm:px-6 py-20 sm:py-28 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 ">
-        <h2 className="theme-heading text-3xl font-bold text-center mb-4">
-          Journey & <span className="text-yellow-300">Learning Experience</span>
-        </h2>
-        <p className="theme-text text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          Exploring, building, learning, and growing as a developer every day
-        </p>
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-20">
+          
 
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-12">
+          <h2 className="theme-heading text-3xl sm:text-5xl font-bold mb-5">
+            Journey &{" "}
+            <span className="text-yellow-400">Learning Experience</span>
+          </h2>
+
+          <p className="theme-text max-w-2xl mx-auto text-sm sm:text-base leading-7">
+            Every step is a new opportunity to learn, build, and grow.
+            Here's my journey through development, projects, and continuous learning.
+          </p>
+        </div>
+
+        {/* Timeline */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Curved dotted line - desktop */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block"
+            viewBox="0 0 1000 1000"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path
+              d="M500 0
+                 C500 100 200 100 200 200
+                 S800 300 800 400
+                 S200 500 200 600
+                 S800 700 800 800
+                 S500 900 500 1000"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeDasharray="4 9"
+              className="text-gray-400/60 dark:text-gray-600/60"
+            />
+          </svg>
+
+          {/* Mobile dotted line */}
+          <div className="absolute left-5 top-0 bottom-0 border-l-2 border-dotted border-gray-400/60 dark:border-gray-600/60 sm:hidden" />
+
+          {/* Cards */}
+          <div className="relative space-y-12 sm:space-y-20">
             {workData.map((data, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="relative pl-12 before:content-['']
-                    before:absolute before:left-0 before:top-2 before:w-[2px] before:h-full 
-                    before:bg-gradient-to-b before:from-sky-400 before:to-purple-500 cursor-pointer hover:-translate-y-2 
-                    transition-all duration-300"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5 }}
+                className={`relative flex pl-12 sm:pl-0 ${
+                  index % 2 === 0
+                    ? "sm:justify-start"
+                    : "sm:justify-end"
+                }`}
               >
-                {/* TIMELINE Dot*/}
-                <div className="absolute left-[-0.6rem] top-2 w-5 h-5 rounded-full bg-sky-400 ring-4 ring-sky-400/20">
-                  💻
-                </div>
+                {/* Card */}
+                <div className="theme-bg3 relative w-full sm:w-[42%] rounded-2xl p-5 sm:p-7 border border-gray-300/70 dark:border-white/[0.08] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-400/10 dark:hover:shadow-white/[0.04]">
+                  {/* Icon and duration */}
+                  <div className="flex items-center justify-between gap-3 mb-5">
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-gray-200/70 dark:bg-white/[0.06] border border-gray-300/70 dark:border-white/[0.08]">
+                      <FaLaptopCode className="text-gray-600 dark:text-gray-300 text-xl" />
+                    </div>
 
-                {/* B0x/Card */}
-                <div className="theme-bg3 rounded-3xl border border-blue/30 p-6 hover:-translate-y-3 hover:shadow-[0_0_30px_rgba(59,130,246,.2)] transition-all duration-300 cursor-pointer group">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="theme-heading text-2xl font-bold">
-                      {data.role}
-                    </h3>
-                    <span className="theme-text px-4 py-1 bg-sky-300/20 text-sky-300 rounded-full md:text-sm font-medium">
+                    <span className="text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full bg-gray-200/70 dark:bg-white/[0.06] text-gray-600 dark:text-gray-300 border border-gray-300/70 dark:border-white/[0.08]">
                       {data.duration}
                     </span>
                   </div>
-                  <div className="theme-heading text-sky-400 mb-2">
+
+                  {/* Content */}
+                  <h3 className="theme-heading text-xl sm:text-2xl font-bold mb-2">
+                    {data.role}
+                  </h3>
+
+                  <p className="theme-text text-sm font-medium mb-4">
                     {data.company}
-                  </div>
-                  <p className="theme-text text-gray-300 leading-7">
+                  </p>
+
+                  <p className="theme-text text-sm sm:text-base leading-7">
                     {data.description}
                   </p>
+
+                  {/* Background number */}
+                  <span className="absolute bottom-3 right-5 text-5xl font-bold text-gray-300/40 dark:text-white/[0.04] select-none pointer-events-none">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
+
+        {/* Bottom text */}
+        <div className="text-center mt-20">
+          <p className="theme-text text-sm sm:text-base">
+            Still learning. Still building. Always moving forward.
+          </p>
+        </div>
       </div>
-      {/* yellow glow line  */}
     </section>
   );
 };
