@@ -148,7 +148,7 @@ const About = () => {
                       ${index === 2 ? "rotate-[-3deg] md:-mt-6 shadow-xl" : ""}
                      `}
                   >
-                    <div className="flex items-center mb-4 gap-3 sm:gap-4">
+                    <div className="flex items-center justify-center sm:justify-center mb-4 gap-3 sm:gap-4">
                       {/* icon background */}
                       <div className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl bg-gray-200/70 dark:bg-white/[0.06] border border-gray-300/70 dark:border-white/[0.08] shrink-0">
                         <data.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-300" />

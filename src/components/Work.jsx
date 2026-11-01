@@ -49,10 +49,10 @@ const Work = () => {
           </svg>
 
           {/* Mobile dotted line */}
-          <div className="absolute left-5 top-0 bottom-0 border-l-2 border-dotted border-gray-400/60 dark:border-gray-600/60 sm:hidden" />
+          <div className="absolute left-2 top-0 bottom-0 border-l-2 border-dotted border-gray-400/60 dark:border-gray-600/60 sm:hidden" />
 
           {/* Cards */}
-          <div className="relative space-y-12 sm:space-y-20">
+          <div className="relative space-y-12 sm:space-y-20 right-4">
             {workData.map((data, index) => (
               <motion.div
                 key={index}
@@ -92,10 +92,7 @@ const Work = () => {
                     {data.description}
                   </p>
 
-                  {/* Background number */}
-                  <span className="absolute bottom-3 right-5 text-5xl font-bold text-gray-300/40 dark:text-white/[0.04] select-none pointer-events-none">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  
                 </div>
               </motion.div>
             ))}
