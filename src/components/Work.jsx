@@ -12,16 +12,14 @@ const Work = () => {
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-20">
-          
-
-          <h2 className="theme-heading text-3xl sm:text-5xl font-bold mb-5">
-            Journey &{" "}
-            <span className="text-yellow-400">Learning Experience</span>
+          <h2 className="theme-heading text-3xl font-bold text-center mb-4">
+            Journey &
+            <span className="text-yellow-300"> Learning Experience</span>
           </h2>
 
           <p className="theme-text max-w-2xl mx-auto text-sm sm:text-base leading-7">
-            Every step is a new opportunity to learn, build, and grow.
-            Here's my journey through development, projects, and continuous learning.
+            Every step is a new opportunity to learn, build, and grow. Here's my
+            journey through development, projects, and continuous learning.
           </p>
         </div>
 
@@ -61,9 +59,7 @@ const Work = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5 }}
                 className={`relative flex pl-12 sm:pl-0 ${
-                  index % 2 === 0
-                    ? "sm:justify-start"
-                    : "sm:justify-end"
+                  index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
                 }`}
               >
                 {/* Card */}
@@ -91,8 +87,6 @@ const Work = () => {
                   <p className="theme-text text-sm sm:text-base leading-7">
                     {data.description}
                   </p>
-
-                  
                 </div>
               </motion.div>
             ))}

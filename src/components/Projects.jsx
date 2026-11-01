@@ -145,7 +145,7 @@ const Projects = () => {
         <div className="mt-12 text-center sm:mt-14">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-500 bg-gray-300 px-5 py-2.5 font-semibold text-gray-900 transition-all duration-300 hover:bg-sky-300 hover:shadow-lg hover:shadow-sky-400/20 sm:px-6 sm:py-3"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-black to-gray-600 px-6 py-2 font-semibold text-white transition-all duration-300 hover:bg-sky-300 hover:shadow-lg shadow-lg shadow-white/10 hover:shadow-sky-400/20 hover:scale-[1.02] sm:px-6 sm:py-3 text-sm"
           >
             View All Projects
             <FaArrowRight className="text-sm" />

@@ -10,7 +10,7 @@ const ProjectCards = ({
   github,
 }) => {
   return (
-    <article className="theme-bg3  group flex h-full flex-col overflow-hidden rounded-3xl border border-blue/30 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <article className="theme-bg3  group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-300 dark:border-gray-950 dark:bg-black/25  shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       {/* Project Image */}
       <div className="relative overflow-hidden">
         <img
@@ -83,7 +83,7 @@ const ProjectCards = ({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="theme-heading theme-bg2 inline-flex items-center justify-center gap-2 rounded-lg border border-gray-600 px-2 py-1.5 text-sm font-semibold transition-all duration-200 hover:text-green-800 sm:text-base"
+              className="theme-heading theme-bg2 inline-flex items-center justify-center gap-2 rounded-lg border border-none hover:text-emerald-300 dark:border-gray-800 px-2 py-1.5 text-sm font-semibold transition-all duration-200  sm:text-base"
             >
               <FaGithub />
               GitHub
