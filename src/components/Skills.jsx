@@ -11,8 +11,9 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         {/* section heading */}
         <div className="text-center mb-16 sm:mb-20">
-          <h2 className="theme-heading text-3xl sm:text-4xl font-bold mb-4">
-            My <span className="text-yellow-300">Skills</span>
+          <h2 className="theme-heading text-3xl font-bold text-center mb-4">
+            My
+            <span className="text-yellow-300"> Skills</span>
           </h2>
 
           <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
