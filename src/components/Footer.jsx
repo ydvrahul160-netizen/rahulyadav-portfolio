@@ -69,7 +69,7 @@ const Footer = () => {
       {/* border-gray-300/70 dark:border-white/[0.08] */}
       
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 pb-8 pt-12 sm:px-8 sm:pb-10 sm:pt-16 lg:px-12">
+      <div className="relative mx-auto w-full max-w-6xl px-5 pb-8 pt-12 sm:px-8 sm:pb-10 sm:pt-16 lg:px-5">
         {/* Main footer */}
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12">
           {/* Brand section */}
