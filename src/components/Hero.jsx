@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
+import { m } from "motion/react";
 import { TypeAnimation } from "react-type-animation";
-import profileImg1 from "../assets/profileImg1.jpeg";
+import profileImg1 from "../assets/profileImg1.webp";
+import profileImg1_450 from "../assets/profileImg1-450.webp";
+import profileImg1_780 from "../assets/profileImg1-780.webp";
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -19,19 +21,19 @@ const Hero = () => {
 
         {/* --------------------------------- HUGE BACKGROUND TEXT ----------------------------------------- */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <motion.h1
+          <m.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             className="absolute whitespace-nowrap text-[18vw] sm:text-[20vw] lg:text-[18vw] font-black tracking-[-0.08em] text-black/[0.08] dark:text-white/[0.12] uppercase"
           >
             DEVELOPER
-          </motion.h1>
+          </m.h1>
         </div>
 
         {/* ---------------------------- CENTER IMAGE ----------------------------- */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <motion.div
+          <m.div
             initial={{
               opacity: 0,
               y: 80,
@@ -46,36 +48,35 @@ const Hero = () => {
               duration: 1,
               ease: "easeOut",
             }}
-            className="
-  relative
-  z-10
-  -translate-y-20
-  sm:-translate-y-12
-  lg:-translate-y-4
-"
+            className="relative z-10 -translate-y-20 sm:-translate-y-12 lg:-translate-y-4"
           >
             {/* Image glow */}
             <div className="absolute inset-10 bg-purple-600/20 blur-[80px]" />
 
-            <motion.img
+            <m.img
               src={profileImg1}
+              srcSet={`${profileImg1_450} 450w, ${profileImg1_780} 780w, ${profileImg1} 900w`}
+              sizes="(max-width: 639px) 260px, (max-width: 1023px) 330px, 390px"
               alt="Rahul Yadav"
-              animate={{
-                y: [0, -8, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              // animate={{
+              //   y: [0, -8, 0],
+              // }}
+              // transition={{
+              //   duration: 4,
+              //   repeat: Infinity,
+              //   ease: "easeInOut",
+              // }}
               className="relative w-[260px] h-[360px] sm:w-[330px] sm:h-[440px] lg:w-[390px] lg:h-[500px]
                 object-cover rounded-[20px] grayscale-[20%] shadow-[0_30px_100px_rgba(0,0,0,0.7)] "
             />
-          </motion.div>
+          </m.div>
         </div>
 
         {/* --------------------------------- PURPLE TEXT -------------------------------- */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -89,9 +90,9 @@ const Hero = () => {
           >
             Modern
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
@@ -105,10 +106,10 @@ const Hero = () => {
           >
             Developer
           </div>
-        </motion.div>
+        </m.div>
 
         {/* -------------------------------------- LEFT BOTTOM CONTENT ------------------------------------------- */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -152,6 +153,7 @@ const Hero = () => {
           <div className="flex gap-4 mt-5 text-lg">
             <a
               href="https://github.com/ydvrahul160-netizen"
+              aria-label="Visit Rahul Yadav on GitHub"
               target="_blank"
               rel="noreferrer"
               className="theme-gray dark:text-white/50 hover:text-black dark:hover:text-white transition"
@@ -161,6 +163,7 @@ const Hero = () => {
 
             <a
               href="https://www.linkedin.com/in/rahulyadav-77dev"
+              aria-label="Visit Rahul Yadav on LinkedIn"
               target="_blank"
               rel="noreferrer"
               className="theme-gray dark:text-white/50 hover:text-black dark:hover:text-white transition"
@@ -170,15 +173,16 @@ const Hero = () => {
 
             <a
               href="mailto:rahulyadav40777@gmail.com"
+              aria-label="Email Rahul Yadav"
               className="theme-gray dark:text-white/50 hover:text-black dark:hover:text-white transition"
             >
               <FaEnvelope />
             </a>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* ----------------------------------- RIGHT INFO CARD ---------------------------------------- */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -211,20 +215,15 @@ const Hero = () => {
 
             <span className="text-gray-500 dark:text-white/40">→</span>
           </a>
-        </motion.div>
+        </m.div>
 
         {/* ------------------------------------- SCROLL INDICAT --------------------------------------------- */}
-        <motion.a
+        <m.a
           href="#about"
-          animate={{ y: [0, 8, 0] }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-          }}
-          className="  absolute  z-30  bottom-5  left-1/2  -translate-x-1/2  text-gray-400 dark:text-white/30 hover:text-black dark:hover:text-white   transition  "
+          className="absolute z-30 bottom-5 left-1/2 -translate-x-1/2 text-gray-400 dark:text-white/30 hover:text-black dark:hover:text-white transition"
         >
           <FaArrowDown />
-        </motion.a>
+        </m.a>
 
         {/* Bottom line */}
         <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/60 to-transparent" />

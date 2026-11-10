@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { m } from "motion/react";
 import { workData } from "../assets/assets";
 import { FaLaptopCode } from "react-icons/fa6";
 
@@ -52,7 +51,7 @@ const Work = () => {
           {/* Cards */}
           <div className="relative space-y-12 sm:space-y-20 right-4">
             {workData.map((data, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +87,7 @@ const Work = () => {
                     {data.description}
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

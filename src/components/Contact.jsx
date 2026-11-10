@@ -1,15 +1,14 @@
-// import React from 'react'
-import { motion } from "framer-motion";
+import { m } from "motion/react";
 import { useState } from "react";
 
 import { validateContact } from "../validation/contact.schema";
 import { submitContactForm } from "../services/contact.service";
 import { FaPaperPlane } from "react-icons/fa";
-import { FaDribbble, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
+import { FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
-import monkey from "../assets/monkeyImg.png";
+import monkey from "../assets/monkeyImg.webp";
 
 import { User, Mail, MessageSquare } from "lucide-react";
 
@@ -100,8 +99,8 @@ const Contact = () => {
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* CONTACT FORM */}
           <div className="theme-bg3 glass rounded-3xl border border-gray-300 dark:border-gray-950 dark:bg-black/25 p-6 ">
-            {/* monkey PNG */}
-            <motion.img
+            {/* monkey webp */}
+            <m.img
               src={monkey}
               alt="Cute monkey"
               className="absolute z-20 pointer-events-none w-25 sm:w-32 md:w-40 lg:w-48 left-1/2 -translate-x-1/2 -top-16 sm:-top-18 md:-top-24 lg:-top-30
@@ -261,6 +260,7 @@ const Contact = () => {
               <div className="flex space-x-4">
                 <a
                   href="https://github.com/ydvrahul160-netizen"
+                  aria-label="Visit Rahul Yadav on GitHub"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-blue-400 hover:bg-black hover:text-white transition duration-300"
@@ -269,7 +269,10 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="www.linkedin.com/in/rahulyadav-77dev"
+                  href="https://www.linkedin.com/in/rahulyadav-77dev"
+                  aria-label="Visit Rahul Yadav on LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition duration-300"
                 >
                   <FaLinkedin size={22} />

@@ -28,7 +28,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      href: "https://github.com/",
+      href: "https://github.com/ydvrahul160-netizen",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.62 1.21 3.26.93.1-.73.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.5 0-1.21.43-2.2 1.15-2.98-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.04-1.14 3.04-1.14.61 1.53.23 2.67.12 2.95.71.78 1.14 1.77 1.14 2.98 0 4.27-2.62 5.22-5.11 5.5.4.35.75 1.02.75 2.06v3.09c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" />
@@ -37,7 +37,7 @@ const Footer = () => {
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/",
+      href: "https://www.linkedin.com/in/rahulyadav-77dev",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.9H4.98V9.4h2.95v9.5ZM6.45 8.1a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.47 10.8h-2.94v-4.62c0-1.1-.02-2.51-1.53-2.51-1.53 0-1.77 1.2-1.77 2.43v4.7H9.74V9.4h2.82v1.3h.04c.39-.74 1.35-1.52 2.78-1.52 2.97 0 3.54 1.95 3.54 4.48v5.24Z" />
@@ -46,7 +46,7 @@ const Footer = () => {
     },
     {
       name: "Email",
-      href: "mailto:your-email@example.com",
+      href: "mailto:rahulyadav40777@gmail.com",
       icon: (
         <svg
           viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ const Footer = () => {
             </p>
 
             <a
-              href="mailto:your-email@example.com"
+              href="mailto:rahulyadav40777@gmail.com"
               className="break-all text-sm font-medium text-emerald-500 transition-colors hover:text-emerald-400"
             >
               rahulyadav40777@gmail.com
