@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { m } from "motion/react";
 import { skills } from "../assets/assets";
 
 const Skills = () => {
@@ -24,7 +23,7 @@ const Skills = () => {
         {/* skills cards */}
         <div className="max-w-5xl mx-auto space-y-16 sm:space-y-20">
           {skills.map((skill, index) => (
-            <motion.div
+            <m.div
               key={skill.title}
               initial={{
                 opacity: 0,
@@ -87,7 +86,7 @@ const Skills = () => {
                   </div>
 
                   <div className="theme-border h-2 rounded-full bg-gray-300 overflow-hidden">
-                    <motion.div
+                    <m.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       transition={{
@@ -114,7 +113,7 @@ const Skills = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

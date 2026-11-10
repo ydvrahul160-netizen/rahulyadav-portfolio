@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 const name = "RAHUL YADAV";
 
-const particles = Array.from({ length: 35 }, (_, i) => ({
+const particles = Array.from({ length: 15 }, (_, i) => ({
   id: i,
   x: Math.random() * 100,
   y: Math.random() * 100,
@@ -22,13 +22,12 @@ const PortfolioIntro = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <motion.div
+    <m.div
       className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-white dark:bg-[#070b14]"
       initial={{ opacity: 1 }}
       exit={{
         opacity: 0,
         scale: 1.08,
-        filter: "blur(15px)",
       }}
       transition={{
         duration: 0.8,
@@ -38,7 +37,7 @@ const PortfolioIntro = ({ onComplete }) => {
       {/* Particles */}
       <div className="absolute inset-0">
         {particles.map((particle) => (
-          <motion.span
+          <m.span
             key={particle.id}
             className="absolute rounded-full bg-blue-400 dark:bg-blue-300"
             style={{
@@ -65,23 +64,12 @@ const PortfolioIntro = ({ onComplete }) => {
       </div>
 
       {/* Glow behind name */}
-      <motion.div
-        className="absolute w-[500px] h-[300px] rounded-full bg-blue-500/10 dark:bg-purple-500/10 blur-[100px]"
-        animate={{
-          scale: [1, 1.25, 1],
-          opacity: [0.3, 0.7, 0.3],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      <div className="absolute w-[500px] h-[300px] rounded-full bg-blue-500/10 dark:bg-purple-500/10 blur-[100px]" />
 
       {/* NAME */}
       <div className="relative z-10 flex justify-center overflow-hidden px-4">
         {name.split("").map((letter, index) => (
-          <motion.span
+          <m.span
             key={index}
             className="
                 inline-block
@@ -95,7 +83,6 @@ const PortfolioIntro = ({ onComplete }) => {
               x: index % 3 === 0 ? -80 : index % 3 === 1 ? 80 : 0,
               rotate: index % 2 === 0 ? -25 : 25,
               scale: 1.8,
-              filter: "blur(20px)",
             }}
             animate={{
               opacity: 1,
@@ -103,7 +90,6 @@ const PortfolioIntro = ({ onComplete }) => {
               x: 0,
               rotate: 0,
               scale: 1,
-              filter: "blur(0px)",
             }}
             transition={{
               duration: 1,
@@ -112,10 +98,10 @@ const PortfolioIntro = ({ onComplete }) => {
             }}
           >
             {letter === " " ? "\u00A0" : letter}
-          </motion.span>
+          </m.span>
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

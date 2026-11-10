@@ -1,39 +1,47 @@
-import React, { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "motion/react";
+import {
+  AnimatePresence,
+  LazyMotion,
+  domAnimation,
+} from "motion/react";
 
-import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Resume from "./pages/Resume";
-import AllProjects from "./pages/AllProjects";
 import PortfolioIntro from "./components/PortfolioIntro";
 import ClickSparkles from "./components/ClickSparkles";
+
+const Home = lazy(() => import("./pages/Home"));
+const Resume = lazy(() => import("./pages/Resume"));
+const AllProjects = lazy(() => import("./pages/AllProjects"));
+const Services = lazy(() => import("./pages/Services"));
 
 const App = () => {
   const location = useLocation();
   const [showIntro, setShowIntro] = useState(true);
 
   return (
-    <>
-     <ClickSparkles />
-      <AnimatePresence mode="wait">
-        {showIntro ? (
-          <PortfolioIntro
-            onComplete={() => setShowIntro(false)}
-          />
-        ) : (
-          <>
-            {location.pathname !== "/resume" && <Navbar />}
+    <LazyMotion features={domAnimation}>
+      <>
+        <ClickSparkles />
 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/projects" element={<AllProjects />} />
-            </Routes>
-          </>
-        )}
-      </AnimatePresence>
-    </>
+        <AnimatePresence>
+          {showIntro && (
+            <PortfolioIntro onComplete={() => setShowIntro(false)} />
+          )}
+        </AnimatePresence>
+
+        {location.pathname !== "/resume" && <Navbar />}
+
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/projects" element={<AllProjects />} />
+            <Route path="/services" element={<Services />} />
+          </Routes>
+        </Suspense>
+      </>
+    </LazyMotion>
   );
 };
 

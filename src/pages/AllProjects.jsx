@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "motion/react";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const AllProjects = () => {
   }, []);
 
   return (
-    <motion.section
+    <m.section
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -69,7 +69,7 @@ const AllProjects = () => {
           </div>
         ) : (
           // Projects
-          <motion.div
+          <m.div
             initial="hidden"
             animate="show"
             variants={{
@@ -83,7 +83,7 @@ const AllProjects = () => {
             className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
           >
             {projects.map((project, index) => (
-              <motion.div
+              <m.div
                 key={project.id || index}
                 variants={{
                   hidden: {
@@ -101,13 +101,13 @@ const AllProjects = () => {
                 }}
               >
                 <ProjectCards {...project} />
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         )}
 
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 

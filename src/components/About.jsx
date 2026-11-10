@@ -1,17 +1,11 @@
-import { motion } from "framer-motion";
+import { m } from "motion/react";
 import { aboutInfo } from "../assets/assets";
 // import myphoto from "../assets/myphoto.png";
-import profileImg1 from "../assets/profileImg1.jpeg";
+import profileImg1 from "../assets/profileImg1.webp";
+import profileImg1_450 from "../assets/profileImg1-450.webp";
+import profileImg1_780 from "../assets/profileImg1-780.webp";
 // import ProfileCard from "./ProfileCard";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaArrowDown,
-  FaArrowRight,
-  FaCode,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -32,7 +26,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row md:items-start items-center gap-4">
           {/* IMAGE */}
           {/* RIGHT CONTENT: PROFILE */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 35, scale: 0.97 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
@@ -46,10 +40,13 @@ const About = () => {
 
             {/* Image container */}
             <div className="relative mx-auto w-[85%] max-w-[360px] overflow-hidden rounded-[28px] border border-black/[0.08] bg-[#E9EDE5] p-2 shadow-[0_30px_80px_rgba(0,0,0,0.12)] dark:border-white/[0.10] dark:bg-[#171B16] dark:shadow-[0_30px_100px_rgba(0,0,0,0.4)] sm:max-w-[400px] sm:rounded-[36px] sm:p-3 lg:w-full lg:max-w-[380px]">
-              <motion.img
+              <m.img
                 src={profileImg1}
+                srcSet={`${profileImg1_450} 450w, ${profileImg1_780} 780w, ${profileImg1} 900w`}
+                sizes="(max-width: 640px) 100vw, 450px"
                 alt="Rahul Yadav - Full Stack Developer"
-                loading="eager"
+                loading="lazy"
+                decoding="async"
                 animate={{ y: [0, -6, 0] }}
                 transition={{
                   duration: 4,
@@ -90,10 +87,10 @@ const About = () => {
 
               <span className="h-px w-10 bg-[#52763B]/50" />
             </div>
-          </motion.div>
+          </m.div>
 
           {/* TEXT CONTENT */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeInOut" }}
@@ -120,7 +117,7 @@ const About = () => {
               </p>
 
               {/* CARDS */}
-              <motion.div
+              <m.div
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.2 }}
@@ -135,7 +132,7 @@ const About = () => {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
               >
                 {aboutInfo.map((data, index) => (
-                  <motion.div
+                  <m.div
                     key={index}
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -160,11 +157,11 @@ const About = () => {
                     </h3>
 
                     <p className="text-gray-400">{data.description}</p>
-                  </motion.div>
+                  </m.div>
                 ))}
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

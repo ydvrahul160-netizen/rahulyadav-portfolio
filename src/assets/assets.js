@@ -113,17 +113,17 @@ export const projects = [
     image: projectImg1,
     tech: ["HTML", "CSS", "JavaScript"],
     icons: [FaReact, FaNodeJs, FaDatabase, FaStripe],
-    github: "https://github.com/yourusername/ecommerce-platform",
-    live: "true",
+    github: null,
+    live: false,
   },
   {
     title: "Education Hub",
     description:
-      "A productivity application with drag-and-drop functionality and real-time updates.",
+      "An education-focused web application designed to organize learning resources and support a smoother study experience.",
     image: projectImg2,
     tech: ["html", "css", "js"],
     icons: [FaVuejs, FaFire, FaCloud, FaDatabase],
-    github: "#",
+    github: null,
     live: false,
   },
   {
@@ -133,7 +133,7 @@ export const projects = [
     image: projectImg3,
     tech: ["HTML5", "CSS3", "JavaScript"],
     icons: [FaHtml5, FaCss3Alt, FaJs],
-    github: "#",
+    github: null,
     live: "https://weather-aap0.netlify.app/",
   },
   {
@@ -143,17 +143,17 @@ export const projects = [
     image: projectImg4,
     tech: ["React", "Tailwind CSS", "Framer Motion"],
     icons: [FaReact, SiTailwindcss, SiFramer],
-    github: "#",
+    github: null,
     live: "https://rahulyadav-portfolio-psi.vercel.app/",
   },
   {
     title: "Todo App",
     description:
-      "A real-time chat application with group messaging, emojis, and file sharing.",
+      "A task management application for creating, organizing, and tracking daily tasks.",
     image: projectImg5,
     tech: ["React", "Tailwind", "Node.js", "MongoDB"],
     icons: [FaReact, FaNodeJs, FaDatabase],
-    github: "#",
+    github: null,
     live: false,
   },
   {
@@ -161,10 +161,10 @@ export const projects = [
     description:
       "Built an AI-powered code reviewer using React.js, Node.js, Express.js, Google Gemini API",
     image: projectImg6,
-    tech: ["React", "OpenAI API", "Tailwind CSS"],
+    tech: ["React", "Node.js", "Express.js", "Google Gemini API"],
     icons: [FaRobot, FaReact, FaCloud],
-    github: "#",
-    live: false,
+    github: "https://github.com/ydvrahul160-netizen/AI-Powered-Code-Reviewer",
+    live: "https://ai-powered-code-reviewer-bo9j.onrender.com/",
   },
   {
     title: "InterviewPilot",

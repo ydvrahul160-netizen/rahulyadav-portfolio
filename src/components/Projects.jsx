@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useRef, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 import { projects } from "../assets/assets";
 import ProjectCards from "./ProjectCards";

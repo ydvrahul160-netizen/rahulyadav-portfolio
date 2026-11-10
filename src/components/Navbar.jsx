@@ -1,7 +1,7 @@
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "motion/react";
 import {
   FaHouse,
   FaUser,
@@ -138,7 +138,7 @@ const Navbar = () => {
             {/*--------------------------------- desktop setting dropdown ---------------------------------------*/}
             <AnimatePresence>
               {showSettings && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: -10, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.96 }}
@@ -184,7 +184,7 @@ const Navbar = () => {
                   >
                     Accent Color
                   </button> 
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
@@ -209,7 +209,7 @@ const Navbar = () => {
 
       <AnimatePresence>
         {showMenu && (
-          <motion.div
+          <m.div
             className={`fixed inset-0 z-[100] flex justify-end backdrop-blur-md lg:hidden
             ${theme === "dark" ? "bg-[#080b13]/75" : "bg-[#dfe4ee]/70"}`}
             initial={{ opacity: 0 }}
@@ -220,7 +220,7 @@ const Navbar = () => {
           >
             {/*----------------------------------------Menu card---------------------------------------------*/}
 
-            <motion.div
+            <m.div
               className={`relative flex h-full w-[88%] max-w-[400px] flex-col overflow-hidden rounded-l-[30px] border-l border-y shadow-2xl
                 ${
                   theme === "dark"
@@ -239,7 +239,7 @@ const Navbar = () => {
             >
               {/*-------------------------------------- Close btn -------------------------------------------- */}
 
-              <motion.button
+              <m.button
                 type="button"
                 onClick={() => setShowMenu(false)}
                 className={`absolute right-5 top-5 z-20 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300
@@ -255,11 +255,11 @@ const Navbar = () => {
                 transition={{ delay: 0.2, type: "spring", stiffness: 300 }}
               >
                 <FaXmark className="text-lg" />
-              </motion.button>
+              </m.button>
 
               {/*---------------------------------------- Profile header ------------------------------------------ */}
 
-              <motion.div
+              <m.div
                 className="relative px-6 pb-5 pt-7"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -283,7 +283,7 @@ const Navbar = () => {
                 >
                   MERN Stack Developer
                 </p>
-              </motion.div>
+              </m.div>
 
               {/*------------------------------------ Divider --------------------------------------------*/}
 
@@ -298,7 +298,7 @@ const Navbar = () => {
               <div className="relative flex-1 overflow-y-auto px-4 py-5">
                 {/*--------------------------------- Home --------------------------------------- */}
 
-                <motion.a
+                <m.a
                   href="#home"
                   onClick={() => setShowMenu(false)}
                   className={`flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
@@ -317,11 +317,11 @@ const Navbar = () => {
                   </span>
 
                   <span>Home</span>
-                </motion.a>
+                </m.a>
 
                 {/*------------------------------- About ------------------------------------------------ */}
 
-                <motion.a
+                <m.a
                   href="#about"
                   onClick={() => setShowMenu(false)}
                   className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
@@ -341,11 +341,11 @@ const Navbar = () => {
                   </span>
 
                   <span>About</span>
-                </motion.a>
+                </m.a>
 
                 {/* --------------------------------------- Skills --------------------------------------------*/}
 
-                <motion.a
+                <m.a
                   href="#skills"
                   onClick={() => setShowMenu(false)}
                   className={`mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
@@ -365,11 +365,11 @@ const Navbar = () => {
                   </span>
 
                   <span>Skills</span>
-                </motion.a>
+                </m.a>
 
                 {/*------------------------------------ Projects ------------------------------------------- */}
 
-                <motion.a
+                <m.a
                   href="#projects"
                   onClick={() => setShowMenu(false)}
                   className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
@@ -389,11 +389,11 @@ const Navbar = () => {
                   </span>
 
                   <span>Projects</span>
-                </motion.a>
+                </m.a>
 
                 {/*--------------------------------- Experience ---------------------------------------------*/}
 
-                <motion.a
+                <m.a
                   href="#work"
                   onClick={() => setShowMenu(false)}
                   className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
@@ -413,11 +413,11 @@ const Navbar = () => {
                   </span>
 
                   <span>Experience</span>
-                </motion.a>
+                </m.a>
 
                 {/*----------------------------------------- Contact ---------------------------------------------------- */}
 
-                <motion.a
+                <m.a
                   href="#contact"
                   onClick={() => setShowMenu(false)}
                   className={` mt-2 flex items-center gap-4 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-300
@@ -437,7 +437,7 @@ const Navbar = () => {
                   </span>
 
                   <span>Contact</span>
-                </motion.a>
+                </m.a>
 
                 {/*------------------------------------------- Divider Under ----------------------------------------*/}
 
@@ -449,7 +449,7 @@ const Navbar = () => {
 
                 {/*--------------------------------------- Settings --------------------------------------------*/}
 
-                <motion.button
+                <m.button
                   type="button"
                   onClick={() => setShowSettings((prev) => !prev)}
                   className={`flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-sm font-medium transition-all
@@ -478,13 +478,13 @@ const Navbar = () => {
                   >
                     ↓
                   </span>
-                </motion.button>
+                </m.button>
 
                 {/*---------------------------------------------- Settings content ------------------------------------------------*/}
 
                 <AnimatePresence initial={false}>
                   {showSettings && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -556,14 +556,14 @@ const Navbar = () => {
                           <span>→</span>
                         </button>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>
 
               {/*---------------------------------------------- Bottom Resume Btn --------------------------------------------------- */}
 
-              <motion.div
+              <m.div
                 className="relative px-5 pb-5"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -576,7 +576,7 @@ const Navbar = () => {
                 />
 
                 <a
-                  href="/resume.pdf"
+                  href="/Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className=" flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-black to-gray-600 px-4 py-3 text-sm
@@ -592,26 +592,26 @@ const Navbar = () => {
                 >
                   © 2026 Rahul Yadav
                 </p>
-              </motion.div>
+              </m.div>
 
               {/*----------------------------------- Decorative Bottom Glow ---------------------------------------*/}
 
               <div className="pointer-events-none absolute bottom-[-60px] right-[-50px] h-40 w-40 rounded-full bg-purple-500/10 blur-3xl" />
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
 
       {/*---------------------------------- setting function block Under Development popup -------------------------------------*/}
       <AnimatePresence>
         {showFeaturePopup && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 px-4 backdrop-blur-md"
           >
-            <motion.div
+            <m.div
               initial={{ scale: 0.9, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.9, y: 20, opacity: 0 }}
@@ -643,8 +643,8 @@ const Navbar = () => {
               >
                 Got it
               </button>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

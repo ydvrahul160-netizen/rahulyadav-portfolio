@@ -9,11 +9,17 @@ const FinalCTA = () => {
 
     let animationFrame;
 
+    let canvasWidth = 0;
+    let canvasHeight = 0;
+
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
 
-      canvas.width = canvas.offsetWidth * dpr;
-      canvas.height = canvas.offsetHeight * dpr;
+      canvasWidth = canvas.offsetWidth;
+      canvasHeight = canvas.offsetHeight;
+
+      canvas.width = canvasWidth * dpr;
+      canvas.height = canvasHeight * dpr;
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
@@ -25,13 +31,6 @@ const FinalCTA = () => {
 
     const createParticles = () => {
       particles.length = 0;
-
-      const width = canvas.offsetWidth;
-      const height = canvas.offsetHeight;
-
-      const centerX = width / 2;
-      const centerY = height / 2;
-      const radius = Math.min(width, height) * 0.32;
 
       const count = window.innerWidth < 640 ? 650 : 1400;
 
@@ -59,8 +58,8 @@ const FinalCTA = () => {
     let rotation = 0;
 
     const animate = () => {
-      const width = canvas.offsetWidth;
-      const height = canvas.offsetHeight;
+      const width = canvasWidth;
+      const height = canvasHeight;
 
       ctx.clearRect(0, 0, width, height);
 

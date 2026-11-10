@@ -1,25 +1,10 @@
-// import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url,
-).toString();
+import { m } from "motion/react";
 
 const Resume = () => {
-  const [numPages, setNumPages] = useState(null);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-    setLoading(false);
-  }
-  const [loading, setLoading] = useState(true);
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
@@ -46,32 +31,17 @@ const Resume = () => {
       </div>
 
       {/* PDF Preview */}
-
       <div className="relative z-10 px-2 sm:px-6 lg:px-10 pt-24 pb-10 h-[calc(100vh-80px)]">
         <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-full">
-          {loading && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center bg-[#0d1117]">
-              <div className="w-16 h-16 rounded-full border-4 border-yellow-400 border-t-transparent animate-spin" />
-            </div>
-          )}
-          <div className="overflow-y-auto h-full flex justify-center">
-            <Document
-              file="/Resume.pdf"
-              onLoadSuccess={onDocumentLoadSuccess}
-              loading=""
-            >
-              {Array.from(new Array(numPages), (_, index) => (
-                <Page
-                  key={index}
-                  pageNumber={index + 1}
-                  width={Math.min(window.innerWidth - 20, 900)}
-                />
-              ))}
-            </Document>
-          </div>
+          <iframe
+            src="/Resume.pdf"
+            title="Rahul Yadav Resume"
+            className="w-full h-full border-0"
+            loading="eager"
+          />
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 
