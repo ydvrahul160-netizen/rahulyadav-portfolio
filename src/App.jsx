@@ -13,7 +13,7 @@ const App = () => {
   const location = useLocation();
   const [showIntro, setShowIntro] = useState(true);
 
-  return (
+  return (      
     <>
      <ClickSparkles />
       <AnimatePresence mode="wait">
